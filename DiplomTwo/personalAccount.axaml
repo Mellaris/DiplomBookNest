@@ -1,0 +1,211 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="3200"
+        x:Class="DiplomTwo.personalAccount"
+		x:CompileBindings="False" 
+		Width="1440"
+        Title="personalAccount">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+
+
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+					<Button Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+				</StackPanel>
+
+				<Button Click="Log" Background="White" Margin="297,38,0,0">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
+				</Button>
+
+
+			</StackPanel>
+
+			<Grid Width="1139" Height="833" Background="White" Margin="80">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<!-- Верхний блок (Приветствие + Прогресс) -->
+				<Border Width="1139" Height="260" Grid.Row="0" Background="#A0C8FF" Padding="20" CornerRadius="10" Margin="0,0,0,10">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="2*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<!-- Текстовое приветствие -->
+						<StackPanel Grid.Column="0">
+							<TextBlock Text="Привет, Анастасия!" FontSize="36" FontWeight="Regular" Foreground="White"/>
+							<TextBlock Margin="0,40,0,0" HorizontalAlignment="Left" Width="391" Height="100" Text="Ты Любишь Всех, А Любить Всех - Значит Не Любить Никого..."
+                           Foreground="White" FontSize="20" TextWrapping="Wrap"/>
+						</StackPanel>
+
+						<!-- Блок с прогрессом -->
+						<Border Margin="519,40,0,40" Background="#DEEDFF" CornerRadius="16"
+                    Width="570" Height="140" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+							<StackPanel Orientation="Vertical" >
+								<TextBlock Margin="12,16,0,0" FontSize="24" Text="Посмотри На Свой Прогресс!" Foreground="#FF7979" FontWeight="Regular"/>
+								<TextBlock HorizontalAlignment="Center" Text="10" FontSize="64" Foreground="#FF7979" FontWeight="Bold" Margin="350,0,0,0"/>
+							</StackPanel>
+						</Border>
+					</Grid>
+				</Border>
+
+				<!-- Основной блок с кнопками -->
+				<Grid Grid.Row="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="Что Ты Хочешь Сделать Сегодня?" FontSize="36" FontWeight="Regular"
+                   Foreground="#108DE8" HorizontalAlignment="Left" Margin="0,24,0,10"/>
+
+					<UniformGrid Rows="2" Columns="3" Grid.Row="1" HorizontalAlignment="Center">
+						<!-- Карточки-кнопки -->
+						<Border Background="#FFF4AA" Width="358" Height="183" CornerRadius="10" Margin="10">
+							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Мои книги" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+						</Border>
+						<Border Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
+							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Книжный план" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+						</Border>
+
+						<Border Background="#FFC2D1"   Width="300" CornerRadius="10" Margin="20,30,60,-197">
+							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Друзья" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+						</Border>
+
+						<Border Background="#D5B8FF" Width="358" Height="183" CornerRadius="10" Margin="0,0,0,30">
+							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Доска автора" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+						</Border>
+
+						<!-- Круглая кнопка -->
+					</UniformGrid>
+				</Grid>
+
+			</Grid>
+			<TextBlock HorizontalAlignment="Center" Margin="0,64,0,0" Foreground="#108DE8" FontSize="48">Твоя Личность</TextBlock>
+			<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="20" Foreground="#9AC6FF">Здесь ты можешь найти информацию о своих любимых книгах, жанрах и достижениях!</TextBlock>
+			<Grid  Margin="0,16,0,0">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Margin="230,0,0,0" FontSize="36" Foreground="#108DE8">Любимые Книги</TextBlock>
+					<Grid Margin="0,43,0,0" Width="1080" Height="236">
+						<Grid.ColumnDefinitions>
+							<!-- Колонка для кнопки "Влево" -->
+							<ColumnDefinition Width="Auto" />
+							<!-- Колонка для списка книг -->
+							<ColumnDefinition Width="*" />
+							<!-- Колонка для кнопки "Вправо" -->
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+
+						<Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"></Image>
+						<!-- ListBox с горизонтальной прокруткой -->
+						<ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+             SelectionMode="Single" BorderThickness="0">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<!-- Книги располагаются горизонтально -->
+									<StackPanel Orientation="Horizontal" />
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<!-- Изображение книги -->
+									<Image  Width="163" Height="235" Margin="5" />
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+						<Image Grid.Column="2" Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"></Image>
+					</Grid>
+				</StackPanel>
+			</Grid>
+
+
+			<TextBlock HorizontalAlignment="Center" Margin="0,64,0,0" Foreground="#FF7979" FontSize="48">Топ Жанров</TextBlock>
+			<TextBlock Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="20" Foreground="#FF7979">Здесь находятся твои топ 3 любимых жанра</TextBlock>
+
+			<StackPanel Margin="0,44,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+				<StackPanel>
+					<Image Width="261" Height="380"></Image>
+					<TextBlock FontSize="24" Foreground="#FF7979" HorizontalAlignment="Center">Классика</TextBlock>
+				</StackPanel>
+				<StackPanel>
+					<Image Width="358" Height="465"></Image>
+					<TextBlock FontSize="24" Foreground="#FF7979" HorizontalAlignment="Center">Фэнтези</TextBlock>
+				</StackPanel>
+				<StackPanel>
+					<Image Width="261" Height="380"></Image>
+					<TextBlock FontSize="24" Foreground="#FF7979" HorizontalAlignment="Center">Детектив</TextBlock>
+				</StackPanel>
+			</StackPanel>
+
+			<TextBlock Foreground="#108DE8" FontSize="56" Margin="148,64,0,0">Статистика</TextBlock>
+
+			<StackPanel Margin="0,12,0,0" Height="29" Background="#E4EFFD">
+				<TextBlock FontSize="20" Foreground="#9AC6FF" Margin="158,4,0,0" VerticalAlignment="Center">Твоя статистика за весь период и достижения!</TextBlock>
+			</StackPanel>
+
+			<TextBlock FontSize="24" Foreground="#108DE8" Margin="158,24,0,0">Продолжай читать и получать новые достижения</TextBlock>
+			
+				<StackPanel Margin="0,32,0,0" Width="1100" Height="284" Background="#B1D3FF">
+					<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#FF7979">Прогресс</TextBlock>
+					<ListBox Margin="0,24,0,0" Background="" Width="1100" Height="125" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+						   SelectionMode="Single" BorderThickness="0">
+						<ListBox.ItemsPanel>
+							<ItemsPanelTemplate>
+								<!-- Книги располагаются горизонтально -->
+								<StackPanel Orientation="Horizontal" />
+							</ItemsPanelTemplate>
+						</ListBox.ItemsPanel>
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<!-- Изображение книги -->
+								<Image Width="125" Height="125" Margin="60,0,0,60" />
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+						<Image Margin="15" Source="\Imoges\StrelkaRedLeft.png"></Image>
+						<Image Margin="180,0,0,0" Source="\Imoges\StrelkaRedR.png"></Image>
+					</StackPanel>
+				</StackPanel>
+			<StackPanel Margin="0,36,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+				<StackPanel Margin="0,0,0,0" >
+					<TextBlock FontSize="36" Foreground="#FF7979">Книги</TextBlock>
+					<Border Margin="0,12,0,0" CornerRadius="12" Background="#B1D3FF" Width="273" Height="204">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF1C3" FontSize="64">10</TextBlock>
+					</Border>
+				</StackPanel>
+				<StackPanel Margin="140,0,0,0">
+					<TextBlock FontSize="36" Foreground="#FF7979">Лайки</TextBlock>
+					<Border Margin="0,12,0,0" CornerRadius="12" Background="#B1D3FF" Width="273" Height="204">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF1C3" FontSize="64">10</TextBlock>
+					</Border>
+				</StackPanel>
+				<StackPanel Margin="140,0,0,0">
+					<TextBlock FontSize="36" Foreground="#FF7979">Отзывы</TextBlock>
+					<Border Margin="0,12,0,0" CornerRadius="12" Background="#B1D3FF" Width="273" Height="204">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF1C3" FontSize="64">10</TextBlock>
+					</Border>
+				</StackPanel>
+			
+			</StackPanel>
+			
+			
+			
+		</StackPanel>
+		
+		
+		
+		
+	</ScrollViewer>
+
+</Window>

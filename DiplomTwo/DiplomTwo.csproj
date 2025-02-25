@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Imoges\angle-app.png" />
+    <None Remove="Imoges\angle-down.png" />
+    <None Remove="Imoges\Group 226.png" />
+    <None Remove="Imoges\Group 229.png" />
+    <None Remove="Imoges\Group 242.png" />
+    <None Remove="Imoges\Group 244.png" />
+    <None Remove="Imoges\Group 246.png" />
+    <None Remove="Imoges\Group 248.png" />
+    <None Remove="Imoges\Group 250.png" />
+    <None Remove="Imoges\Group 252.png" />
+    <None Remove="Imoges\Group 254.png" />
+    <None Remove="Imoges\Group 256.png" />
+    <None Remove="Imoges\Group 351.png" />
+    <None Remove="Imoges\image 1.png" />
+    <None Remove="Imoges\StrelkaLeft.png" />
+    <None Remove="Imoges\StrelkaR.png" />
+    <None Remove="Imoges\strelkaRAutor.png" />
+    <None Remove="Imoges\StrelkaRedLeft.png" />
+    <None Remove="Imoges\StrelkaRedR.png" />
+    <None Remove="Imoges\Vector.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.2.1">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Imoges\angle-app.png" />
+    <AvaloniaResource Include="Imoges\angle-down.png" />
+    <AvaloniaResource Include="Imoges\Group 226.png" />
+    <AvaloniaResource Include="Imoges\Group 229.png" />
+    <AvaloniaResource Include="Imoges\Group 242.png" />
+    <AvaloniaResource Include="Imoges\Group 244.png" />
+    <AvaloniaResource Include="Imoges\Group 246.png" />
+    <AvaloniaResource Include="Imoges\Group 248.png" />
+    <AvaloniaResource Include="Imoges\Group 250.png" />
+    <AvaloniaResource Include="Imoges\Group 252.png" />
+    <AvaloniaResource Include="Imoges\Group 254.png" />
+    <AvaloniaResource Include="Imoges\Group 256.png" />
+    <AvaloniaResource Include="Imoges\Group 351.png" />
+    <AvaloniaResource Include="Imoges\image 1.png" />
+    <AvaloniaResource Include="Imoges\StrelkaLeft.png" />
+    <AvaloniaResource Include="Imoges\StrelkaR.png" />
+    <AvaloniaResource Include="Imoges\strelkaRAutor.png" />
+    <AvaloniaResource Include="Imoges\StrelkaRedLeft.png" />
+    <AvaloniaResource Include="Imoges\StrelkaRedR.png" />
+    <AvaloniaResource Include="Imoges\Vector.png" />
+  </ItemGroup>
+</Project>
