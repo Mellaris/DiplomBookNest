@@ -1,0 +1,100 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2069"
+        x:Class="DiplomTwo.Books"
+        Title="Books">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#042A99" FontSize="64">BookNest</TextBlock>
+
+
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+					<Button Height="40" Background="White" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Дом</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Книги</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Авторы</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Новости</Button>
+				</StackPanel>
+
+				<Button  Background="White" Margin="297,38,0,0">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\PurpleMenu.png" Width="45" Height="25"></Image>
+				</Button>
+			</StackPanel>
+
+
+			<Image Margin="0,30,0,0" Source="\Imoges\Group 352.png"></Image>
+
+			<StackPanel HorizontalAlignment="Center" Margin="0,44,0,0" Orientation="Horizontal">
+				<TextBlock Margin="0,0,0,0" FontSize="24" Foreground="#042A99">Детектив</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Проза</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Фантастика</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Романтика</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Образование</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Фэнтези</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Ужасы</TextBlock>
+				<TextBlock Margin="32,0,0,0" FontSize="24" Foreground="#042A99">Психология</TextBlock>
+			</StackPanel>
+
+			<TextBlock Margin="0,44,0,0" HorizontalAlignment="Center" Foreground="#042A99" FontSize="48" FontWeight="Bold">Все книги</TextBlock>
+
+			<StackPanel Margin="150,32,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
+
+				<ComboBox FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+					<ComboBox.Items>Жанр</ComboBox.Items>
+				</ComboBox>
+				<CheckBox Margin="68,0,0,0" Foreground="#042A99" FontSize="26">Новинки</CheckBox>
+				<CheckBox Margin="44,0,0,0" Foreground="#042A99" FontSize="26">Авторское</CheckBox>
+
+				<Image Margin="302,0,0,0" Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\Icon.png"></Image>
+				
+			</StackPanel>
+
+			<StackPanel Margin="150,42,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
+				
+				<ComboBox FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+					<ComboBox.Items>Рейтинг</ComboBox.Items>
+				</ComboBox>
+				<TextBox Margin="264,0,0,0" FontSize="26" Foreground="#042A99"  CornerRadius="12" Width="517" Height="46" Background="#E4EFFD"></TextBox>
+				
+			</StackPanel>
+
+
+			<ListBox Margin="0,68,0,0" Width="1140" Height="981">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal">
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Image></Image>
+									<StackPanel>
+										<TextBlock></TextBlock>
+										<TextBlock></TextBlock>
+										<StackPanel Orientation="Horizontal">
+											<Image></Image>
+											<TextBlock></TextBlock>
+										</StackPanel>
+									</StackPanel>
+								</StackPanel>
+								<Button>
+									<TextBlock>Открыть</TextBlock>
+								</Button>
+							</StackPanel>
+							
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+
+			<StackPanel Margin="0,32,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+				<Image Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\StrelkaBooksLeft.png"></Image>
+				<TextBlock Margin="32,0,0,0">1</TextBlock>
+				<TextBlock Margin="12,0,0,12">из</TextBlock>
+				<TextBlock Margin="12,0,0,0">10</TextBlock>
+				<Image  Margin="32,0,0,0" Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\StrelkaBooksR.png"></Image>
+				
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</Window>

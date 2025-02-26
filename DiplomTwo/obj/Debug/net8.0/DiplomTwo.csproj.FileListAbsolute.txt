@@ -65,3 +65,4 @@ D:\Work\DiplomTwo\DiplomTwo\obj\Debug\net8.0\refint\Avalonia\DiplomTwo.dll
 D:\Work\DiplomTwo\DiplomTwo\obj\Debug\net8.0\DiplomTwo.csproj.Up2Date
 D:\Work\DiplomTwo\DiplomTwo\obj\Debug\net8.0\DiplomTwo.genruntimeconfig.cache
 D:\Work\DiplomTwo\DiplomTwo\obj\Debug\net8.0\ref\DiplomTwo.dll
+D:\Work\DiplomTwo\DiplomTwo\obj\Debug\net8.0\DiplomTwo.sourcelink.json

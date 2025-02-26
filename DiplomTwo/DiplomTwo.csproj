@@ -21,7 +21,12 @@
     <None Remove="Imoges\Group 254.png" />
     <None Remove="Imoges\Group 256.png" />
     <None Remove="Imoges\Group 351.png" />
+    <None Remove="Imoges\Group 352.png" />
+    <None Remove="Imoges\Icon.png" />
     <None Remove="Imoges\image 1.png" />
+    <None Remove="Imoges\PurpleMenu.png" />
+    <None Remove="Imoges\StrelkaBooksLeft.png" />
+    <None Remove="Imoges\StrelkaBooksR.png" />
     <None Remove="Imoges\StrelkaLeft.png" />
     <None Remove="Imoges\StrelkaR.png" />
     <None Remove="Imoges\strelkaRAutor.png" />
@@ -56,7 +61,12 @@
     <AvaloniaResource Include="Imoges\Group 254.png" />
     <AvaloniaResource Include="Imoges\Group 256.png" />
     <AvaloniaResource Include="Imoges\Group 351.png" />
+    <AvaloniaResource Include="Imoges\Group 352.png" />
+    <AvaloniaResource Include="Imoges\Icon.png" />
     <AvaloniaResource Include="Imoges\image 1.png" />
+    <AvaloniaResource Include="Imoges\PurpleMenu.png" />
+    <AvaloniaResource Include="Imoges\StrelkaBooksLeft.png" />
+    <AvaloniaResource Include="Imoges\StrelkaBooksR.png" />
     <AvaloniaResource Include="Imoges\StrelkaLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaR.png" />
     <AvaloniaResource Include="Imoges\strelkaRAutor.png" />
