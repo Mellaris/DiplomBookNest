@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1885"
+        x:Class="DiplomTwo.CreatingBook"
+		Width="1440"
+		x:CompileBindings="False"
+        Title="CreatingBook">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+					<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+					<Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+				</StackPanel>
+
+				<Button Click="Log" Background="White" Margin="297,38,0,0">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
+				</Button>
+			</StackPanel>
+
+			<StackPanel Margin="0,36,0,0" Height="791" Background="#EAF2FF">
+				<Border Width="814" Height="150" Background="White" CornerRadius="0,0,32,32">
+					<StackPanel>
+						<TextBlock Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="48" Foreground="#0C5489">Название книги</TextBlock>
+						<StackPanel Margin="10,0,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+							<Button Background="White">
+								<TextBlock HorizontalAlignment="Left" Margin="36,32,0,0" FontSize="24" Foreground="#108DE8">Персонажи</TextBlock>
+							</Button>
+							<Button Background="White">
+								<TextBlock Margin="110,32,0,0" FontSize="24" Foreground="#108DE8">Окружающий мир</TextBlock>
+							</Button>
+							<Button Background="White">
+								<TextBlock Margin="110,32,0,0" FontSize="24" Foreground="#108DE8">Заметки</TextBlock>
+							</Button>
+						</StackPanel>
+					</StackPanel>
+				</Border>
+				<TextBlock Margin="150,44,0,0" FontSize="36" Foreground="#0C5489">Список глав</TextBlock>
+				<ListBox Margin="0,12,0,0" Width="1140" Height="439" Background="White">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Border CornerRadius="8" Width="813" Height="80" Background="#F6F7FF">
+								<StackPanel Orientation="Horizontal">
+									<TextBlock></TextBlock>
+									<Button Margin="87,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+										<TextBlock>Открыть</TextBlock>
+									</Button>
+									<Button Margin="32,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+										<TextBlock>Удалить</TextBlock>
+									</Button>
+								</StackPanel>
+							</Border>		
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+				<Button Margin="0,22,0,0" HorizontalAlignment="Center" CornerRadius="12" Width="292" Height="59" Background="White">
+					<TextBlock FontSize="24" Foreground="#9AC6FF" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить главу</TextBlock>
+				</Button>
+			</StackPanel>
+
+			<TextBlock Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBlock>
+			<Border Margin="0,24,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="758">
+				<TextBox CornerRadius="8" Width="1140" Height="758"></TextBox>
+			</Border>
+			<Button Margin="0,24,0,0" HorizontalAlignment="Center" Background="#EAF2FF">Сохранить</Button>
+		</StackPanel>
+	</ScrollViewer>
+</Window>

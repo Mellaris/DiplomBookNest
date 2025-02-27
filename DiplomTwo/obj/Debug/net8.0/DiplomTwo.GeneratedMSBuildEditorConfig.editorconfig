@@ -27,7 +27,13 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Work/DiplomTwo/DiplomTwo/AuthorBoard.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Work/DiplomTwo/DiplomTwo/BookDownload.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Work/DiplomTwo/DiplomTwo/Books.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Work/DiplomTwo/DiplomTwo/CreatingBook.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Work/DiplomTwo/DiplomTwo/LogIn.axaml]
