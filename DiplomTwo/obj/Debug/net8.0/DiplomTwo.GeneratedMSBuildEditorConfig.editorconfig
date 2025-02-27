@@ -36,6 +36,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Work/DiplomTwo/DiplomTwo/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Work/DiplomTwo/DiplomTwo/MyBooks.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Work/DiplomTwo/DiplomTwo/personalAccount.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

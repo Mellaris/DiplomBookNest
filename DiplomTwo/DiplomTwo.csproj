@@ -23,7 +23,9 @@
     <None Remove="Imoges\Group 351.png" />
     <None Remove="Imoges\Group 352.png" />
     <None Remove="Imoges\Icon.png" />
+    <None Remove="Imoges\IconPurple.png" />
     <None Remove="Imoges\image 1.png" />
+    <None Remove="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <None Remove="Imoges\PurpleMenu.png" />
     <None Remove="Imoges\StrelkaBooksLeft.png" />
     <None Remove="Imoges\StrelkaBooksR.png" />
@@ -32,6 +34,7 @@
     <None Remove="Imoges\strelkaRAutor.png" />
     <None Remove="Imoges\StrelkaRedLeft.png" />
     <None Remove="Imoges\StrelkaRedR.png" />
+    <None Remove="Imoges\trash-alt.png" />
     <None Remove="Imoges\Vector.png" />
   </ItemGroup>
 
@@ -63,7 +66,9 @@
     <AvaloniaResource Include="Imoges\Group 351.png" />
     <AvaloniaResource Include="Imoges\Group 352.png" />
     <AvaloniaResource Include="Imoges\Icon.png" />
+    <AvaloniaResource Include="Imoges\IconPurple.png" />
     <AvaloniaResource Include="Imoges\image 1.png" />
+    <AvaloniaResource Include="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <AvaloniaResource Include="Imoges\PurpleMenu.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksR.png" />
@@ -72,6 +77,7 @@
     <AvaloniaResource Include="Imoges\strelkaRAutor.png" />
     <AvaloniaResource Include="Imoges\StrelkaRedLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaRedR.png" />
+    <AvaloniaResource Include="Imoges\trash-alt.png" />
     <AvaloniaResource Include="Imoges\Vector.png" />
   </ItemGroup>
 </Project>

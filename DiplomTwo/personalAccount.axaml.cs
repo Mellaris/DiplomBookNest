@@ -15,4 +15,10 @@ public partial class personalAccount : Window
         new LogIn().Show();
         Close();
     }
+
+    private void MyLibraryBooks(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MyBooks().Show();
+        Close();
+    }
 }

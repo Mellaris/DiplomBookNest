@@ -72,7 +72,10 @@
 					<UniformGrid Rows="2" Columns="3" Grid.Row="1" HorizontalAlignment="Center">
 						<!-- Карточки-кнопки -->
 						<Border Background="#FFF4AA" Width="358" Height="183" CornerRadius="10" Margin="10">
-							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Мои книги" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+							<Button Click="MyLibraryBooks" Width="358" Height="183" CornerRadius="10" Background="#FFF4AA">
+								<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Мои книги" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+							</Button>
+							
 						</Border>
 						<Border Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
 							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Книжный план" HorizontalAlignment="Left" VerticalAlignment="Top"/>
