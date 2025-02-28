@@ -1,0 +1,100 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2896"
+        x:Class="DiplomTwo.BookPlan"
+		Width="1440"
+		x:CompileBindings="False"
+        Title="BookPlan">
+	<ScrollViewer>
+		<StackPanel>
+
+				<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+					<TextBlock Foreground="#9AC6FF" FontSize="64">BookNest</TextBlock>
+
+					<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+						<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+						<Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+					</StackPanel>
+
+					<Button Click="Log" Background="White" Margin="297,38,0,0">
+						<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
+					</Button>
+				</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<Image HorizontalAlignment="Left" Margin="0,60,0,0" Source="\Imoges\Group 353.png"></Image>
+				<StackPanel HorizontalAlignment="Center">
+					<TextBlock Margin="30,75,0,0" Foreground="#3B57FF" Width="488" FontSize="64" TextWrapping="Wrap">Создай свой
+					книжный план!</TextBlock>
+					<StackPanel Margin="66,40,0,0" HorizontalAlignment="Left">
+						<TextBlock Foreground="#8394FF" Width="522" TextWrapping="Wrap" FontSize="24">Создайте список книг, которые мечтаете прочитать, и следите за прогрессом.</TextBlock>
+						<TextBlock Margin="0,12,0,0" Foreground="#8394FF" Width="522" TextWrapping="Wrap" FontSize="24">Установите цель на год — сколько книг вы хотите осилить?</TextBlock>
+						<TextBlock Margin="0,12,0,0" Foreground="#8394FF" Width="522" TextWrapping="Wrap" FontSize="24">
+							Разделите книги по категориям: от тех, которые
+							хочется прочитать в первую очередь, до тех, что могут подождать.
+						</TextBlock>
+					</StackPanel>
+					
+					<TextBlock Margin="60,40,0,0" Foreground="#FF5065" Width="522" TextWrapping="Wrap" FontSize="32">Пусть ваш книжный план станет удобным и вдохновляющим!</TextBlock>
+
+				</StackPanel>
+
+			</StackPanel>
+
+			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="48" Foreground="#3B57FF">Книги для прочтения</TextBlock>
+
+			<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#98A7FF">Название, автор</TextBlock>
+
+			<Border Width="1140" Height="813" CornerRadius="8" BorderBrush="#656DCE">
+				<ListBox Width="1008" Height="718">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Margin="12" Background="#EAF2FF" Orientation="Horizontal">
+								<ComboBox Margin="32,36,0,0" Background="White" Width="261" Height="57"></ComboBox>
+								<CheckBox Margin="618,36,0,0" Width="65" Height="57"></CheckBox>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Border>
+			<StackPanel Height="1057" Background="#E4EFFD">
+				<StackPanel Orientation="Horizontal">
+					<StackPanel>
+						<Image Source="\Imoges\hand-drawn-book-cartoon-illustration-b 2.png"></Image>
+						<Image Source="\Imoges\photoTwoBook.png"></Image>
+						<Image Source="\Imoges\photoThreeBook.png"></Image>
+					</StackPanel>
+					<StackPanel HorizontalAlignment="Center" Margin="150,80,0,0">
+						<TextBlock  FontSize="48" Foreground="#3B57FF">Книжный вызов 2025!</TextBlock>
+						<TextBlock FontSize="24" Foreground="#FC531F">Самый приятный дедлайн</TextBlock>
+						<Border Margin="0,32,0,0" Background="White" CornerRadius="12" Width="782" Height="770" BorderBrush="#FDB2C8">
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<Border Margin="33,36,0,0" Width="261" Height="132" Background="#8299D9" CornerRadius="12">
+										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+									</Border>
+									<Button Margin="32,0,0,90" Background="White">
+										<Image  Source="\Imoges\pen-solid.png"></Image>
+									</Button>
+								</StackPanel>
+								<TextBlock Margin="30,32,0,0" Foreground="#3B57FF" FontSize="40">Ваш Прогресс</TextBlock>
+								<StackPanel Orientation="Horizontal">
+									<Border Margin="30,40,0,0" Width="293" Height="117" Background="#FFD576" CornerRadius="12">
+										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+									</Border>
+									<Border Margin="64,40,0,0"  Width="293" Height="117" Background="#FFC4D3" CornerRadius="12">
+										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+									</Border>
+								</StackPanel>
+							</StackPanel>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</Window>
