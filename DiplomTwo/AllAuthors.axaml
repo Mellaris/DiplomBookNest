@@ -1,0 +1,71 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="3301"
+        x:Class="DiplomTwo.AllAuthors"
+		Width="1440"
+		x:CompileBindings="False"
+        Title="AllAuthors">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel Height="745" Background="#E4EAFF">
+
+				<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+					<TextBlock Foreground="#042A99" FontSize="64">BookNest</TextBlock>
+
+
+					<StackPanel Orientation="Horizontal" Background="#E4EAFF" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+						<Button Height="40" Background="#E4EAFF" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Дом</Button>
+						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Книги</Button>
+						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Авторы</Button>
+						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Новости</Button>
+					</StackPanel>
+
+					<Button  Background="#E4EAFF" Margin="297,38,0,0">
+						<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\PurpleMenu.png" Width="45" Height="25"></Image>
+					</Button>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal">
+					<StackPanel Margin="145,80,0,0">
+						<TextBlock FontSize="64" Foreground="#3444A2">Новые авторы!</TextBlock>
+						<TextBlock Margin="0,36,0,0" Width="567" TextWrapping="Wrap" FontSize="24" Foreground="#3151AD">Станьте автором и пишите свои уникальные произведения.</TextBlock>
+						<TextBlock Margin="0,20,0,0" Width="567" TextWrapping="Wrap" FontSize="24" Foreground="#3151AD">Или находите своих новых кумиров и читайте их книги, погружаясь в новые и новые миры.</TextBlock>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Margin="0,44,0,0" FontSize="36" Foreground="#3444A2">Начните прямо сейчас</TextBlock>
+							<Image Margin="16,45,0,0" Source="\Imoges\angle-double-down-solid.png"></Image>
+						</StackPanel>
+						
+					</StackPanel>
+					<Image Source="\Imoges\rb_2149330603 1.png"></Image>
+				</StackPanel>
+					
+			</StackPanel>
+			<TextBlock Margin="0,32,0,0" HorizontalAlignment="Center" FontSize="64" Foreground="#3444A2">Toп авторов!</TextBlock>
+			<ListBox Margin="0,32,0,0" HorizontalAlignment="Center" Width="847" Height="829">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<Button Margin="0,44,0,0" HorizontalAlignment="Center" CornerRadius="8" Background="#E6ECFF" Width="586" Height="81">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="#E7A17E">Стать автором</TextBlock>
+			</Button>
+			<TextBlock Margin="0,100,0,0" HorizontalAlignment="Center" FontSize="64" Foreground="#3444A2">Найди своего автора!</TextBlock>
+			<StackPanel Margin="0,50,0,0" Height="1664" Background="#E6ECFF">
+				<TextBox Margin="0,60,0,0" Foreground="#E7A17E" HorizontalAlignment="Center" FontSize="36" Background="White" CornerRadius="32" Height="99" Width="814" Watermark="Поиск"></TextBox>
+
+				<ListBox Margin="0,32,0,0" HorizontalAlignment="Center" Width="1008" Height="818">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</StackPanel>
+			
+		</StackPanel>
+	</ScrollViewer>
+</Window>

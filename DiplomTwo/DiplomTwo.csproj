@@ -9,7 +9,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Imoges\angle-app.png" />
+    <None Remove="Imoges\angle-double-down-solid.png" />
     <None Remove="Imoges\angle-down.png" />
+    <None Remove="Imoges\angle-right-solid.png" />
     <None Remove="Imoges\Group 226.png" />
     <None Remove="Imoges\Group 229.png" />
     <None Remove="Imoges\Group 242.png" />
@@ -28,10 +30,12 @@
     <None Remove="Imoges\IconPurple.png" />
     <None Remove="Imoges\image 1.png" />
     <None Remove="Imoges\international-literacy-day-with-lots-books-b 1.png" />
+    <None Remove="Imoges\multiracial-students-study-together-b 1.png" />
     <None Remove="Imoges\pen-solid.png" />
     <None Remove="Imoges\photoThreeBook.png" />
     <None Remove="Imoges\photoTwoBook.png" />
     <None Remove="Imoges\PurpleMenu.png" />
+    <None Remove="Imoges\rb_2149330603 1.png" />
     <None Remove="Imoges\StrelkaBooksLeft.png" />
     <None Remove="Imoges\StrelkaBooksR.png" />
     <None Remove="Imoges\StrelkaLeft.png" />
@@ -57,7 +61,9 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Imoges\angle-app.png" />
+    <AvaloniaResource Include="Imoges\angle-double-down-solid.png" />
     <AvaloniaResource Include="Imoges\angle-down.png" />
+    <AvaloniaResource Include="Imoges\angle-right-solid.png" />
     <AvaloniaResource Include="Imoges\Group 226.png" />
     <AvaloniaResource Include="Imoges\Group 229.png" />
     <AvaloniaResource Include="Imoges\Group 242.png" />
@@ -76,10 +82,12 @@
     <AvaloniaResource Include="Imoges\IconPurple.png" />
     <AvaloniaResource Include="Imoges\image 1.png" />
     <AvaloniaResource Include="Imoges\international-literacy-day-with-lots-books-b 1.png" />
+    <AvaloniaResource Include="Imoges\multiracial-students-study-together-b 1.png" />
     <AvaloniaResource Include="Imoges\pen-solid.png" />
     <AvaloniaResource Include="Imoges\photoThreeBook.png" />
     <AvaloniaResource Include="Imoges\photoTwoBook.png" />
     <AvaloniaResource Include="Imoges\PurpleMenu.png" />
+    <AvaloniaResource Include="Imoges\rb_2149330603 1.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksR.png" />
     <AvaloniaResource Include="Imoges\StrelkaLeft.png" />
