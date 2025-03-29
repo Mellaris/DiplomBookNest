@@ -35,6 +35,7 @@
     <None Remove="Imoges\photoThreeBook.png" />
     <None Remove="Imoges\photoTwoBook.png" />
     <None Remove="Imoges\PurpleMenu.png" />
+    <None Remove="Imoges\rb_2149279810 1.png" />
     <None Remove="Imoges\rb_2149330603 1.png" />
     <None Remove="Imoges\StrelkaBooksLeft.png" />
     <None Remove="Imoges\StrelkaBooksR.png" />
@@ -87,6 +88,7 @@
     <AvaloniaResource Include="Imoges\photoThreeBook.png" />
     <AvaloniaResource Include="Imoges\photoTwoBook.png" />
     <AvaloniaResource Include="Imoges\PurpleMenu.png" />
+    <AvaloniaResource Include="Imoges\rb_2149279810 1.png" />
     <AvaloniaResource Include="Imoges\rb_2149330603 1.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksR.png" />

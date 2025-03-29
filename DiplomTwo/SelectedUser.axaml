@@ -1,0 +1,136 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="3153"
+        x:Class="DiplomTwo.SelectedUser"
+		Width="1440"
+        Title="SelectedUser">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+					<Button Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+				</StackPanel>
+
+				<Button Background="White" Margin="297,38,0,0">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
+				</Button>
+			</StackPanel>
+
+			<Border>
+				<StackPanel Orientation="Horizontal">
+					<Image></Image>
+					<StackPanel>
+						<TextBlock>Анастасия</TextBlock>
+						<TextBlock>Ты любишь всех, а любить всех - значит не любить никого.Тебе все одинаково безразличны.</TextBlock>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock>Лайков</TextBlock>
+						<Border>
+							<TextBlock></TextBlock>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+			</Border>
+
+			<TextBlock>Про пользователя</TextBlock>
+
+			<StackPanel Orientation="Horizontal">
+				<Border></Border>
+				<Border></Border>
+				<Border></Border>
+			</StackPanel>
+
+			<TextBlock>Прочитанные книги</TextBlock>
+
+			<Border Margin="0,64,0,0" CornerRadius="24" Background="#DAEBFF" Width="1139" Height="1106">
+				<ListBox Background="#DAEBFF" Width="1009" Height="1039">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<StackPanel Width="683" Height="329" Background="White">
+										<StackPanel Orientation="Horizontal">
+											<Image Width="161" Height="235"></Image>
+											<StackPanel>
+												<TextBlock FontSize="32" Foreground="#042A99"></TextBlock>
+												<TextBlock FontSize="20" Foreground="#3250A6"></TextBlock>
+
+												<StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Оригинальность сюжета:</TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Персонажи:</TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Мир внутри книги:</TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Любовная линия: </TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Юмор:</TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal">
+														<Image></Image>
+														<TextBlock FontSize="16" Foreground="#506AB8">Смысловая нагрузка:</TextBlock>
+														<TextBlock FontSize="20" Foreground="#042A99" Margin="62,0,0,0"></TextBlock>
+													</StackPanel>
+
+
+												</StackPanel>
+
+
+											</StackPanel>
+										</StackPanel>
+									</StackPanel>
+									<TextBlock Foreground="#042A99" FontSize="16" TextWrapping="Wrap" Width="294" Height="180"></TextBlock>
+								</StackPanel>
+
+								<StackPanel Orientation="Horizontal">
+
+									<TextBlock></TextBlock>
+									<Image></Image>
+
+									<Button>
+										<TextBlock> Открыть</TextBlock>
+									</Button>
+
+									<Button>
+										<Image Width="25" Height="25" Source="\Imoges\trash-alt.png"></Image>
+									</Button>
+
+								</StackPanel>
+
+							</StackPanel>
+
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Border>
+
+			<TextBlock></TextBlock>
+			<TextBlock></TextBlock>
+			
+			
+			
+		</StackPanel>
+	</ScrollViewer>
+</Window>
