@@ -7,219 +7,133 @@
 		x:CompileBindings="False"
 		Width="1440"
         Title="DiplomTwo">
-  <ScrollViewer>
-        <StackPanel>
-
-            <StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
-                <TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
-
-                <StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
-                    <Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
-                   <Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
-                    <Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
-                    <Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
-                </StackPanel>
-               
-				<Button Click="Log" Background="White" Margin="297,38,0,0">
-					 <Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+				<TextBlock Foreground="#108DE8" FontSize="64" HorizontalAlignment="Left">BookNest</TextBlock>
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" HorizontalAlignment="Stretch">
+					<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Дом</Button>
+					<Button Click="AllBooks" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Книги</Button>
+					<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Авторы</Button>
+					<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Новости</Button>
+				</StackPanel>
+				<Button Click="Log" Background="White" Margin="297,38,0,0" HorizontalAlignment="Right">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"/>
 				</Button>
-                   
-                
-               
-            </StackPanel>
+			</StackPanel>
 
-            <StackPanel Margin="0,45,0,0" Width="1080" Height="239" Orientation="Horizontal">
-                <Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"></Image>
-                <Image Margin="33,0,0,0" HorizontalAlignment="Center" Source="\Imoges\Group 229.png"></Image>
-                <Image Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"></Image>
-            </StackPanel>
-            <Grid  Margin="0,86,0,0">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Margin="150,0,0,0" FontSize="36" Foreground="#108DE8">Топ 10 Книг</TextBlock>
-                    <Grid Margin="0,43,0,0" Width="1080" Height="236">
-                        <Grid.ColumnDefinitions>
-                            <!-- Колонка для кнопки "Влево" -->
-                            <ColumnDefinition Width="Auto" />
-                            <!-- Колонка для списка книг -->
-                            <ColumnDefinition Width="*" />
-                            <!-- Колонка для кнопки "Вправо" -->
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+			<StackPanel Margin="0,45,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+				<Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"/>
+				<Image Margin="33,0,0,0" HorizontalAlignment="Center" Source="\Imoges\Group 229.png"/>
+				<Image Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"/>
+			</StackPanel>
 
-                        <Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"></Image>
-                        <!-- ListBox с горизонтальной прокруткой -->
-                        <ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
-                         SelectionMode="Single" BorderThickness="0">
-                            <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <!-- Книги располагаются горизонтально -->
-                                    <StackPanel Orientation="Horizontal" />
-                                </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <!-- Изображение книги -->
-                                    <Image Source="\Imoges\image 1.png" Width="163" Height="235" Margin="5" />
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                        <Image Grid.Column="2" Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"></Image>
-                    </Grid>
-                </StackPanel>
-            </Grid>
+			<Grid Margin="0,86,0,0">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Margin="150,0,0,0" FontSize="36" Foreground="#108DE8">Топ 10 Книг</TextBlock>
+					<Grid Margin="0,43,0,0" HorizontalAlignment="Stretch" Height="236">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"/>
+						<ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<StackPanel Orientation="Horizontal"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Image Source="\Imoges\image 1.png" Width="163" Height="235" Margin="5"/>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+						<Image Grid.Column="2" Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"/>
+					</Grid>
+				</StackPanel>
+			</Grid>
 
-            <Grid Margin="0,64,0,0">
-                <!-- Фоновое изображение -->
-                <Image Source="\Imoges\Group 351.png" Stretch="Fill"/>
+			<Grid Margin="0,64,0,0">
+				<Image Source="\Imoges\Group 351.png" Stretch="Fill"/>
+				<StackPanel Margin="0,31,0,0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+					<TextBlock Text="Новые Авторы" FontSize="36" FontWeight="Regular" Foreground="#E57373" HorizontalAlignment="Center"/>
+					<TextBlock Text="Check Out The New Authors And Their Works" FontSize="14" Foreground="#E57373" HorizontalAlignment="Center" Margin="0,8,0,36"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="944"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<ListBox Margin="60,0,0,0" Grid.Column="0" Height="226" Width="944" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="0" HorizontalAlignment="Left">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border Width="456" Height="226" Background="#E3F2FD" BorderBrush="#FF8A80" BorderThickness="1" Margin="10,0,10,0">
+										<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+											<TextBlock Text="Имя Автора" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
+											<TextBlock Text="Описание автора" FontSize="12" Foreground="Gray" HorizontalAlignment="Center"/>
+										</StackPanel>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+						<StackPanel Grid.Column="1" Margin="32,0,0,0">
+							<Image Source="\Imoges\angle-app.png"/>
+							<Image Margin="0,100,0,0" Source="\Imoges\angle-down.png"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+			</Grid>
 
-                <!-- Основной контейнер -->
-                <StackPanel Margin="0,31,0,0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <!-- Заголовок -->
-                    <TextBlock Text="Новые Авторы" FontSize="36" FontWeight="Regular" Foreground="#E57373" 
-                   HorizontalAlignment="Center"/>
-                    <TextBlock Text="Check Out The New Authors And Their Works" FontSize="14" Foreground="#E57373"
-                   HorizontalAlignment="Center" Margin="0,8,0,36"/>
+			<TextBlock Margin="150,40,0,0" FontSize="36" Foreground="#108DE8">Последние новости</TextBlock>
+			<StackPanel HorizontalAlignment="Center" Width="944" Margin="0,52,0,0" Orientation="Horizontal">
+				<StackPanel Orientation="Vertical">
+					<TextBlock FontSize="20" Foreground="#108DE8">Название</TextBlock>
+					<Border Margin="0,12,0,0" CornerRadius="16" Width="390" Height="390" Background="#CDE2FD">
+						<StackPanel Width="390" Height="390" Orientation="Vertical">
+							<Image Width="326" Height="235"/>
+							<TextBlock></TextBlock>
+						</StackPanel>
+					</Border>
+					<Button CornerRadius="24" Margin="80,27,0,0" Foreground="White" FontSize="32" Width="228" Height="54" Background="#CDE2FD">
+						<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Открыть</TextBlock>
+					</Button>
+				</StackPanel>
+				<StackPanel Margin="164,0,0,0" Orientation="Vertical">
+					<TextBlock FontSize="20" Foreground="#108DE8">Название</TextBlock>
+					<Border Margin="0,12,0,0" CornerRadius="16" Width="390" Height="390" Background="#CDE2FD">
+						<StackPanel Width="390" Height="390" Orientation="Vertical">
+							<Image Width="326" Height="235"/>
+							<TextBlock></TextBlock>
+						</StackPanel>
+					</Border>
+					<Button CornerRadius="24" Margin="80,27,0,0" Foreground="White" FontSize="32" Width="228" Height="54" Background="#CDE2FD">
+						<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Открыть</TextBlock>
+					</Button>
+				</StackPanel>
+			</StackPanel>
 
-                    <!-- Контейнер для авторов -->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="944" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-
-                        <!-- ListBox с горизонтальным размещением двух элементов -->
-                        <ListBox Margin="60,0,0,0" Grid.Column="0" Height="226" Width="944" ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                     BorderThickness="0" HorizontalAlignment="Left">
-                            <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
-                                </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Width="456" Height="226" Background="#E3F2FD" BorderBrush="#FF8A80" BorderThickness="1"
-                                Margin="10,0,10,0">
-                                        <!-- Добавлен отступ между элементами -->
-                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <TextBlock Text="Имя Автора" FontSize="16" FontWeight="Bold" Foreground="Black"
-                                           HorizontalAlignment="Center"/>
-                                            <TextBlock Text="Описание автора" FontSize="12" Foreground="Gray"
-                                           HorizontalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-
-                        <!-- Стрелки управления -->
-                        <StackPanel Grid.Column="1"  Margin="32,0,0,0">
-                            <Image Source="\Imoges\angle-app.png"></Image>
-                            <Image Margin="0,100,0,0" Source="\Imoges\angle-down.png"></Image>
-                        </StackPanel>
-                    </Grid>
-                </StackPanel>
-            </Grid>
-
-            <TextBlock Margin="150,40,0,0" FontSize="36" Foreground="#108DE8">Последние новости</TextBlock>
-
-            <StackPanel HorizontalAlignment="Center" Width="944" Margin="0,52,0,0" Orientation="Horizontal">
-
-                <StackPanel Orientation="Vertical">
-                    <TextBlock FontSize="20" Foreground="#108DE8">Название</TextBlock>
-                    <Border  Margin="0,12,0,0" CornerRadius="16" Width="390" Height="390" Background="#CDE2FD">
-                        <StackPanel  Width="390" Height="390" Orientation="Vertical">
-                            <Image Width="326" Height="235"></Image>
-                            <TextBlock></TextBlock>
-                        </StackPanel>
-                    </Border>
-
-                    <Button CornerRadius="24" Margin="80,27,0,0" Foreground="White" FontSize="32" Width="228" Height="54" Background="#CDE2FD">
-                       <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Открыть</TextBlock>
-                    </Button>
-                </StackPanel>
-
-                <StackPanel Margin="164,0,0,0" Orientation="Vertical">
-                    <TextBlock FontSize="20" Foreground="#108DE8">Название</TextBlock>
-                    <Border Margin="0,12,0,0" CornerRadius="16" Width="390" Height="390" Background="#CDE2FD">
-                        <StackPanel  Width="390" Height="390" Orientation="Vertical">
-                            <Image Width="326" Height="235"></Image>
-                            <TextBlock></TextBlock>
-                        </StackPanel>
-                    </Border>
-
-                    <Button CornerRadius="24" Margin="80,27,0,0" Foreground="White" FontSize="32" Width="228" Height="54" Background="#CDE2FD">
-                       <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Открыть</TextBlock>
-                    </Button>
-                </StackPanel>
-
-            </StackPanel>
-
-            <StackPanel Margin="0,63,0,0" Height="5" Background="#E4EFFD"></StackPanel>
-
-            <TextBlock Margin="0,44,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#108DE8">Выбери Свой Жанр</TextBlock>
-
-            <StackPanel Margin="0,44,0,0" Background="#E4EFFD" Width="1440" Height="420" Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <Image Margin="16,16,0,0" Width="394" Height="186" Source="\Imoges\Group 242.png"></Image>
-                    <Image Margin="16,16,0,0" Width="278" Height="186" Source="\Imoges\Group 244.png"></Image>
-                    <Image Margin="16,16,0,0" Width="394" Height="186" Source="\Imoges\Group 246.png"></Image>
-                    <Image Margin="16,16,0,0" Width="296" Height="186" Source="\Imoges\Group 248.png"></Image>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Image Margin="16,16,0,0" Width="329" Height="186" Source="\Imoges\Group 250.png"></Image>
-                    <Image Margin="16,16,0,0" Width="397" Height="186" Source="\Imoges\Group 252.png"></Image>
-                    <Image Margin="16,16,0,0" Width="292" Height="186" Source="\Imoges\Group 254.png"></Image>
-                    <Image Margin="16,16,0,0" Width="347" Height="186" Source="\Imoges\Group 256.png"></Image>
-                </StackPanel>
-            </StackPanel>
-
-            <TextBlock Margin="0,44,0,0" Text="Что Прочитать Сегодня?" FontSize="36" FontWeight="Regular" Foreground="LightCoral"
-HorizontalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Text="Здесь Ты Можешь Найти Случайную Книгу Для Чтения. "
-FontSize="20" Foreground="LightCoral" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,8,0,0"/>
-            <TextBlock FontSize="20" Foreground="LightCoral" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,0,0,20">Подбери Свои Критерии И Начинай!</TextBlock>
-            <Grid Margin="0,60,0,0" Width="749" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
-                    <!-- Левая часть с фильтрами -->
-                    <ColumnDefinition Width="3*" />
-                    <!-- Правая часть с изображением -->
-                </Grid.ColumnDefinitions>
-
-                <!-- Левая часть с заголовком и фильтрами -->
-                
-                    <!-- Поля фильтрации -->
-                    <StackPanel  >
-                        <TextBlock Text="Genre" FontSize="14" Foreground="LightCoral"/>
-                    <ComboBox Background="White" HorizontalAlignment="Left" Width="180" Height="30" Margin="0,5,50,10"/>
-
-                        <TextBlock Text="Number Of Pages" FontSize="14" Foreground="LightCoral"/>
-                    <ComboBox HorizontalAlignment="Left" Width="180" Height="30" Margin="0,5,50,10"/>
-
-                        <TextBlock Text="Type" FontSize="14" Foreground="LightCoral"/>
-                        <ComboBox HorizontalAlignment="Left" Width="180" Height="30" Margin="0,5,50,10"/>
-
-                        <TextBlock Text="Author" FontSize="14" Foreground="LightCoral"/>
-                    <ComboBox HorizontalAlignment="Left" Width="180" Height="30" Margin="0,5,50,10"/>
-                    </StackPanel>
-
-                    <!-- Кнопка поиска -->
-                   
-               
-
-                <!-- Правая часть с изображением книги -->
-                <Border Grid.Column="1" Background="White" CornerRadius="15" Width="200" Height="260" 
-            HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image />
-                </Border>
-            </Grid>
-				<Button Margin="0,64,0,0" Width="422" Height="64" BorderBrush="#CDE2FD" Background="White" CornerRadius="12"  HorizontalAlignment="Center">
-			   <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="#FF7979">Найти книгу</TextBlock>
-		   </Button>
-			
-           
-        </StackPanel>
-
-
-    </ScrollViewer>
+			<StackPanel Margin="0,63,0,0" Height="5" Background="#E4EFFD"/>
+			<TextBlock Margin="0,44,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#108DE8">Выбери Свой Жанр</TextBlock>
+			<StackPanel Margin="0,44,0,0" Background="#E4EFFD" HorizontalAlignment="Stretch" Orientation="Vertical">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+					<Image Margin="16,16,0,0" Width="394" Height="186" Source="\Imoges\Group 242.png"/>
+					<Image Margin="16,16,0,0" Width="278" Height="186" Source="\Imoges\Group 244.png"/>
+					<Image Margin="16,16,0,0" Width="394" Height="186" Source="\Imoges\Group 246.png"/>
+					<Image Margin="16,16,0,0" Width="296" Height="186" Source="\Imoges\Group 248.png"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+					<Image Margin="16,16,0,0" Width="329" Height="186" Source="\Imoges\Group 250.png"/>
+					<Image Margin="16,16,0,0" Width="397" Height="186" Source="\Imoges\Group 252.png"/>
+					<Image Margin="16,16,0,0" Width="292" Height="186" Source="\Imoges\Group 254.png"/>
+					<Image Margin="16,16,0,0" Width="347" Height="186" Source="\Imoges\Group 256.png"/>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
 </Window>

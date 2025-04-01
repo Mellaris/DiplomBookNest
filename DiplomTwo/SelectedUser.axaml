@@ -23,31 +23,34 @@
 				</Button>
 			</StackPanel>
 
-			<Border>
+			<Border HorizontalAlignment="Center" Margin="0,40,0,0" CornerRadius="24" Width="1139" Height="267" Background="#DAEBFF">
 				<StackPanel Orientation="Horizontal">
-					<Image></Image>
-					<StackPanel>
-						<TextBlock>Анастасия</TextBlock>
-						<TextBlock>Ты любишь всех, а любить всех - значит не любить никого.Тебе все одинаково безразличны.</TextBlock>
+					<Border Margin="98,0,0,0" VerticalAlignment="Center" Width="195" Height="197" Background="White" CornerRadius="12">
+						<Image></Image>
+					</Border>
+					
+					<StackPanel Margin="97,31,0,0">
+						<TextBlock FontSize="40" FontWeight="Bold" Foreground="#5573C0">Анастасия</TextBlock>
+						<TextBlock Margin="0,12,0,0" Foreground="#4564B8" FontSize="20" TextWrapping="Wrap" Width="391">Ты любишь всех, а любить всех - значит не любить никого.Тебе все одинаково безразличны.</TextBlock>
 					</StackPanel>
-					<StackPanel>
-						<TextBlock>Лайков</TextBlock>
-						<Border>
-							<TextBlock></TextBlock>
+					<StackPanel Margin="64,31,0,0">
+						<TextBlock FontSize="20" Foreground="#042A99">Лайков</TextBlock>
+						<Border Margin="0,12,0,0" VerticalAlignment="Center" Width="195" Height="107" Background="White" CornerRadius="12">
+							<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="48" Foreground="#FF7979">10</TextBlock>
 						</Border>
 					</StackPanel>
 				</StackPanel>
 			</Border>
 
-			<TextBlock>Про пользователя</TextBlock>
+			<TextBlock Margin="248,25,0,0" FontSize="36" Foreground="#637BC0">Про пользователя</TextBlock>
 
-			<StackPanel Orientation="Horizontal">
-				<Border></Border>
-				<Border></Border>
-				<Border></Border>
+			<StackPanel Margin="32" HorizontalAlignment="Center" Orientation="Horizontal">
+				<Border CornerRadius="16" Width="293" Height="396" Background="#FFE7EF"></Border>
+				<Border Margin="64,0,0,0" VerticalAlignment="Top" CornerRadius="16" Width="293" Height="293" Background="#F3E8FF"></Border>
+				<Border Margin="64,0,0,0" VerticalAlignment="Top" CornerRadius="16" Width="228" Height="224" Background="#FFF9E5"></Border>
 			</StackPanel>
 
-			<TextBlock>Прочитанные книги</TextBlock>
+			<TextBlock Margin="0,44,263,0" HorizontalAlignment="Right" Foreground="#506AB8" FontSize="48">Прочитанные книги</TextBlock>
 
 			<Border Margin="0,64,0,0" CornerRadius="24" Background="#DAEBFF" Width="1139" Height="1106">
 				<ListBox Background="#DAEBFF" Width="1009" Height="1039">
@@ -126,11 +129,44 @@
 				</ListBox>
 			</Border>
 
-			<TextBlock></TextBlock>
-			<TextBlock></TextBlock>
-			
-			
-			
+			<TextBlock Margin="0,64,0,0" HorizontalAlignment="Center" Foreground="#FF7979" FontSize="48">Доска автора</TextBlock>
+			<TextBlock Margin="0,6,0,0" TextAlignment="Center" TextWrapping="Wrap" Width="385" Foreground="#FFAAAA" FontSize="20">Здесь находятся все авторские книги пользователя</TextBlock>
+			<Border Margin="0,24,0,0" Width="1140" Height="257" Background="#DAEBFF" CornerRadius="32">
+				<StackPanel VerticalAlignment="Center">
+					<StackPanel VerticalAlignment="Center" Margin="110,8,0,0" Orientation="Horizontal">
+						<Image Source="\Imoges\leftDubl.png"></Image>
+						<ListBox VerticalAlignment="Center" Margin="69,0,0,0" Width="717" Height="163" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+             SelectionMode="Single" BorderThickness="0">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<!-- Книги располагаются горизонтально -->
+									<StackPanel Orientation="Horizontal" />
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<!-- Изображение книги -->
+									<Image  Width="163" Height="235" Margin="5" />
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+						<Image Margin="44,0,0,0" Source="\Imoges\strelkaRAutor.png"></Image>
+					</StackPanel>
+				</StackPanel>
+
+			</Border>
+
+			<Border HorizontalAlignment="Left" Margin="148,32,0,0" CornerRadius="32" Width="652" Height="398" Background="#DAEBFF">
+				<StackPanel>
+					<TextBlock Margin="66,12,0,0" FontSize="32" Foreground="#0C5489">Самые популярные книги</TextBlock>
+					<ComboBox Margin="66,24,0,0" Width="360" Height="30"></ComboBox>
+					<StackPanel Margin="0,36,0,0" HorizontalAlignment="Center">
+						<Image Width="130" Height="162"></Image>
+						<Image Width="130" Height="162"></Image>
+						<Image Width="130" Height="162"></Image>
+					</StackPanel>
+				</StackPanel>
+			</Border>
 		</StackPanel>
 	</ScrollViewer>
 </Window>
