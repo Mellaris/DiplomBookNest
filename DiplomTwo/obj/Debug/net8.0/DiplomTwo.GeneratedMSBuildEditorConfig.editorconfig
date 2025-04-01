@@ -68,3 +68,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Work/DiplomTwo/DiplomTwo/SpecificBook.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Work/DiplomTwo/DiplomTwo/WritingReview.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

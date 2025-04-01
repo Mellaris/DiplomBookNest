@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\Work\\DiplomTwo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\writingreview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\writingreview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\writingreview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\writingreview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\specificbook.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\specificbook.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\news.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\news.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\specificbook.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\selecteduser.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\selecteduser.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\news.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|solutionrelative:diplomtwo\\news.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD312407-9B88-4700-8EEE-0B82730C3061}|DiplomTwo\\DiplomTwo.csproj|d:\\work\\diplomtwo\\diplomtwo\\allauthors.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
@@ -119,6 +127,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "WritingReview.axaml",
+              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\WritingReview.axaml",
+              "RelativeDocumentMoniker": "DiplomTwo\\WritingReview.axaml",
+              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\WritingReview.axaml",
+              "RelativeToolTip": "DiplomTwo\\WritingReview.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T09:24:05.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WritingReview.axaml.cs",
+              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\WritingReview.axaml.cs",
+              "RelativeDocumentMoniker": "DiplomTwo\\WritingReview.axaml.cs",
+              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\WritingReview.axaml.cs",
+              "RelativeToolTip": "DiplomTwo\\WritingReview.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T09:24:04.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SpecificBook.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\SpecificBook.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\SpecificBook.axaml",
@@ -130,32 +163,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SpecificBook.axaml.cs",
-              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\SpecificBook.axaml.cs",
-              "RelativeDocumentMoniker": "DiplomTwo\\SpecificBook.axaml.cs",
-              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\SpecificBook.axaml.cs",
-              "RelativeToolTip": "DiplomTwo\\SpecificBook.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T07:54:27.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SelectedUser.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\SelectedUser.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\SelectedUser.axaml",
               "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\SelectedUser.axaml",
               "RelativeToolTip": "DiplomTwo\\SelectedUser.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-29T09:36:36.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T09:36:36.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "AllAuthors.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\AllAuthors.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\AllAuthors.axaml",
@@ -166,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Friends.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\Friends.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\Friends.axaml",
@@ -177,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "MyBooks.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\MyBooks.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\MyBooks.axaml",
@@ -188,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Books.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\Books.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\Books.axaml",
@@ -199,19 +218,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "MainWindow.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\MainWindow.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\MainWindow.axaml",
               "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\MainWindow.axaml",
               "RelativeToolTip": "DiplomTwo\\MainWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-27T08:06:24.476Z",
+              "WhenOpened": "2025-02-27T08:06:24.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "News.axaml",
+              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\News.axaml",
+              "RelativeDocumentMoniker": "DiplomTwo\\News.axaml",
+              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\News.axaml",
+              "RelativeToolTip": "DiplomTwo\\News.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-29T09:16:12.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "SpecificBook.axaml.cs",
+              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\SpecificBook.axaml.cs",
+              "RelativeDocumentMoniker": "DiplomTwo\\SpecificBook.axaml.cs",
+              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\SpecificBook.axaml.cs",
+              "RelativeToolTip": "DiplomTwo\\SpecificBook.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T07:54:27.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "SelectedUser.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\SelectedUser.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\SelectedUser.axaml.cs",
@@ -223,19 +265,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "AuthorBoard.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\AuthorBoard.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\AuthorBoard.axaml",
               "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\AuthorBoard.axaml",
               "RelativeToolTip": "DiplomTwo\\AuthorBoard.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-25T13:57:41.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T13:57:41.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "News.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\News.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\News.axaml.cs",
@@ -247,18 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "News.axaml",
-              "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\News.axaml",
-              "RelativeDocumentMoniker": "DiplomTwo\\News.axaml",
-              "ToolTip": "D:\\Work\\DiplomTwo\\DiplomTwo\\News.axaml",
-              "RelativeToolTip": "DiplomTwo\\News.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-29T09:16:12.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "BookDownload.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\BookDownload.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\BookDownload.axaml",
@@ -269,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "personalAccount.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\personalAccount.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\personalAccount.axaml",
@@ -280,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CreatingBook.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\CreatingBook.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\CreatingBook.axaml.cs",
@@ -292,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AllAuthors.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\AllAuthors.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\AllAuthors.axaml.cs",
@@ -304,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Friends.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\Friends.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\Friends.axaml.cs",
@@ -316,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "BookPlan.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\BookPlan.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\BookPlan.axaml",
@@ -327,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "MyBooks.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\MyBooks.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\MyBooks.axaml.cs",
@@ -339,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "MainWindow.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\MainWindow.axaml.cs",
@@ -351,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "BookPlan.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\BookPlan.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\BookPlan.axaml.cs",
@@ -363,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "BookDownload.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\BookDownload.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\BookDownload.axaml.cs",
@@ -375,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "CreatingBook.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\CreatingBook.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\CreatingBook.axaml",
@@ -386,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "personalAccount.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\personalAccount.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\personalAccount.axaml.cs",
@@ -398,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "LogIn.axaml",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\LogIn.axaml",
               "RelativeDocumentMoniker": "DiplomTwo\\LogIn.axaml",
@@ -409,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Books.axaml.cs",
               "DocumentMoniker": "D:\\Work\\DiplomTwo\\DiplomTwo\\Books.axaml.cs",
               "RelativeDocumentMoniker": "DiplomTwo\\Books.axaml.cs",

@@ -29,6 +29,7 @@
     <None Remove="Imoges\Icon.png" />
     <None Remove="Imoges\IconPurple.png" />
     <None Remove="Imoges\image 1.png" />
+    <None Remove="Imoges\image 13.png" />
     <None Remove="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <None Remove="Imoges\leftDubl.png" />
     <None Remove="Imoges\multiracial-students-study-together-b 1.png" />
@@ -83,6 +84,7 @@
     <AvaloniaResource Include="Imoges\Icon.png" />
     <AvaloniaResource Include="Imoges\IconPurple.png" />
     <AvaloniaResource Include="Imoges\image 1.png" />
+    <AvaloniaResource Include="Imoges\image 13.png" />
     <AvaloniaResource Include="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <AvaloniaResource Include="Imoges\leftDubl.png" />
     <AvaloniaResource Include="Imoges\multiracial-students-study-together-b 1.png" />
