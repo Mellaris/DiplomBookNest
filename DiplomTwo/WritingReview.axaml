@@ -2,8 +2,132 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2735"
         x:Class="DiplomTwo.WritingReview"
         Title="WritingReview">
-  Welcome to Avalonia!
+	<ScrollViewer>
+		<StackPanel >
+			<StackPanel Height="108" Background="#E4EAFF">
+				<StackPanel  VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+					<TextBlock Foreground="#637BC0" FontSize="64">BookNest</TextBlock>
+
+
+					<StackPanel Orientation="Horizontal" Background="#E4EAFF" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+						<Button Height="40" Background="#E4EAFF" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
+						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
+						<Button Height="40" Background="#E4EAFF" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
+						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
+					</StackPanel>
+
+					<Button Background="#E4EAFF" Margin="297,38,0,0">
+						<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\PurpleMenu.png" Width="45" Height="25"></Image>
+					</Button>
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Margin="0,5,0,0" Height="901" Background="#E4EAFF">
+				<TextBlock Margin="0,44,0,0" Foreground="#042A99" FontSize="64" HorizontalAlignment="Center">Заполни Отзыв</TextBlock>
+				<TextBlock Margin="375,0,0,0" Foreground="#042A99" FontSize="64" HorizontalAlignment="Center">На Книгу</TextBlock>
+
+				<StackPanel Margin="0,0,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+					
+					<Border Margin="40,60,0,0" CornerRadius="12" Width="985" Height="521" Background="White">
+						
+						<StackPanel Orientation="Horizontal" Margin="0,0,120,0">
+							<Image Margin="0,0,0,0" Width="359" Height="473" Source="\Imoges\image 13.png"></Image>
+							<StackPanel>
+								<TextBlock Margin="93,24,0,0" FontSize="40" Foreground="#042A99">Первый раунд</TextBlock>
+								<TextBlock Margin="93,12,0,0" Foreground="#3250A6" FontSize="32">Грейс Райли</TextBlock>
+								<TextBlock Foreground="#3250A6" FontSize="16" Margin="93,24,0,0" Width="457" Height="200" TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Margin="97,24,0,0" Foreground="#042A99" FontSize="20">Количество страниц:</TextBlock>
+									<TextBlock></TextBlock>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Margin="97,24,0,0" Foreground="#042A99" FontSize="20">Ограничение:</TextBlock>
+									<TextBlock></TextBlock>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Margin="97,24,0,0" Foreground="#042A99" FontSize="20">Серия:</TextBlock>
+									<TextBlock></TextBlock>
+									<TextBlock></TextBlock>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+				<Border Margin="0,24,0,0" Background="#E4EAFF" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock></TextBlock>
+						<TextBlock></TextBlock>
+						<TextBlock></TextBlock>
+						<TextBlock></TextBlock>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+			<TextBlock Margin="0,64,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Мои впечатления</TextBlock>
+			<Border Margin="0,28,0,0" Width="944" Height="352" Background="#E6ECFF" CornerRadius="12">
+				<StackPanel Orientation="Horizontal">
+					<StackPanel>
+						<StackPanel Margin="12,24,0,0" Orientation="Horizontal">
+							<Image Width="40" Height="40" Source="\Imoges\award-solid.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Оригинальность сюжета:</TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
+							<Image Source="\Imoges\user-friends-solid.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Персонажи:</TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
+							<Image Source="\Imoges\book-reader-solid.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Мир внутри книги:</TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
+							<Image Source="\Imoges\loveV.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Любовная линия: </TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
+							<Image Source="\Imoges\burn-solid.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Юмор:</TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
+							<Image Source="\Imoges\smisl.png"></Image>
+							<TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Смысловая нагрузка:</TextBlock>
+							<TextBlock FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBlock>
+						</StackPanel>
+
+
+					</StackPanel>
+					<StackPanel Margin="400,0,0,0" HorizontalAlignment="Right" Width="66" Height="352" Background="White"></StackPanel>
+				</StackPanel>
+			</Border>
+			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Мои цитаты</TextBlock>
+			<ListBox Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+
+
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<Button Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить цитату</TextBlock>
+			</Button>
+			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Моя рецензия</TextBlock>
+			<TextBox Margin="0,44,0,0" CornerRadius="8" BorderBrush="#EAF2FF" BorderThickness="5" Width="1140" Height="322" TextWrapping="Wrap"></TextBox>
+			<StackPanel Orientation="Horizontal">
+				<Button Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Сохранить</TextBlock>
+				</Button>
+				<Button Margin="34,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Опубликовать</TextBlock>
+				</Button>
+			</StackPanel>
+		
+		</StackPanel>
+	</ScrollViewer>
 </Window>
