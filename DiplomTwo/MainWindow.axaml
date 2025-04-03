@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.MainWindow"
 		x:CompileBindings="False"
 		Width="1440"
+		MinWidth="1440" MinHeight="600"
         Title="DiplomTwo">
 	<ScrollViewer>
 		<StackPanel>
@@ -14,7 +15,7 @@
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" HorizontalAlignment="Stretch">
 					<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Дом</Button>
 					<Button Click="AllBooks" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Книги</Button>
-					<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Авторы</Button>
+					<Button Click="Button_Click_1" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Авторы</Button>
 					<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Новости</Button>
 				</StackPanel>
 				<Button Click="Log" Background="White" Margin="297,38,0,0" HorizontalAlignment="Right">
@@ -37,7 +38,7 @@
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="Auto"/>
 						</Grid.ColumnDefinitions>
-						<Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"/>
+						<Image Margin="200,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"/>
 						<ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
 							<ListBox.ItemsPanel>
 								<ItemsPanelTemplate>
@@ -50,7 +51,7 @@
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>
-						<Image Grid.Column="2" Margin="33,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaR.png"/>
+						<Image Margin="0,0,200,0" Grid.Column="2"  Width="35" Height="27" Source="\Imoges\StrelkaR.png"/>
 					</Grid>
 				</StackPanel>
 			</Grid>

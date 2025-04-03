@@ -26,5 +26,11 @@ namespace DiplomTwo
             new Books().Show();
             Close();
         }
+
+        private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            new AllAuthors().Show();
+            Close();
+        }
     }
 }
