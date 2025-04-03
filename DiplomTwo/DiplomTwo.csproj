@@ -54,6 +54,39 @@
     <None Remove="Imoges\trash-alt.png" />
     <None Remove="Imoges\user-friends-solid.png" />
     <None Remove="Imoges\Vector.png" />
+    <None Remove="PhotoForBook\1.50x-thumb.png" />
+    <None Remove="PhotoForBook\AblY0tFG-ipad.jpeg" />
+    <None Remove="PhotoForBook\AILSi1cf-ipad.jpeg" />
+    <None Remove="PhotoForBook\Ajgul_Klinovskaya__Data_S_Kogda_zhizn_nachinaetsya_zanovo.jpg" />
+    <None Remove="PhotoForBook\Aleksandr_Gonorovskij__Sobachij_les.jpg" />
+    <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Akademiya_Burya.jpg" />
+    <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Dolina_Kolokolchikov.jpg" />
+    <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Orden_Sumrachnoj_Vuali.jpg" />
+    <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Prizrachnye_roschi.jpg" />
+    <None Remove="PhotoForBook\Atft7r9l-ipad.jpeg" />
+    <None Remove="PhotoForBook\feaospugl.jpg" />
+    <None Remove="PhotoForBook\Frank_Tile__Golovolomka.jpg" />
+    <None Remove="PhotoForBook\FZ1fI05G-ipad.jpeg" />
+    <None Remove="PhotoForBook\gesfawfre.jpg" />
+    <None Remove="PhotoForBook\GFO6F9MF-ipad.jpeg" />
+    <None Remove="PhotoForBook\I2kXGa1r-ipad.jpeg" />
+    <None Remove="PhotoForBook\iVj1dT3H-ipad.jpeg" />
+    <None Remove="PhotoForBook\jg8WQw0Z-ipad.jpeg" />
+    <None Remove="PhotoForBook\KTcTOokT-ipad.jpeg" />
+    <None Remove="PhotoForBook\L2YmEk3H-ipad.jpeg" />
+    <None Remove="PhotoForBook\lGFuC4Lu-ipad.jpeg" />
+    <None Remove="PhotoForBook\Mihail_Lvovskij__V_moej_smerti_proshu_vinit_Klavu_K..jpg" />
+    <None Remove="PhotoForBook\O._Genri__Dary_volhvov.jpg" />
+    <None Remove="PhotoForBook\phGLcv6j-ipad.jpeg" />
+    <None Remove="PhotoForBook\Pol_Linch__Blagodat.jpg" />
+    <None Remove="PhotoForBook\rcNna0qA-ipad.jpeg" />
+    <None Remove="PhotoForBook\tqntaAb7-ipad.jpeg" />
+    <None Remove="PhotoForBook\wJ2EY1Gy-ipad.jpeg" />
+    <None Remove="PhotoForBook\XDEMvlRY-ipad.jpeg" />
+    <None Remove="PhotoForBook\xJQl93we-ipad.jpeg" />
+    <None Remove="PhotoForBook\yl9KIkAF-ipad.jpeg" />
+    <None Remove="PhotoForBook\zQAtIESP-ipad.jpeg" />
+    <None Remove="PhotoForBook\ZyRxrJmq-ipad.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +99,12 @@
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -115,5 +154,38 @@
     <AvaloniaResource Include="Imoges\trash-alt.png" />
     <AvaloniaResource Include="Imoges\user-friends-solid.png" />
     <AvaloniaResource Include="Imoges\Vector.png" />
+    <AvaloniaResource Include="PhotoForBook\1.50x-thumb.png" />
+    <AvaloniaResource Include="PhotoForBook\AblY0tFG-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\AILSi1cf-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\Ajgul_Klinovskaya__Data_S_Kogda_zhizn_nachinaetsya_zanovo.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Aleksandr_Gonorovskij__Sobachij_les.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Akademiya_Burya.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Dolina_Kolokolchikov.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Orden_Sumrachnoj_Vuali.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Prizrachnye_roschi.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Atft7r9l-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\feaospugl.jpg" />
+    <AvaloniaResource Include="PhotoForBook\Frank_Tile__Golovolomka.jpg" />
+    <AvaloniaResource Include="PhotoForBook\FZ1fI05G-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\gesfawfre.jpg" />
+    <AvaloniaResource Include="PhotoForBook\GFO6F9MF-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\I2kXGa1r-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\iVj1dT3H-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\jg8WQw0Z-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\KTcTOokT-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\L2YmEk3H-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\lGFuC4Lu-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\Mihail_Lvovskij__V_moej_smerti_proshu_vinit_Klavu_K..jpg" />
+    <AvaloniaResource Include="PhotoForBook\O._Genri__Dary_volhvov.jpg" />
+    <AvaloniaResource Include="PhotoForBook\phGLcv6j-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\Pol_Linch__Blagodat.jpg" />
+    <AvaloniaResource Include="PhotoForBook\rcNna0qA-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\tqntaAb7-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\wJ2EY1Gy-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\XDEMvlRY-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\xJQl93we-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\yl9KIkAF-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\zQAtIESP-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\ZyRxrJmq-ipad.jpeg" />
   </ItemGroup>
 </Project>

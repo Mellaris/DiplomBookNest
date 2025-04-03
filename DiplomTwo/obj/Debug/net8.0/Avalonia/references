@@ -25,12 +25,26 @@ C:\Users\Notebook\.nuget\packages\avalonia.x11\11.2.1\lib\net8.0\Avalonia.X11.dl
 C:\Users\Notebook\.nuget\packages\harfbuzzsharp\7.3.0.2\lib\net6.0\HarfBuzzSharp.dll
 C:\Users\Notebook\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\Microsoft.CSharp.dll
+C:\Users\Notebook\.nuget\packages\microsoft.entityframeworkcore.abstractions\9.0.3\lib\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Notebook\.nuget\packages\microsoft.entityframeworkcore\9.0.3\lib\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Notebook\.nuget\packages\microsoft.entityframeworkcore.relational\9.0.3\lib\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.caching.abstractions\9.0.3\lib\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.caching.memory\9.0.3\lib\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.configuration.abstractions\9.0.3\lib\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\9.0.3\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.dependencyinjection\9.0.3\lib\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.logging.abstractions\9.0.3\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.logging\9.0.3\lib\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.options\9.0.3\lib\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Notebook\.nuget\packages\microsoft.extensions.primitives\9.0.3\lib\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\Microsoft.VisualBasic.Core.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\Microsoft.VisualBasic.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\Microsoft.Win32.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\Microsoft.Win32.Registry.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\mscorlib.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\netstandard.dll
+C:\Users\Notebook\.nuget\packages\npgsql\9.0.3\lib\net8.0\Npgsql.dll
+C:\Users\Notebook\.nuget\packages\npgsql.entityframeworkcore.postgresql\9.0.4\lib\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Notebook\.nuget\packages\skiasharp\2.88.8\lib\net6.0\SkiaSharp.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.AppContext.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Buffers.dll
@@ -53,7 +67,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Data.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.Contracts.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.Debug.dll
-C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Notebook\.nuget\packages\system.diagnostics.diagnosticsource\9.0.3\lib\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.FileVersionInfo.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.Process.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.Diagnostics.StackTrace.dll
@@ -82,7 +96,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.FileSystem.Watcher.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.IsolatedStorage.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.MemoryMappedFiles.dll
-C:\Users\Notebook\.nuget\packages\system.io.pipelines\8.0.0\lib\net8.0\System.IO.Pipelines.dll
+C:\Users\Notebook\.nuget\packages\system.io.pipelines\9.0.3\lib\net8.0\System.IO.Pipelines.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.Pipes.AccessControl.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.Pipes.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\System.IO.UnmanagedMemoryStream.dll

@@ -39,7 +39,7 @@
 							<ColumnDefinition Width="Auto"/>
 						</Grid.ColumnDefinitions>
 						<Image Margin="200,0,0,0" Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"/>
-						<ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
+						<ListBox Background="White" Name="topFiveBooks" Width="945" Height="246" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
 							<ListBox.ItemsPanel>
 								<ItemsPanelTemplate>
 									<StackPanel Orientation="Horizontal"/>
@@ -47,7 +47,10 @@
 							</ListBox.ItemsPanel>
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<Image Source="\Imoges\image 1.png" Width="163" Height="235" Margin="5"/>
+									<StackPanel>
+										<Image Source="{Binding CoverBitmap}" Width="163" Height="235" />
+									</StackPanel>
+									
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>

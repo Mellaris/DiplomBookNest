@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2947"
+        x:Class="DiplomTwo.Headline"
+		x:CompileBindings="False"
+  Width="1440"
+        Title="Headline">
+	<ScrollViewer>
+		<StackPanel Background="#E4EFFD">
+			<StackPanel>
+
+				<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+					<TextBlock Foreground="#042A99" FontSize="64">BookNest</TextBlock>
+
+
+					<StackPanel Orientation="Horizontal" Background="#E4EFFD" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+						<Button Height="40" Background="#E4EFFD" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Дом</Button>
+						<Button Height="40" Background="#E4EFFD"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Книги</Button>
+						<Button Height="40" Background="#E4EFFD"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Авторы</Button>
+						<Button Height="40" Background="#E4EFFD"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Новости</Button>
+					</StackPanel>
+
+					<Button  Background="#E4EAFF" Margin="297,38,0,0">
+						<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\PurpleMenu.png" Width="45" Height="25"></Image>
+					</Button>
+				</StackPanel>
+
+
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<StackPanel Margin="0,156,0,0" Background="White" Width="834" Height="257">
+					<TextBlock Margin="144,57,0,0" FontSize="64" Foreground="#042A99">Последние Новости</TextBlock>
+					<TextBlock Margin="70,12,0,0" Foreground="#637BC0" FontSize="20" Width="614" TextWrapping="Wrap">Все последние новости о книгах, авторах и событиях в одном месте. Читайте и следите за обновлениями!</TextBlock>
+				</StackPanel>
+				<StackPanel Margin="0,0,0,80" Width="456" Height="257">
+					<Image Width="423" Height="423" Margin="0,0,0,0" Source="\Imoges\rb_2149279810 1.png"></Image>
+				</StackPanel>
+				<StackPanel Margin="0,156,0,0" Width="150" Height="257" Background="White"></StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Image></Image>
+				<Image></Image>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Image></Image>
+				<Image></Image>
+			</StackPanel>
+			<TextBlock Margin="0,64,0,0" HorizontalAlignment="Center" FontSize="64" Foreground="#042A99">Все новости</TextBlock>
+			<ListBox>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</StackPanel>
+	</ScrollViewer>
+</Window>
