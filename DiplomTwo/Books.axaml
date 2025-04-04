@@ -44,7 +44,7 @@
 
 			<StackPanel Margin="150,32,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
 
-				<ComboBox SelectionChanged="NewGenreSelection" PlaceholderText="Жанр" PlaceholderForeground="#042A99"  Name="genreForBooks" FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+				<ComboBox  SelectionChanged="NewGenreSelection" PlaceholderText="Жанр" PlaceholderForeground="#042A99"  Name="genreForBooks" FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
 					<ComboBox.ItemTemplate>
 						<DataTemplate>
 							<TextBlock Text="{Binding Name}"></TextBlock>

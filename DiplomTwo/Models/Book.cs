@@ -43,21 +43,21 @@ public partial class Book
 
     public virtual ICollection<BookChapter> BookChapters { get; set; } = new List<BookChapter>();
 
+    public virtual ICollection<BookGenre> BookGenres { get; set; } = new List<BookGenre>();
+
     public virtual ICollection<Bookreview> Bookreviews { get; set; } = new List<Bookreview>();
 
     public virtual ICollection<Personallibrary> Personallibraries { get; set; } = new List<Personallibrary>();
 
     public virtual ICollection<Quote> Quotes { get; set; } = new List<Quote>();
 
+    public virtual ICollection<Readerfavoritebook> Readerfavoritebooks { get; set; } = new List<Readerfavoritebook>();
+
     public virtual ICollection<Readingplan> Readingplans { get; set; } = new List<Readingplan>();
 
     public virtual Series? Series { get; set; }
 
     public virtual ICollection<Seriesbook> Seriesbooks { get; set; } = new List<Seriesbook>();
-
-    public virtual ICollection<Genre> Genres { get; set; } = new List<Genre>();
-
-    public virtual ICollection<Reader> Readers { get; set; } = new List<Reader>();
     public Bitmap CoverBitmap
     {
         get

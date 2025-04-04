@@ -23,11 +23,11 @@ public partial class Reader
 
     public virtual ICollection<Quote> Quotes { get; set; } = new List<Quote>();
 
+    public virtual ICollection<Readerfavoritebook> Readerfavoritebooks { get; set; } = new List<Readerfavoritebook>();
+
     public virtual ICollection<Readingplan> Readingplans { get; set; } = new List<Readingplan>();
 
     public virtual User User { get; set; } = null!;
 
     public virtual ICollection<Userachievement> Userachievements { get; set; } = new List<Userachievement>();
-
-    public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 }

@@ -30,6 +30,8 @@ public partial class User9Context : DbContext
 
     public virtual DbSet<BookChapter> BookChapters { get; set; }
 
+    public virtual DbSet<BookGenre> BookGenres { get; set; }
+
     public virtual DbSet<Bookauthor> Bookauthors { get; set; }
 
     public virtual DbSet<Bookreview> Bookreviews { get; set; }
@@ -49,6 +51,8 @@ public partial class User9Context : DbContext
     public virtual DbSet<Quote> Quotes { get; set; }
 
     public virtual DbSet<Reader> Readers { get; set; }
+
+    public virtual DbSet<Readerfavoritebook> Readerfavoritebooks { get; set; }
 
     public virtual DbSet<Readingplan> Readingplans { get; set; }
 
@@ -193,23 +197,6 @@ public partial class User9Context : DbContext
                 .HasForeignKey(d => d.SeriesId)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("books_series_id_fkey");
-
-            entity.HasMany(d => d.Genres).WithMany(p => p.Books)
-                .UsingEntity<Dictionary<string, object>>(
-                    "BookGenre",
-                    r => r.HasOne<Genre>().WithMany()
-                        .HasForeignKey("GenreId")
-                        .HasConstraintName("book_genres_genre_id_fkey"),
-                    l => l.HasOne<Book>().WithMany()
-                        .HasForeignKey("BookId")
-                        .HasConstraintName("book_genres_book_id_fkey"),
-                    j =>
-                    {
-                        j.HasKey("BookId", "GenreId").HasName("book_genres_pkey");
-                        j.ToTable("book_genres", "diplom");
-                        j.IndexerProperty<int>("BookId").HasColumnName("book_id");
-                        j.IndexerProperty<int>("GenreId").HasColumnName("genre_id");
-                    });
         });
 
         modelBuilder.Entity<BookChapter>(entity =>
@@ -238,6 +225,27 @@ public partial class User9Context : DbContext
                 .HasForeignKey(d => d.BookId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("book_chapters_book_id_fkey");
+        });
+
+        modelBuilder.Entity<BookGenre>(entity =>
+        {
+            entity.HasKey(e => new { e.BookId, e.GenreId }).HasName("book_genres_pkey");
+
+            entity.ToTable("book_genres", "diplom");
+
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.GenreId).HasColumnName("genre_id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("id");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.BookGenres)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("book_genres_book_id_fkey");
+
+            entity.HasOne(d => d.Genre).WithMany(p => p.BookGenres)
+                .HasForeignKey(d => d.GenreId)
+                .HasConstraintName("book_genres_genre_id_fkey");
         });
 
         modelBuilder.Entity<Bookauthor>(entity =>
@@ -447,23 +455,27 @@ public partial class User9Context : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.Readers)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("readers_user_id_fkey");
+        });
 
-            entity.HasMany(d => d.Books).WithMany(p => p.Readers)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Readerfavoritebook",
-                    r => r.HasOne<Book>().WithMany()
-                        .HasForeignKey("BookId")
-                        .HasConstraintName("readerfavoritebooks_book_id_fkey"),
-                    l => l.HasOne<Reader>().WithMany()
-                        .HasForeignKey("ReaderId")
-                        .HasConstraintName("readerfavoritebooks_reader_id_fkey"),
-                    j =>
-                    {
-                        j.HasKey("ReaderId", "BookId").HasName("readerfavoritebooks_pkey");
-                        j.ToTable("readerfavoritebooks", "diplom");
-                        j.IndexerProperty<int>("ReaderId").HasColumnName("reader_id");
-                        j.IndexerProperty<int>("BookId").HasColumnName("book_id");
-                    });
+        modelBuilder.Entity<Readerfavoritebook>(entity =>
+        {
+            entity.HasKey(e => new { e.ReaderId, e.BookId }).HasName("readerfavoritebooks_pkey");
+
+            entity.ToTable("readerfavoritebooks", "diplom");
+
+            entity.Property(e => e.ReaderId).HasColumnName("reader_id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("id");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.Readerfavoritebooks)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("readerfavoritebooks_book_id_fkey");
+
+            entity.HasOne(d => d.Reader).WithMany(p => p.Readerfavoritebooks)
+                .HasForeignKey(d => d.ReaderId)
+                .HasConstraintName("readerfavoritebooks_reader_id_fkey");
         });
 
         modelBuilder.Entity<Readingplan>(entity =>

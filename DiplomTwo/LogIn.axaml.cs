@@ -36,18 +36,18 @@ public partial class LogIn : Window
 
     private void LogInAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if(!string.IsNullOrEmpty(loginCheck.Text) && !string.IsNullOrEmpty(passwordCheck.Text))
-        {
-            foreach(User a in ListsStaticClass.listAllUsers)
-            {
-                if(a.Login == loginCheck.Text && a.Passwords == passwordCheck.Text)
-                {
-                    ListsStaticClass.currentAccount = a.Id;
-                    new personalAccount().Show();
-                    Close();
-                }
-            }
-        }
-        errorMessage.IsVisible = true;
+        //if(!string.IsNullOrEmpty(loginCheck.Text) && !string.IsNullOrEmpty(passwordCheck.Text))
+        //{
+        //    foreach(User a in ListsStaticClass.listAllUsers)
+        //    {
+        //        if(a.Login == loginCheck.Text && a.Passwords == passwordCheck.Text)
+        //        {
+        //            ListsStaticClass.currentAccount = a.Id;
+        //            new personalAccount().Show();
+        //            Close();
+        //        }
+        //    }
+        //}
+        //errorMessage.IsVisible = true;
     }
 }
