@@ -21,4 +21,10 @@ public partial class personalAccount : Window
         new MyBooks().Show();
         Close();
     }
+
+    private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
+    }
 }

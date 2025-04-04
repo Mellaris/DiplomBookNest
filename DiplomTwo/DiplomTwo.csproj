@@ -44,6 +44,7 @@
     <None Remove="Imoges\rb_2149279810 1.png" />
     <None Remove="Imoges\rb_2149330603 1.png" />
     <None Remove="Imoges\smisl.png" />
+    <None Remove="Imoges\Star 7.png" />
     <None Remove="Imoges\StrelkaBooksLeft.png" />
     <None Remove="Imoges\StrelkaBooksR.png" />
     <None Remove="Imoges\StrelkaLeft.png" />
@@ -144,6 +145,7 @@
     <AvaloniaResource Include="Imoges\rb_2149279810 1.png" />
     <AvaloniaResource Include="Imoges\rb_2149330603 1.png" />
     <AvaloniaResource Include="Imoges\smisl.png" />
+    <AvaloniaResource Include="Imoges\Star 7.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksLeft.png" />
     <AvaloniaResource Include="Imoges\StrelkaBooksR.png" />
     <AvaloniaResource Include="Imoges\StrelkaLeft.png" />

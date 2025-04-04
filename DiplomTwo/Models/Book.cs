@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Avalonia.Media.Imaging;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Avalonia.Media.Imaging;
 
 namespace DiplomTwo.Models;
 
@@ -35,6 +35,8 @@ public partial class Book
 
     public int? KolPlan { get; set; }
 
+    public DateTime? Dateadd { get; set; }
+
     public virtual ICollection<AuthorBookCharacter> AuthorBookCharacters { get; set; } = new List<AuthorBookCharacter>();
 
     public virtual ICollection<AuthorBookWorld> AuthorBookWorlds { get; set; } = new List<AuthorBookWorld>();
@@ -56,7 +58,6 @@ public partial class Book
     public virtual ICollection<Genre> Genres { get; set; } = new List<Genre>();
 
     public virtual ICollection<Reader> Readers { get; set; } = new List<Reader>();
-
     public Bitmap CoverBitmap
     {
         get
@@ -65,8 +66,8 @@ public partial class Book
             {
                 string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "PhotoForBook", CoverImage);
                 return new Bitmap(fullPath);
-                
-                
+
+
             }
             catch (Exception ex)
             {

@@ -4,6 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2069"
         x:Class="DiplomTwo.Books"
+		x:CompileBindings="False"
+		Width="1440"
+	MinWidth="1440" MinHeight="600"
         Title="Books">
 	<ScrollViewer>
 		<StackPanel>
@@ -41,58 +44,66 @@
 
 			<StackPanel Margin="150,32,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
 
-				<ComboBox FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
-					<ComboBox.Items>Жанр</ComboBox.Items>
+				<ComboBox SelectionChanged="NewGenreSelection" PlaceholderText="Жанр" PlaceholderForeground="#042A99"  Name="genreForBooks" FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"></TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
 				</ComboBox>
 				<CheckBox Margin="68,0,0,0" Foreground="#042A99" FontSize="26">Новинки</CheckBox>
 				<CheckBox Margin="44,0,0,0" Foreground="#042A99" FontSize="26">Авторское</CheckBox>
 
-				<Image Margin="302,0,0,0" Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\Icon.png"></Image>
+				<Image Margin="302,0,0,0" Source="\Imoges\Icon.png"></Image>
 				
 			</StackPanel>
 
 			<StackPanel Margin="150,42,0,0" HorizontalAlignment="Left" Orientation="Horizontal">
-				
-				<ComboBox FontSize="26" Foreground="#042A99" SelectedIndex="0" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
-					<ComboBox.Items>Рейтинг</ComboBox.Items>
+
+				<ComboBox SelectionChanged="NewRatingSelection" PlaceholderText="Рейтинг" PlaceholderForeground="#042A99" FontSize="26" Foreground="#042A99" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+					<ComboBox.Items>По возрастанию</ComboBox.Items>
+					<ComboBox.Items>По уьыванию</ComboBox.Items>
 				</ComboBox>
 				<TextBox Margin="264,0,0,0" FontSize="26" Foreground="#042A99"  CornerRadius="12" Width="517" Height="46" Background="#E4EFFD"></TextBox>
 				
 			</StackPanel>
 
 
-			<ListBox Margin="0,68,0,0" Width="1140" Height="981">
-				<ListBox.ItemTemplate>
-					<DataTemplate>
-						<StackPanel Orientation="Horizontal">
-							<StackPanel>
-								<StackPanel Orientation="Horizontal">
-									<Image></Image>
-									<StackPanel>
-										<TextBlock></TextBlock>
-										<TextBlock></TextBlock>
-										<StackPanel Orientation="Horizontal">
-											<Image></Image>
-											<TextBlock></TextBlock>
-										</StackPanel>
-									</StackPanel>
-								</StackPanel>
-								<Button>
-									<TextBlock>Открыть</TextBlock>
-								</Button>
-							</StackPanel>
-							
-						</StackPanel>
-					</DataTemplate>
-				</ListBox.ItemTemplate>
-			</ListBox>
+		<ListBox Name="allBooks" Background="White" Margin="0,68,0,0" Width="1180" Height="981">
+    <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <WrapPanel Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+    </ListBox.ItemsPanel>
+
+    <ListBox.ItemTemplate>
+        <DataTemplate>
+            <Border Width="540" Margin="10" Background="White" BorderBrush="#DDD" BorderThickness="1" Padding="10">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="163" Height="235" Source="{Binding CoverBitmap}"/>
+                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Top">
+                        <TextBlock Foreground="#042A99" FontSize="24" Text="{Binding Title}" Width="358" TextWrapping="Wrap"/>
+                        <TextBlock MaxHeight="240" Width="340" TextWrapping="Wrap" FontSize="16" Foreground="#637BC0" Text="{Binding Synopsis}"/>
+                        <StackPanel Margin="0,21,0,0" Orientation="Horizontal">
+                            <Image Margin="0,0,5,0" Source="\Imoges\Star 7.png"/>
+                            <TextBlock FontSize="32" Foreground="#2344A6" Text="{Binding Rating}"/>
+                        </StackPanel>
+                        <Button Margin="0,10,0,0" Width="100" Height="32">
+                            <TextBlock Text="Открыть" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>
 
 			<StackPanel Margin="0,32,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-				<Image Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\StrelkaBooksLeft.png"></Image>
+				<Image Source="\Imoges\StrelkaBooksLeft.png"></Image>
 				<TextBlock Margin="32,0,0,0">1</TextBlock>
 				<TextBlock Margin="12,0,0,12">из</TextBlock>
 				<TextBlock Margin="12,0,0,0">10</TextBlock>
-				<Image  Margin="32,0,0,0" Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\StrelkaBooksR.png"></Image>
+				<Image  Margin="32,0,0,0" Source="\Imoges\StrelkaBooksR.png"></Image>
 				
 			</StackPanel>
 		</StackPanel>

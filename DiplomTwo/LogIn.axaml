@@ -5,6 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="722"
         x:Class="DiplomTwo.LogIn"
 		Width="1440"
+		MinWidth="1000"
+		MinHeight="600"
 		x:CompileBindings="False"
         Title="LogIn">
 	<Grid Background="#98A1FF">
@@ -24,12 +26,12 @@
 
 				<!-- Поля для ввода -->
 				<StackPanel Height="115" Margin="0,10,0,0" HorizontalAlignment="Center" Width="550">
-					<TextBox Width="550" Height="30" Margin="0,0,0,5" BorderBrush="LightGray"/>
-					<TextBox Width="550" Height="30" Margin="0,24,0,5" BorderBrush="LightGray"/>
+					<TextBox Name="loginCheck" Watermark="Логин" Width="550" Height="30" Margin="0,0,0,5" BorderBrush="LightGray"/>
+					<TextBox Name="passwordCheck" Watermark="Пароль" Width="550" Height="30" Margin="0,24,0,5" BorderBrush="LightGray"/>
 				</StackPanel>
 
-				<!-- Кнопка регистрации -->
-				<Button Margin="0,20,0,0" Height="40" Background="#6F79F9" Foreground="White"
+				<!-- Кнопка входа -->
+				<Button Click="LogInAccount" Margin="0,20,0,0" Height="40" Background="#6F79F9" Foreground="White"
                  FontSize="20" CornerRadius="12" HorizontalAlignment="Center" Width="250">
 					<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Войти</TextBlock>
 				</Button>
@@ -42,6 +44,7 @@
 					</Button>
 					
 				</StackPanel>
+				<TextBlock Name="errorMessage" IsVisible="False" Foreground="Red" HorizontalAlignment="Center">Неверный Логин или Пароль! Попробуйте еще раз!</TextBlock>
 			</StackPanel>
 		</Border>
 	</Grid>

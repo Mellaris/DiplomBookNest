@@ -13,7 +13,7 @@ public partial class News
 
     public DateTime? CreatedAt { get; set; }
 
-    public string? Category { get; set; }
+    public string? Image { get; set; }
 
     public int? UserId { get; set; }
 

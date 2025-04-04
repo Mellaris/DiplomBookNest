@@ -11,5 +11,7 @@ public partial class Achievement
 
     public string? Description { get; set; }
 
+    public string? Picturename { get; set; }
+
     public virtual ICollection<Userachievement> Userachievements { get; set; } = new List<Userachievement>();
 }

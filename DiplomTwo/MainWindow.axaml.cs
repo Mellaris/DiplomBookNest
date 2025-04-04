@@ -31,6 +31,8 @@ namespace DiplomTwo
                 AgeLimit = book.AgeLimit,
                 PageCount = book.PageCount,
                 CoverImage = book.CoverImage,
+                Synopsis = book.Synopsis,
+                Description = book.Description,
             }).ToList();
         }
         private void SortForTopList()
@@ -47,8 +49,16 @@ namespace DiplomTwo
 
         private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            new LogIn().Show();
-            Close();
+            if(ListsStaticClass.currentAccount == -1)
+            {
+                new LogIn().Show();
+                Close();
+            }
+            else
+            {
+                new personalAccount().Show();
+                Close();
+            }
         }
 
         private void AllBooks(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

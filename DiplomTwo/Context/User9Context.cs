@@ -81,6 +81,7 @@ public partial class User9Context : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
                 .HasColumnName("name");
+            entity.Property(e => e.Picturename).HasColumnName("picturename");
         });
 
         modelBuilder.Entity<Appauthor>(entity =>
@@ -171,6 +172,9 @@ public partial class User9Context : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.AgeLimit).HasColumnName("age_limit");
             entity.Property(e => e.CoverImage).HasColumnName("cover_image");
+            entity.Property(e => e.Dateadd)
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("dateadd");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.IsAuthorBook).HasColumnName("is_author_book");
             entity.Property(e => e.KolPlan).HasColumnName("kol_plan");
@@ -344,13 +348,11 @@ public partial class User9Context : DbContext
             entity.ToTable("news", "diplom");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Category)
-                .HasMaxLength(50)
-                .HasColumnName("category");
             entity.Property(e => e.ContentText).HasColumnName("content_text");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("created_at");
+            entity.Property(e => e.Image).HasColumnName("image");
             entity.Property(e => e.Title)
                 .HasMaxLength(255)
                 .HasColumnName("title");
