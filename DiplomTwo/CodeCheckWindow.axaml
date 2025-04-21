@@ -10,7 +10,7 @@
 	<StackPanel>
 		<TextBlock Margin="0,40,0,0" FontSize="64" HorizontalAlignment="Center" Foreground="#7674CF">Проверка Кода</TextBlock>
 		<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-			<TextBox FontSize="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="#E6ECFF" Width="586" Height="145"></TextBox>
+			<TextBox TextChanged="TextBox_TextChanged" Name="checkCode" FontSize="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="#E6ECFF" Width="586" Height="145"></TextBox>
 		</StackPanel>
 	
 	</StackPanel>

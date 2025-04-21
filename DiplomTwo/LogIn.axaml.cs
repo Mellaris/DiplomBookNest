@@ -54,7 +54,7 @@ public partial class LogIn : Window
 
                     EmailSender.SendVerificationCode(a.Email, code);
 
-                    new CodeCheckWindow(a.Id).ShowDialog(this);
+                    new CodeCheckWindow(a.Id, this).ShowDialog(this);
                     break;
                 }
             }
