@@ -3,11 +3,13 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System.Linq;
 using DiplomTwo.Models;
+using System;
 
 namespace DiplomTwo;
 
 public partial class LogIn : Window
 {
+    private int CheckForMassage = 0;
     public LogIn()
     {
         InitializeComponent();
@@ -28,26 +30,48 @@ public partial class LogIn : Window
         }).ToList();
     }
 
+    private void LogInAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (!string.IsNullOrEmpty(loginCheck.Text) && !string.IsNullOrEmpty(passwordCheck.Text))
+        {
+            foreach (User a in ListsStaticClass.listAllUsers)
+            {
+                if (a.Login == loginCheck.Text && a.Passwords == passwordCheck.Text)
+                {
+                    CheckForMassage = 1;
+
+                    ListsStaticClass.currentAccount = a.Id;
+                    var code = GenerateVerificationCode();
+
+                    var verification = new VerificationCode
+                    {
+                        UserId = a.Id,
+                        Code = code,
+                        CreatedAt = DateTime.Now,
+                    };
+                    Baza.DbContext.VerificationCodes.Add(verification);
+                    Baza.DbContext.SaveChanges();
+
+                    EmailSender.SendVerificationCode(a.Email, code);
+
+                    new CodeCheckWindow(a.Id).ShowDialog(this);
+                    break;
+                }
+            }
+        }
+        if(CheckForMassage == 0)
+        {
+            errorMessage.IsVisible = true;
+        }
+    }
+    public static string GenerateVerificationCode()
+    {
+        var random = new Random();
+        return random.Next(100000, 999999).ToString();
+    }
     private void RegistrNewAcc(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         new Registration().Show();
         Close();
-    }
-
-    private void LogInAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        //if(!string.IsNullOrEmpty(loginCheck.Text) && !string.IsNullOrEmpty(passwordCheck.Text))
-        //{
-        //    foreach(User a in ListsStaticClass.listAllUsers)
-        //    {
-        //        if(a.Login == loginCheck.Text && a.Passwords == passwordCheck.Text)
-        //        {
-        //            ListsStaticClass.currentAccount = a.Id;
-        //            new personalAccount().Show();
-        //            Close();
-        //        }
-        //    }
-        //}
-        //errorMessage.IsVisible = true;
     }
 }

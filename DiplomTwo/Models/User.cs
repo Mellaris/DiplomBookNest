@@ -34,4 +34,6 @@ public partial class User
     public virtual ICollection<Reader> Readers { get; set; } = new List<Reader>();
 
     public virtual Role? Role { get; set; }
+
+    public virtual ICollection<VerificationCode> VerificationCodes { get; set; } = new List<VerificationCode>();
 }

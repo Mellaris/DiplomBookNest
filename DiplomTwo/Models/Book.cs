@@ -25,17 +25,17 @@ public partial class Book
 
     public string? CoverImage { get; set; }
 
+    public int? Kolread { get; set; }
+
+    public int? Kolrev { get; set; }
+
+    public int? Kolplan { get; set; }
+
+    public DateTime? Dateadd { get; set; }
+
     public bool IsAuthorBook { get; set; }
 
     public int? SeriesId { get; set; }
-
-    public int? KolRead { get; set; }
-
-    public int? KolRev { get; set; }
-
-    public int? KolPlan { get; set; }
-
-    public DateTime? Dateadd { get; set; }
 
     public virtual ICollection<AuthorBookCharacter> AuthorBookCharacters { get; set; } = new List<AuthorBookCharacter>();
 
@@ -44,6 +44,8 @@ public partial class Book
     public virtual ICollection<BookChapter> BookChapters { get; set; } = new List<BookChapter>();
 
     public virtual ICollection<BookGenre> BookGenres { get; set; } = new List<BookGenre>();
+
+    public virtual ICollection<Bookauthor> Bookauthors { get; set; } = new List<Bookauthor>();
 
     public virtual ICollection<Bookreview> Bookreviews { get; set; } = new List<Bookreview>();
 
@@ -64,9 +66,7 @@ public partial class Book
         {
             try
             {
-                string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "PhotoForBook", CoverImage);
-                return new Bitmap(fullPath);
-
+                string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "PhotoForBook", CoverImage); return new Bitmap(fullPath);
 
             }
             catch (Exception ex)

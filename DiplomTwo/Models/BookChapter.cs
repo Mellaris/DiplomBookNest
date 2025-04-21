@@ -11,7 +11,7 @@ public partial class BookChapter
 
     public int ChapterNumber { get; set; }
 
-    public string? Title { get; set; }
+    public string Title { get; set; } = null!;
 
     public string Content { get; set; } = null!;
 

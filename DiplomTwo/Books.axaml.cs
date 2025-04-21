@@ -23,7 +23,6 @@ public partial class Books : Window
         {
             Id = genre.Id,
             Name = genre.Name,
-            Description = genre.Description,
         }).ToList();
 
         genreForBooks.ItemsSource = ListsStaticClass.listAllGenres;

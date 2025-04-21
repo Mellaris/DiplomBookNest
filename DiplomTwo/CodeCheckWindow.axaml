@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="750" d:DesignHeight="415"
+        x:Class="DiplomTwo.CodeCheckWindow"
+		Width="750" Height="415"
+		CornerRadius="32"
+        Title="CodeCheckWindow">
+	<StackPanel>
+		<TextBlock Margin="0,40,0,0" FontSize="64" HorizontalAlignment="Center" Foreground="#7674CF">Проверка Кода</TextBlock>
+		<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+			<TextBox FontSize="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="#E6ECFF" Width="586" Height="145"></TextBox>
+		</StackPanel>
+	
+	</StackPanel>
+</Window>

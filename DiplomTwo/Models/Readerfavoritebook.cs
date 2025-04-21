@@ -5,11 +5,11 @@ namespace DiplomTwo.Models;
 
 public partial class Readerfavoritebook
 {
+    public int Id { get; set; }
+
     public int ReaderId { get; set; }
 
     public int BookId { get; set; }
-
-    public int Id { get; set; }
 
     public virtual Book Book { get; set; } = null!;
 

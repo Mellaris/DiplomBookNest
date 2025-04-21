@@ -15,5 +15,7 @@ public partial class Appauthor
 
     public int? WritingGoal { get; set; }
 
+    public virtual ICollection<Bookauthor> Bookauthors { get; set; } = new List<Bookauthor>();
+
     public virtual Reader IdNavigation { get; set; } = null!;
 }

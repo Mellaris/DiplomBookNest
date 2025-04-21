@@ -7,7 +7,7 @@ public partial class Reader
 {
     public int IdReader { get; set; }
 
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
 
     public int? YearlyGoal { get; set; }
 
@@ -27,7 +27,7 @@ public partial class Reader
 
     public virtual ICollection<Readingplan> Readingplans { get; set; } = new List<Readingplan>();
 
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; }
 
     public virtual ICollection<Userachievement> Userachievements { get; set; } = new List<Userachievement>();
 }

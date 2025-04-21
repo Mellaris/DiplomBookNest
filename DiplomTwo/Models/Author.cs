@@ -9,9 +9,11 @@ public partial class Author
 
     public string? Biography { get; set; }
 
-    public DateTime? BirthDate { get; set; }
+    public DateOnly? BirthDate { get; set; }
 
-    public DateTime? DeathDate { get; set; }
+    public DateOnly? DeathDate { get; set; }
 
     public string Name { get; set; } = null!;
+
+    public virtual ICollection<Bookauthor> Bookauthors { get; set; } = new List<Bookauthor>();
 }
