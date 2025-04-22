@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="856"
+        x:Class="DiplomTwo.WindowForEditProfile"
+		Width="1440" Height="856"
+        Title="WindowForEditProfile">
+	<Border CornerRadius="32" Background="#E4EAFF" Width="1140" Height="724" VerticalAlignment="Center" HorizontalAlignment="Center">
+		<StackPanel>
+			<Button Click="Back" Foreground="#042A99" Background="#E4EAFF" FontSize="24" Margin="26,20,0,0" CornerRadius="8">Назад</Button>
+			<TextBlock Margin="0,16,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Редактирование профиля!</TextBlock>
+			<TextBlock Margin="0,8,0,0" FontSize="24" Foreground="#5974C0" HorizontalAlignment="Center">Здесь вы можете изменить свой логин и описание профиля</TextBlock>
+
+			<TextBlock Margin="66,64,0,0" FontSize="32" Foreground="#042A99">Логин:</TextBlock>
+			<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
+				<TextBox IsEnabled="False" Name="newLogin" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="53"></TextBox>
+				<Button Click="OpenEditLogin" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
+					<Image Source="\Imoges\pen-solid.png"></Image>
+				</Button>
+				<TextBlock IsVisible="False" Name="errorMassege" Margin="63,0,0,0" Width="390" Height="99" TextWrapping="Wrap"></TextBlock>
+			</StackPanel>
+			<TextBlock Margin="66,0,0,0" FontSize="32" Foreground="#042A99">Описание профиля:</TextBlock>
+			<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
+				
+				<TextBox TextWrapping="Wrap" IsEnabled="False" Name="newDescription" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="124"></TextBox>
+				<Button Click="OpenEditDescription" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
+					<Image Source="\Imoges\pen-solid.png"></Image>
+				</Button>
+			</StackPanel>
+			<Button Click="EditAndBack" Margin="0,81,0,0" HorizontalAlignment="Center" Background="#506AB8" Width="358" Height="47" CornerRadius="16">
+				<TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Редактировать</TextBlock>
+			</Button>
+		</StackPanel>
+	</Border>
+</Window>
