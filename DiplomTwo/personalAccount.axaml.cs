@@ -57,21 +57,26 @@ public partial class personalAccount : Window
             }
         }
     }
-    private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private void MyAuthorDesk(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new LogIn().Show();
-        Close();
-    }
+        int currentUserId = ListsStaticClass.currentAccount;
+        var existingAuthor = Baza.DbContext.Appauthors.FirstOrDefault(u => u.Id == currentUserId);
 
-    private void MyLibraryBooks(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        new MyBooks().Show();
-        Close();
-    }
+        if (existingAuthor == null)
+        {
+            var newAuthor = new Appauthor
+            {
+                Id = currentUserId,
+                ProfileDescription = null,
+                WritingGoal = 0,
+                AvatarUrl = null,
+                WrittenBooksCount = 0,
+            };
+            Baza.DbContext.Appauthors.Add(newAuthor);
+            Baza.DbContext.SaveChanges();
+        }
 
-    private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        new MainWindow().Show();
+        new AuthorBoard().Show();
         Close();
     }
     private void CallBaza()
@@ -117,6 +122,24 @@ public partial class personalAccount : Window
             Feedback = library.Feedback,
         }).ToList();
     }
+    private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new LogIn().Show();
+        Close();
+    }
 
-    
+    private void MyLibraryBooks(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MyBooks().Show();
+        Close();
+    }
+
+    private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
+    }
+   
+
+   
 }

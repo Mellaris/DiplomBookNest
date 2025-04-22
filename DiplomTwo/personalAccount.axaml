@@ -84,17 +84,17 @@
 							</Button>
 							
 						</Border>
-						<Border Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
+						<Button Height="400" Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
 							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Книжный план" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-						</Border>
+						</Button>
 
 						<Border Background="#FFC2D1"   Width="300" CornerRadius="10" Margin="20,30,60,-197">
 							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Друзья" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 						</Border>
 
-						<Border Background="#D5B8FF" Width="358" Height="183" CornerRadius="10" Margin="0,0,0,30">
+						<Button Click="MyAuthorDesk" Background="#D5B8FF" Width="358" Height="183" CornerRadius="10" Margin="10,0,0,30">
 							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Доска автора" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-						</Border>
+						</Button>
 
 						<!-- Круглая кнопка -->
 					</UniformGrid>

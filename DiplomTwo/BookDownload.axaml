@@ -36,24 +36,24 @@
 						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
 					</Button>
 					<Button Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
+						<TextBlock Foreground="#0C5489" FontSize="24">Короткая</TextBlock>
 					</Button>
 					<Button Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
+						<TextBlock Foreground="#0C5489" FontSize="24">Средняя</TextBlock>
 					</Button>
 					<Button Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
+						<TextBlock Foreground="#0C5489" FontSize="24">Длинная</TextBlock>
 					</Button>
 					<Button Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
+						<TextBlock Foreground="#0C5489" FontSize="24">Очень длинная</TextBlock>
 					</Button>
 					<Button Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
+						<TextBlock Foreground="#0C5489" FontSize="24">Без размера</TextBlock>
 					</Button>
 					<Border Background="#B1D3FF" CornerRadius="24" Width="325" Height="110">
 						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
 							<TextBlock VerticalAlignment="Center" Margin="0,0,0,0" Foreground="#0C5489" FontSize="24">Пример:</TextBlock>
-							<TextBlock VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">12 000</TextBlock>
+							<TextBlock Name="sizeText" VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">12 000</TextBlock>
 							<TextBlock VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">слов</TextBlock>
 						</StackPanel>
 					</Border>
@@ -63,33 +63,33 @@
 			</Border>
 			<Border Margin="64,0,0,0" CornerRadius="24" Background="#E4EFFD" Width="618" Height="584">
 				<StackPanel>
-					<TextBox Margin="0,28,0,0" Watermark="Название книги" Foreground="#0C5489" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
+					<TextBox VerticalContentAlignment="Center" BorderBrush="#CDE2FD" Margin="0,28,0,0" Watermark="Название книги" Foreground="White" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
 
-					<TextBlock>Серия</TextBlock>
-					<StackPanel Orientation="Horizontal">
-						<ComboBox></ComboBox>
-						<Button>
+					<TextBlock Margin="32,20,0,0" Foreground="#0C5489" FontSize="24">Серия</TextBlock>
+					<StackPanel Margin="32,8,0,0" Orientation="Horizontal">
+						<ComboBox Width="180"></ComboBox>
+						<Button Margin="16,0,0,0">
 							<TextBlock>Создать новую серию</TextBlock>
 						</Button>
 					</StackPanel>
-					<TextBlock>Настройка</TextBlock>
+					<TextBlock Margin="0,24,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Настройка</TextBlock>
 
-					<StackPanel Orientation="Horizontal">
-						<StackPanel>
-							<Image Width="164" Height="220"></Image>
-							<Button Margin="0,12,0,0">
-								<TextBlock>Добавить</TextBlock>
+					<StackPanel HorizontalAlignment="Center" Margin="0,24,0,0" Orientation="Horizontal">
+						<StackPanel  >
+							<Image Source="\Imoges\Rectangle 57.png" Width="164" Height="220"></Image>
+							<Button Width="154" Height="28" Background="#CDE2FD" CornerRadius="12" Margin="0,12,0,0">
+								<TextBlock FontSize="16" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Добавить</TextBlock>
 							</Button>
 						</StackPanel>
-						<StackPanel>
-							<TextBox Width="358" Height="83" Background="#CDE2FD"></TextBox>
-							<TextBox Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
+						<StackPanel Margin="32,0,0,0">
+							<TextBox BorderBrush="#E4EFFD" Width="358" Height="83" Background="#CDE2FD"></TextBox>
+							<TextBox BorderBrush="#E4EFFD" Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
 						</StackPanel>
 					</StackPanel>
 
 
-					<Button>
-						<TextBlock>Загрузить</TextBlock>
+					<Button  Width="227" Height="43" Background="#CDE2FD" CornerRadius="12" Margin="0,30,0,0" HorizontalAlignment="Center">
+						<TextBlock FontSize="24" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Загрузить</TextBlock>
 					</Button>
 				</StackPanel>
 			</Border>

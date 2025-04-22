@@ -14,13 +14,13 @@
 
 
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
-					<Button Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+					<Button Click="Home" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+					<Button Click="BooksAll" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Click="OpenAuthors" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+					<Button Click="OpenNews" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
 				</StackPanel>
 
-				<Button Background="White" Margin="297,38,0,0">
+				<Button Click="BackAccount" Background="White" Margin="297,38,0,0">
 					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\Vector.png" Width="45" Height="25"></Image>
 				</Button>
 			</StackPanel>
@@ -33,7 +33,9 @@
 				<StackPanel>
 					<TextBlock Margin="66,24,0,0" FontSize="36" Foreground="#0C5489">Ваши Книги</TextBlock>
 					<StackPanel Margin="110,8,0,0" Orientation="Horizontal">
-						<Image Source="\Imoges\Group 226.png"></Image>
+						<Button Click="AddNewBook" Background="#EAF2FF">
+							<Image Source="\Imoges\Group 226.png"></Image>
+						</Button>
 						<ListBox Margin="69,0,0,0" Width="717" Height="163" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
              SelectionMode="Single" BorderThickness="0">
 							<ListBox.ItemsPanel>
