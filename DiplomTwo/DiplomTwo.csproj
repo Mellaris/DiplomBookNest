@@ -55,6 +55,8 @@
     <None Remove="Imoges\StrelkaRedR.png" />
     <None Remove="Imoges\trash-alt.png" />
     <None Remove="Imoges\user-friends-solid.png" />
+    <None Remove="Imoges\user.png" />
+    <None Remove="Imoges\userPurple.png" />
     <None Remove="Imoges\Vector.png" />
     <None Remove="PhotoForBook\1.50x-thumb.png" />
     <None Remove="PhotoForBook\AblY0tFG-ipad.jpeg" />
@@ -158,6 +160,8 @@
     <AvaloniaResource Include="Imoges\StrelkaRedR.png" />
     <AvaloniaResource Include="Imoges\trash-alt.png" />
     <AvaloniaResource Include="Imoges\user-friends-solid.png" />
+    <AvaloniaResource Include="Imoges\user.png" />
+    <AvaloniaResource Include="Imoges\userPurple.png" />
     <AvaloniaResource Include="Imoges\Vector.png" />
     <AvaloniaResource Include="PhotoForBook\1.50x-thumb.png" />
     <AvaloniaResource Include="PhotoForBook\AblY0tFG-ipad.jpeg" />

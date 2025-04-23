@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="680"
+        x:Class="DiplomTwo.NewAddSeries"
+        Title="Добавление новой серии">
+	<Border CornerRadius="32" Background="#E4EAFF" Width="1140" Height="588" VerticalAlignment="Center" HorizontalAlignment="Center">
+		<StackPanel>
+			<Button Click="Back" Foreground="#042A99" Background="#E4EAFF" FontSize="24" Margin="26,20,0,0" CornerRadius="8">Назад</Button>
+			<TextBlock Margin="0,16,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Создай новую серию!</TextBlock>
+			<TextBlock Margin="0,8,0,0" FontSize="24" Foreground="#5974C0" HorizontalAlignment="Center">Здесь вы можете создать свою серию и дать ей название</TextBlock>
+
+			<TextBlock Margin="66,64,0,0" FontSize="32" Foreground="#042A99">Название серии:</TextBlock>
+			<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
+				<TextBox Name="newSeries" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="53"></TextBox>
+				<TextBlock IsVisible="False" Name="errorMassege" Margin="63,0,0,0" Width="390" Height="99" TextWrapping="Wrap"></TextBlock>
+			</StackPanel>
+			<Button Click="Add" Margin="0,40,0,0" HorizontalAlignment="Center" Background="#506AB8" Width="358" Height="47" CornerRadius="16">
+				<TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Добавить</TextBlock>
+			</Button>
+		</StackPanel>
+	</Border>
+</Window>

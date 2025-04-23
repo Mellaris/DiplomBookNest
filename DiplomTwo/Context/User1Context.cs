@@ -529,6 +529,11 @@ public partial class User1Context : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Title).HasColumnName("title");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Series)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("fk_series_user");
         });
 
         modelBuilder.Entity<Seriesbook>(entity =>
