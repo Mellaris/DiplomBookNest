@@ -2,11 +2,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1885"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1935"
         x:Class="DiplomTwo.CreatingBook"
 		Width="1440"
 		x:CompileBindings="False"
-        Title="CreatingBook">
+		Name="CreatingBookIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
@@ -25,29 +26,29 @@
 			</StackPanel>
 
 			<StackPanel Margin="0,36,0,0" Height="791" Background="#EAF2FF">
-				<Border Width="814" Height="150" Background="White" CornerRadius="0,0,32,32">
+				<Border HorizontalAlignment="Center" Width="814" Height="150" Background="White" CornerRadius="0,0,32,32">
 					<StackPanel>
-						<TextBlock Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="48" Foreground="#0C5489">Название книги</TextBlock>
-						<StackPanel Margin="10,0,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-							<Button Background="White">
-								<TextBlock HorizontalAlignment="Left" Margin="36,32,0,0" FontSize="24" Foreground="#108DE8">Персонажи</TextBlock>
+						<TextBlock Name="nameBook" Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="48" Foreground="#0C5489">Название книги</TextBlock>
+						<StackPanel Margin="0,30,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+							<Button Margin="0,0,80,0" Background="White">
+								<TextBlock FontSize="24" Foreground="#108DE8">Персонажи</TextBlock>
+							</Button>
+							<Button Margin="0,0,90,0" Background="White">
+								<TextBlock FontSize="24" Foreground="#108DE8">Окружающий мир</TextBlock>
 							</Button>
 							<Button Background="White">
-								<TextBlock Margin="110,32,0,0" FontSize="24" Foreground="#108DE8">Окружающий мир</TextBlock>
-							</Button>
-							<Button Background="White">
-								<TextBlock Margin="110,32,0,0" FontSize="24" Foreground="#108DE8">Заметки</TextBlock>
+								<TextBlock FontSize="24" Foreground="#108DE8">Заметки</TextBlock>
 							</Button>
 						</StackPanel>
 					</StackPanel>
 				</Border>
 				<TextBlock Margin="150,44,0,0" FontSize="36" Foreground="#0C5489">Список глав</TextBlock>
-				<ListBox Margin="0,12,0,0" Width="1140" Height="439" Background="White">
+				<ListBox Name="listForChapters" Margin="0,12,0,0" Width="1140" Height="439" Background="White">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<Border CornerRadius="8" Width="813" Height="80" Background="#F6F7FF">
 								<StackPanel Orientation="Horizontal">
-									<TextBlock></TextBlock>
+									<TextBlock Text="{Binding Title}"></TextBlock>
 									<Button Margin="87,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Открыть</TextBlock>
 									</Button>
@@ -59,16 +60,28 @@
 						</DataTemplate>
 					</ListBox.ItemTemplate>
 				</ListBox>
-				<Button Margin="0,22,0,0" HorizontalAlignment="Center" CornerRadius="12" Width="292" Height="59" Background="White">
+				<Button Click="AddNewChapter" Margin="0,22,0,0" HorizontalAlignment="Center" CornerRadius="12" Width="292" Height="59" Background="White">
 					<TextBlock FontSize="24" Foreground="#9AC6FF" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить главу</TextBlock>
 				</Button>
 			</StackPanel>
 
-			<TextBlock Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBlock>
+			<TextBox IsEnabled="False" Name="textForTitle" Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBox>
 			<Border Margin="0,24,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="758">
-				<TextBox CornerRadius="8" Width="1140" Height="758"></TextBox>
+				<TextBox Name="textForContent" IsEnabled="False" FontSize="21" BorderThickness="5" BorderBrush="#EAF2FF" CornerRadius="8" Width="1140" Height="758"></TextBox>
 			</Border>
-			<Button Margin="0,24,0,0" HorizontalAlignment="Center" Background="#EAF2FF">Сохранить</Button>
+			<StackPanel Margin="160,24,0,0" Orientation="Horizontal">
+				<Button FontSize="24" Background="#EAF2FF">Сохранить</Button>
+				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Дата последнего обновления:</TextBlock>
+				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="dateUpdateLast"></TextBlock>
+				
+			
+			</StackPanel>
+			<StackPanel Margin="142,16,0,0" Orientation="Horizontal">
+				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество слов:</TextBlock>
+				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countWordLast"></TextBlock>
+				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество страниц:</TextBlock>
+				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countPageLast"></TextBlock>
+			</StackPanel>
 		</StackPanel>
 	</ScrollViewer>
 </Window>

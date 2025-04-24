@@ -4,7 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="680"
         x:Class="DiplomTwo.NewAddSeries"
-        Title="Добавление новой серии">
+		Name="NewAddSeriesIcon"
+        Title="BookNest">
 	<Border CornerRadius="32" Background="#E4EAFF" Width="1140" Height="588" VerticalAlignment="Center" HorizontalAlignment="Center">
 		<StackPanel>
 			<Button Click="Back" Foreground="#042A99" Background="#E4EAFF" FontSize="24" Margin="26,20,0,0" CornerRadius="8">Назад</Button>

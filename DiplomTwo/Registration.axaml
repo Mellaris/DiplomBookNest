@@ -6,7 +6,8 @@
         x:Class="DiplomTwo.Registration"
 		x:CompileBindings="False"
 		Width="1440"
-        Title="Registration">
+		Name="RegistrationIcon"
+        Title="BookNest">
 	<Grid Background="#98A1FF">
 		<!-- Круги на фоне -->
 		<Ellipse Fill="#8B96FE" Width="365" Height="365" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30"/>

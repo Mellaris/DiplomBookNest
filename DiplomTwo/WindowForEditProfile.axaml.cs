@@ -3,6 +3,8 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System.Linq;
 using DiplomTwo.Models;
+using Avalonia.Media.Imaging;
+using System;
 
 namespace DiplomTwo;
 
@@ -11,6 +13,11 @@ public partial class WindowForEditProfile : Window
     public WindowForEditProfile()
     {
         InitializeComponent();
+        try
+        {
+            WindowForEditProfileIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
         foreach(User user in ListsStaticClass.listAllUsers)
         {

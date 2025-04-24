@@ -1,7 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,8 +15,33 @@ public partial class AuthorBoard : Window
     public AuthorBoard()
     {
         InitializeComponent();
+        try
+        {
+            AuthorBoardIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
         SortForAppList();
+    }
+    private void BooksListBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+
+        if (myBooks.SelectedItem != null)
+        {
+            // Получаем выбранную книгу
+            var selectedBook = myBooks.SelectedItem as Book;
+
+            // Проверяем, что книга выбрана
+            if (selectedBook != null)
+            {
+                int bookId = selectedBook.Id; // Получаем id книги
+
+                // Открываем окно для написания главы
+                new CreatingBook(bookId).Show();
+                Close();
+            }
+        }
+
     }
     private void SortForAppList()
     {
@@ -79,5 +106,5 @@ public partial class AuthorBoard : Window
         Close();
     }
 
-   
+
 }

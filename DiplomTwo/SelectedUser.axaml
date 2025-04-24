@@ -5,7 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="3153"
         x:Class="DiplomTwo.SelectedUser"
 		Width="1440"
-        Title="SelectedUser">
+		Name="SelectedUserIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">

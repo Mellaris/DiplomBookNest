@@ -2,114 +2,118 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="887"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="907"
         x:Class="DiplomTwo.BookDownload"
-		Width="1440" Height="887"
+		Width="1440"
 		x:CompileBindings="False"
-        Title="BookDownload">
-	<StackPanel>
-		<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
-			<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+		Name="BookDownloadIcon"
+        Title="BookNest">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
 
-			<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
-				<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
-				<Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
-				<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
-				<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+					<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
+					<Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+				</StackPanel>
+
+				<Button Click="Log" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
+				</Button>
+			</StackPanel>
+			<StackPanel Margin="0,5,0,0" Background="#9AC6FF" Height="5"></StackPanel>
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+				<Button Click="Back" Margin="0,25,20,0" VerticalAlignment="Center" Background="White" >
+					<Image Source="\Imoges\arrow-left.png"></Image>
+				</Button>
+				<TextBlock Margin="0,24,0,0" FontSize="64" Foreground="#108DE8" HorizontalAlignment="Center">Создай свою книгу</TextBlock>
+
 			</StackPanel>
 
-			<Button Click="Log" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
-				<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
-			</Button>
-		</StackPanel>
-		<StackPanel Margin="0,5,0,0" Background="#9AC6FF" Height="5"></StackPanel>
-		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-			<Button Click="Back" Margin="0,25,20,0" VerticalAlignment="Center" Background="White" >
-				<Image Source="\Imoges\arrow-left.png"></Image>
-			</Button>
-			<TextBlock Margin="0,24,0,0" FontSize="64" Foreground="#108DE8" HorizontalAlignment="Center">Создай свою книгу</TextBlock>
-
-		</StackPanel>
-
-		<StackPanel Margin="0,24,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+			<StackPanel Margin="0,24,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 
 
-			<Border CornerRadius="24" Background="#E4EFFD" Width="325" Height="584">
-				<StackPanel>
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="32">Размер книги</TextBlock>
-					<Button Click="MicroOpen" Margin="74,34,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
-					</Button>
-					<Button Click="SmallOpen" Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Короткая</TextBlock>
-					</Button>
-					<Button Click="MiddleOpen" Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Средняя</TextBlock>
-					</Button>
-					<Button Click="LongOpen" Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Длинная</TextBlock>
-					</Button>
-					<Button Click="VeryLongOpen" Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Очень длинная</TextBlock>
-					</Button>
-					<Button Click="FreeMode" Margin="74,24,0,0" Background="#E4EFFD">
-						<TextBlock Foreground="#0C5489" FontSize="24">Без размера</TextBlock>
-					</Button>
-					<Border Background="#B1D3FF" CornerRadius="24" Width="325" Height="110">
-						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-							<TextBlock VerticalAlignment="Center" Margin="0,0,0,0" Foreground="#0C5489" FontSize="24">Пример:</TextBlock>
-							<TextBlock Name="sizeText" VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">20 000</TextBlock>
-							<TextBlock VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">слов</TextBlock>
-						</StackPanel>
-					</Border>
-				
-				
-				</StackPanel>
-			</Border>
-			<Border Margin="64,0,0,0" CornerRadius="24" Background="#E4EFFD" Width="618" Height="584">
-				<StackPanel>
-					<TextBox Name="newTitle" VerticalContentAlignment="Center" BorderBrush="#CDE2FD" Margin="0,28,0,0" Watermark="Название книги" Foreground="White" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
-
-					<TextBlock Margin="32,20,0,0" Foreground="#0C5489" FontSize="24">Серия</TextBlock>
-					<StackPanel Margin="32,8,0,0" Orientation="Horizontal">
-						<ComboBox SelectionChanged="ComboBox_SelectionChanged" Name="boxForSeries" Width="180">
-							<ComboBox.ItemTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding Title}"></TextBlock>
-								</DataTemplate>
-							</ComboBox.ItemTemplate>
-						</ComboBox>
-						<Button Click="OpenNewSeriesAdd" Foreground="#0C5489" Background="#E4EFFD" Margin="16,0,0,0">
-							<TextBlock>Создать новую серию</TextBlock>
+				<Border CornerRadius="24" Background="#E4EFFD" Width="325" Height="584">
+					<StackPanel>
+						<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="32">Размер книги</TextBlock>
+						<Button Click="MicroOpen" Margin="74,34,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Микро</TextBlock>
 						</Button>
-					</StackPanel>
-					<TextBlock Margin="0,24,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Настройка</TextBlock>
+						<Button Click="SmallOpen" Margin="74,24,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Короткая</TextBlock>
+						</Button>
+						<Button Click="MiddleOpen" Margin="74,24,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Средняя</TextBlock>
+						</Button>
+						<Button Click="LongOpen" Margin="74,24,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Длинная</TextBlock>
+						</Button>
+						<Button Click="VeryLongOpen" Margin="74,24,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Очень длинная</TextBlock>
+						</Button>
+						<Button Click="FreeMode" Margin="74,24,0,0" Background="#E4EFFD">
+							<TextBlock Foreground="#0C5489" FontSize="24">Без размера</TextBlock>
+						</Button>
+						<Border Background="#B1D3FF" CornerRadius="24" Width="325" Height="110">
+							<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+								<TextBlock VerticalAlignment="Center" Margin="0,0,0,0" Foreground="#0C5489" FontSize="24">Пример:</TextBlock>
+								<TextBlock Name="sizeText" VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">20 000</TextBlock>
+								<TextBlock VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">слов</TextBlock>
+							</StackPanel>
+						</Border>
 
-					<StackPanel HorizontalAlignment="Center" Margin="0,24,0,0" Orientation="Horizontal">
-						<StackPanel  >
-							<Image Name="coverPreview" Width="164" Height="220"></Image>
-							<Button Click="AddNewPhoto" Width="154" Height="28" Background="#CDE2FD" CornerRadius="12" Margin="0,12,0,0">
-								<TextBlock FontSize="16" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Добавить</TextBlock>
+
+					</StackPanel>
+				</Border>
+				<Border Margin="64,0,0,0" CornerRadius="24" Background="#E4EFFD" Width="618" Height="584">
+					<StackPanel>
+						<TextBox Name="newTitle" VerticalContentAlignment="Center" BorderBrush="#CDE2FD" Margin="0,28,0,0" Watermark="Название книги" Foreground="White" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
+
+						<TextBlock Margin="32,20,0,0" Foreground="#0C5489" FontSize="24">Серия</TextBlock>
+						<StackPanel Margin="32,8,0,0" Orientation="Horizontal">
+							<ComboBox SelectionChanged="ComboBox_SelectionChanged" Name="boxForSeries" Width="180">
+								<ComboBox.ItemTemplate>
+									<DataTemplate>
+										<TextBlock Text="{Binding Title}"></TextBlock>
+									</DataTemplate>
+								</ComboBox.ItemTemplate>
+							</ComboBox>
+							<Button Click="OpenNewSeriesAdd" Foreground="#0C5489" Background="#E4EFFD" Margin="16,0,0,0">
+								<TextBlock>Создать новую серию</TextBlock>
 							</Button>
 						</StackPanel>
-						<StackPanel Margin="32,0,0,0">
-							<TextBox Name="newSinopsis" Watermark="Синопсис (не больше 200 слов)" BorderBrush="#E4EFFD" Width="358" Height="83" Background="#CDE2FD"></TextBox>
-							<TextBox Name="newDescription" Watermark="Описание" BorderBrush="#E4EFFD" Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
+						<TextBlock Margin="0,24,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Настройка</TextBlock>
+
+						<StackPanel HorizontalAlignment="Center" Margin="0,24,0,0" Orientation="Horizontal">
+							<StackPanel  >
+								<Image Name="coverPreview" Width="164" Height="220"></Image>
+								<Button Click="AddNewPhoto" Width="154" Height="28" Background="#CDE2FD" CornerRadius="12" Margin="0,12,0,0">
+									<TextBlock FontSize="16" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Добавить</TextBlock>
+								</Button>
+							</StackPanel>
+							<StackPanel Margin="32,0,0,0">
+								<TextBox Name="newSinopsis" Watermark="Синопсис (не больше 200 слов)" BorderBrush="#E4EFFD" Width="358" Height="83" Background="#CDE2FD"></TextBox>
+								<TextBox Name="newDescription" Watermark="Описание" BorderBrush="#E4EFFD" Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
+							</StackPanel>
 						</StackPanel>
+
+
+						<Button Click="AddNewAppBook" Width="227" Height="43" Background="#CDE2FD" CornerRadius="12" Margin="0,24,0,0" HorizontalAlignment="Center">
+							<TextBlock FontSize="24" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Загрузить</TextBlock>
+						</Button>
 					</StackPanel>
+				</Border>
 
 
-					<Button Click="AddNewAppBook" Width="227" Height="43" Background="#CDE2FD" CornerRadius="12" Margin="0,24,0,0" HorizontalAlignment="Center">
-						<TextBlock FontSize="24" Foreground="#0C5489" VerticalAlignment="Center" HorizontalAlignment="Center">Загрузить</TextBlock>
-					</Button>
-				</StackPanel>
-			</Border>
-			
-			
+			</StackPanel>
+			<StackPanel Width="1440" Background="White" Height="50">
+				<TextBlock Name="error" IsVisible="False" Foreground="Red" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center">sdf</TextBlock>
+			</StackPanel>
+
 		</StackPanel>
-		<StackPanel Width="1440" Background="White" Height="50">
-			<TextBlock Name="error" IsVisible="False" Foreground="Red" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center">sdf</TextBlock>
-		</StackPanel>
-		
-	</StackPanel>
+	</ScrollViewer>
+	
 </Window>

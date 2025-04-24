@@ -6,9 +6,9 @@
         x:Class="DiplomTwo.LogIn"
 		Width="1440"
 		MinWidth="1000"
-		MinHeight="600"
+		MinHeight="600" Name="LogInIcon"
 		x:CompileBindings="False"
-        Title="LogIn">
+        Title="BookNest">
 	<Grid Background="#98A1FF">
 		<!-- Круги на фоне -->
 		<Ellipse Fill="#8B96FE" Width="250" Height="250" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30"/>
@@ -17,7 +17,7 @@
 		<Ellipse Fill="#8B96FE" Width="100" Height="100" Opacity="0.4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,60"/>
 
 		<!-- Белая панель -->
-		<Border Width="800" Height="400" Background="White" CornerRadius="20"
+		<Border Width="800" Height="450" Background="White" CornerRadius="20"
          HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20">
 			<StackPanel>
 				<!-- Заголовок -->
@@ -44,6 +44,7 @@
 					</Button>
 					
 				</StackPanel>
+				<Button Click="Button_Click_1" HorizontalAlignment="Center">Назад</Button>
 				<TextBlock Name="errorMessage" IsVisible="False" Foreground="Red" HorizontalAlignment="Center">Неверный Логин или Пароль! Попробуйте еще раз!</TextBlock>
 			</StackPanel>
 		</Border>

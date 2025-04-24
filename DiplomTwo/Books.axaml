@@ -7,7 +7,8 @@
 		x:CompileBindings="False"
 		Width="1440"
 	MinWidth="1440" MinHeight="600"
-        Title="Books">
+		Name="BooksIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">

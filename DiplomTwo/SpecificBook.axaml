@@ -4,7 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2675"
         x:Class="DiplomTwo.SpecificBook"
-        Title="SpecificBook">
+		Name="SpecificBookIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			

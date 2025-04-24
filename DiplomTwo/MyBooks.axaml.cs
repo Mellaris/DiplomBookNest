@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
+using System;
 using System.Linq;
 
 namespace DiplomTwo;
@@ -10,6 +12,11 @@ public partial class MyBooks : Window
     public MyBooks()
     {
         InitializeComponent();
+        try
+        {
+            MyBooksIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         LoadUserBooks();
     }
     private void LoadUserBooks()

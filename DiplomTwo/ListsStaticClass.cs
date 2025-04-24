@@ -18,6 +18,7 @@ namespace DiplomTwo
         public static List<Appauthor> listAllAppAuthors = new List<Appauthor>(); 
         public static List<Author> listAllAuthors = new List<Author>();
         public static List<Series> listAllSeries = new List<Series>();
+        public static List<BookChapter> listAllBookChapter = new List<BookChapter>();
 
         public static int currentAccount = -1;
     }

@@ -1,14 +1,22 @@
 using Avalonia.Controls;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
+using System;
 using System.Linq;
 
 namespace DiplomTwo;
 
 public partial class NewAddSeries : Window
 {
+    public bool SeriesAdded { get; private set; } = false;
     public NewAddSeries()
     {
         InitializeComponent();
+        try
+        {
+            NewAddSeriesIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
     }
 
@@ -40,6 +48,8 @@ public partial class NewAddSeries : Window
                 };
                 Baza.DbContext.Series.Add(seriesNew);
                 Baza.DbContext.SaveChanges();
+
+                SeriesAdded = true;
 
                 this.Close();
             }

@@ -6,7 +6,8 @@
         x:Class="DiplomTwo.AllAuthors"
 		Width="1440"
 		x:CompileBindings="False"
-        Title="AllAuthors">
+		Name="AllAuthorsIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel Height="745" Background="#E4EAFF">

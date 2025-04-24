@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using System.Linq;
 using DiplomTwo.Models;
 using System;
+using Avalonia.Media.Imaging;
 
 namespace DiplomTwo;
 
@@ -12,6 +13,11 @@ public partial class personalAccount : Window
     public personalAccount()
     {
         InitializeComponent();
+        try
+        {
+            personalAccountIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
         foreach(User user in ListsStaticClass.listAllUsers)
         {

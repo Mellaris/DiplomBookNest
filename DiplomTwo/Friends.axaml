@@ -6,7 +6,8 @@
         x:Class="DiplomTwo.Friends"
 		x:CompileBindings="False"
 		Width="1440"
-        Title="Friends">
+		Name="FriendsIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">

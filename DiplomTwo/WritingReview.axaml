@@ -4,7 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2735"
         x:Class="DiplomTwo.WritingReview"
-        Title="WritingReview">
+		Name="WritingReviewIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel >
 			<StackPanel Height="108" Background="#E4EAFF">

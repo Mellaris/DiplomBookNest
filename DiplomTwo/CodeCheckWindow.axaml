@@ -6,7 +6,8 @@
         x:Class="DiplomTwo.CodeCheckWindow"
 		Width="750" Height="415"
 		CornerRadius="32"
-        Title="CodeCheckWindow">
+		Name="CodeCheckWindowIcon"
+        Title="BookNest">
 	<StackPanel>
 		<TextBlock Margin="0,40,0,0" FontSize="64" HorizontalAlignment="Center" Foreground="#7674CF">Проверка Кода</TextBlock>
 		<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Orientation="Horizontal">

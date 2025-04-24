@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using System.Linq;
 using DiplomTwo.Models;
 using System;
+using Avalonia.Media.Imaging;
 
 namespace DiplomTwo;
 
@@ -13,6 +14,11 @@ public partial class LogIn : Window
     public LogIn()
     {
         InitializeComponent();
+        try
+        {
+            LogInIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         SpisokAllUsers();
     }
     private void SpisokAllUsers()
@@ -72,6 +78,12 @@ public partial class LogIn : Window
     private void RegistrNewAcc(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         new Registration().Show();
+        Close();
+    }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
         Close();
     }
 }

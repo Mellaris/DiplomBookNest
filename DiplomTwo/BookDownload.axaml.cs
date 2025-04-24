@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ public partial class BookDownload : Window
     public BookDownload()
     {
         InitializeComponent();
+        try
+        {
+            BookDownloadIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
         foreach (Series s in ListsStaticClass.listAllSeries)
         {
@@ -152,12 +158,32 @@ public partial class BookDownload : Window
     }
     private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
-        helpCheck = 1;
-        selected = (sender as ComboBox).SelectedIndex;
+        var comboBox = sender as ComboBox;
+        if(comboBox?.SelectedItem is Series selectedSeries)
+        {
+            helpCheck = 1;
+            selected = selectedSeries.Id;
+        }
     }
-    private void OpenNewSeriesAdd(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private async void OpenNewSeriesAdd(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new NewAddSeries().ShowDialog(this);
+        var newSeriesWindow = new NewAddSeries();
+        await newSeriesWindow.ShowDialog(this);
+
+        if (newSeriesWindow.SeriesAdded)
+        {
+            seriesList.Clear();
+            boxForSeries.ItemsSource = seriesList.ToList();
+            CallBaza();
+            foreach (Series s in ListsStaticClass.listAllSeries)
+            {
+                if (s.UserId == ListsStaticClass.currentAccount)
+                {
+                    seriesList.Add(s);
+                }
+            }
+            boxForSeries.ItemsSource = seriesList.ToList();
+        }
     }
     private void MyAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

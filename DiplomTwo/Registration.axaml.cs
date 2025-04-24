@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
 using System;
 using System.Linq;
@@ -14,6 +15,11 @@ public partial class Registration : Window
     public Registration()
     {
         InitializeComponent();
+        try
+        {
+            RegistrationIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
     }
     private void NewUser(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

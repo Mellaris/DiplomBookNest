@@ -6,7 +6,8 @@
 		x:CompileBindings="False"
 		Width="1440"
         x:Class="DiplomTwo.MyBooks"
-        Title="MyBooks">
+		Name="MyBooksIcon"
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel Height="849" Background="#E4EAFF">

@@ -1,7 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,6 +21,11 @@ public partial class CodeCheckWindow : Window
     public CodeCheckWindow(int id, Window loginWindow)
     {
         InitializeComponent();
+        try
+        {
+            CodeCheckWindowIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         CallBaza();
         idUserCheck = id;
         this.loginWindow = loginWindow;
