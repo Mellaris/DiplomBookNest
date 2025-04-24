@@ -71,6 +71,7 @@ public partial class personalAccount : Window
                 WritingGoal = 0,
                 AvatarUrl = null,
                 WrittenBooksCount = 0,
+                RegistrationDate = DateTime.Now,
             };
             Baza.DbContext.Appauthors.Add(newAuthor);
             Baza.DbContext.SaveChanges();

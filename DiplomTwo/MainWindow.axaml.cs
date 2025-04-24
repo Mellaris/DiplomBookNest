@@ -4,6 +4,8 @@ using DiplomTwo.Models;
 using DiplomTwo.Context;
 using System.IO;
 using System.Collections.Generic;
+using Avalonia.Media.Imaging;
+using System;
 
 namespace DiplomTwo
 {
@@ -13,6 +15,11 @@ namespace DiplomTwo
         public MainWindow()
         {
             InitializeComponent();
+            try
+            {
+                Main.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+            }
+            catch { }
             CallBaza();
             SortForTopList();
         }
@@ -33,6 +40,9 @@ namespace DiplomTwo
                 CoverImage = book.CoverImage,
                 Synopsis = book.Synopsis,
                 Description = book.Description,
+                IsAuthorBook = book.IsAuthorBook,
+                Dateadd = book.Dateadd,
+                SeriesId = book.SeriesId,
             }).ToList();
         }
         private void SortForTopList()

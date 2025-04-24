@@ -12,6 +12,7 @@
     <None Remove="Imoges\angle-double-down-solid.png" />
     <None Remove="Imoges\angle-down.png" />
     <None Remove="Imoges\angle-right-solid.png" />
+    <None Remove="Imoges\arrow-left.png" />
     <None Remove="Imoges\award-solid.png" />
     <None Remove="Imoges\book-reader-solid.png" />
     <None Remove="Imoges\burn-solid.png" />
@@ -82,6 +83,8 @@
     <None Remove="PhotoForBook\Mihail_Lvovskij__V_moej_smerti_proshu_vinit_Klavu_K..jpg" />
     <None Remove="PhotoForBook\O._Genri__Dary_volhvov.jpg" />
     <None Remove="PhotoForBook\phGLcv6j-ipad.jpeg" />
+    <None Remove="PhotoForBook\photoCheck.png" />
+    <None Remove="PhotoForBook\PhotoCheck.png.png" />
     <None Remove="PhotoForBook\Pol_Linch__Blagodat.jpg" />
     <None Remove="PhotoForBook\rcNna0qA-ipad.jpeg" />
     <None Remove="PhotoForBook\tqntaAb7-ipad.jpeg" />
@@ -117,6 +120,7 @@
     <AvaloniaResource Include="Imoges\angle-double-down-solid.png" />
     <AvaloniaResource Include="Imoges\angle-down.png" />
     <AvaloniaResource Include="Imoges\angle-right-solid.png" />
+    <AvaloniaResource Include="Imoges\arrow-left.png" />
     <AvaloniaResource Include="Imoges\award-solid.png" />
     <AvaloniaResource Include="Imoges\book-reader-solid.png" />
     <AvaloniaResource Include="Imoges\burn-solid.png" />
@@ -187,6 +191,7 @@
     <AvaloniaResource Include="PhotoForBook\Mihail_Lvovskij__V_moej_smerti_proshu_vinit_Klavu_K..jpg" />
     <AvaloniaResource Include="PhotoForBook\O._Genri__Dary_volhvov.jpg" />
     <AvaloniaResource Include="PhotoForBook\phGLcv6j-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\PhotoCheck.png.png" />
     <AvaloniaResource Include="PhotoForBook\Pol_Linch__Blagodat.jpg" />
     <AvaloniaResource Include="PhotoForBook\rcNna0qA-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\tqntaAb7-ipad.jpeg" />

@@ -36,18 +36,18 @@
 						<Button Click="AddNewBook" Background="#EAF2FF">
 							<Image Source="\Imoges\Group 226.png"></Image>
 						</Button>
-						<ListBox Margin="69,0,0,0" Width="717" Height="163" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-             SelectionMode="Single" BorderThickness="0">
+						<ListBox Margin="69,0,0,0" Background="#EAF2FF" Name="myBooks" Width="717" Height="163" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
 							<ListBox.ItemsPanel>
 								<ItemsPanelTemplate>
-									<!-- Книги располагаются горизонтально -->
-									<StackPanel Orientation="Horizontal" />
+									<StackPanel Orientation="Horizontal"/>
 								</ItemsPanelTemplate>
 							</ListBox.ItemsPanel>
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<!-- Изображение книги -->
-									<Image  Width="163" Height="235" Margin="5" />
+									<StackPanel>
+										<Image Source="{Binding CoverBitmap}" Margin="5" Width="163" Height="155" />
+									</StackPanel>
+
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>

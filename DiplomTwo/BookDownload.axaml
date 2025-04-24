@@ -23,8 +23,13 @@
 			</Button>
 		</StackPanel>
 		<StackPanel Margin="0,5,0,0" Background="#9AC6FF" Height="5"></StackPanel>
+		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+			<Button Click="Back" Margin="0,25,20,0" VerticalAlignment="Center" Background="White" >
+				<Image Source="\Imoges\arrow-left.png"></Image>
+			</Button>
+			<TextBlock Margin="0,24,0,0" FontSize="64" Foreground="#108DE8" HorizontalAlignment="Center">Создай свою книгу</TextBlock>
 
-		<TextBlock Margin="0,24,0,0" FontSize="64" Foreground="#108DE8" HorizontalAlignment="Center">Создай свою книгу</TextBlock>
+		</StackPanel>
 
 		<StackPanel Margin="0,24,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 
@@ -53,7 +58,7 @@
 					<Border Background="#B1D3FF" CornerRadius="24" Width="325" Height="110">
 						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
 							<TextBlock VerticalAlignment="Center" Margin="0,0,0,0" Foreground="#0C5489" FontSize="24">Пример:</TextBlock>
-							<TextBlock Name="sizeText" VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">12 000</TextBlock>
+							<TextBlock Name="sizeText" VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">20 000</TextBlock>
 							<TextBlock VerticalAlignment="Center" Margin="12,3,0,0" FontSize="20" Foreground="#0C5489">слов</TextBlock>
 						</StackPanel>
 					</Border>
@@ -63,11 +68,11 @@
 			</Border>
 			<Border Margin="64,0,0,0" CornerRadius="24" Background="#E4EFFD" Width="618" Height="584">
 				<StackPanel>
-					<TextBox VerticalContentAlignment="Center" BorderBrush="#CDE2FD" Margin="0,28,0,0" Watermark="Название книги" Foreground="White" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
+					<TextBox Name="newTitle" VerticalContentAlignment="Center" BorderBrush="#CDE2FD" Margin="0,28,0,0" Watermark="Название книги" Foreground="White" CornerRadius="12" Background="#CDE2FD" Width="554" Height="36"></TextBox>
 
 					<TextBlock Margin="32,20,0,0" Foreground="#0C5489" FontSize="24">Серия</TextBlock>
 					<StackPanel Margin="32,8,0,0" Orientation="Horizontal">
-						<ComboBox Name="boxForSeries" Width="180">
+						<ComboBox SelectionChanged="ComboBox_SelectionChanged" Name="boxForSeries" Width="180">
 							<ComboBox.ItemTemplate>
 								<DataTemplate>
 									<TextBlock Text="{Binding Title}"></TextBlock>
@@ -88,8 +93,8 @@
 							</Button>
 						</StackPanel>
 						<StackPanel Margin="32,0,0,0">
-							<TextBox Watermark="Синопсис (не больше 200 слов)" BorderBrush="#E4EFFD" Width="358" Height="83" Background="#CDE2FD"></TextBox>
-							<TextBox Watermark="Описание" BorderBrush="#E4EFFD" Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
+							<TextBox Name="newSinopsis" Watermark="Синопсис (не больше 200 слов)" BorderBrush="#E4EFFD" Width="358" Height="83" Background="#CDE2FD"></TextBox>
+							<TextBox Name="newDescription" Watermark="Описание" BorderBrush="#E4EFFD" Margin="0,16,0,0" Width="358" Height="161" Background="#CDE2FD"></TextBox>
 						</StackPanel>
 					</StackPanel>
 
@@ -103,7 +108,7 @@
 			
 		</StackPanel>
 		<StackPanel Width="1440" Background="White" Height="50">
-			
+			<TextBlock Name="error" IsVisible="False" Foreground="Red" FontSize="24" Margin="0,20,0,0" HorizontalAlignment="Center">sdf</TextBlock>
 		</StackPanel>
 		
 	</StackPanel>

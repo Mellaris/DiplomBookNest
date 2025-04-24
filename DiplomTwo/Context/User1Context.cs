@@ -36,6 +36,8 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<Bookreview> Bookreviews { get; set; }
 
+    public virtual DbSet<ElectronicBooksInfo> ElectronicBooksInfos { get; set; }
+
     public virtual DbSet<Friend> Friends { get; set; }
 
     public virtual DbSet<Gender> Genders { get; set; }
@@ -67,6 +69,8 @@ public partial class User1Context : DbContext
     public virtual DbSet<Userachievement> Userachievements { get; set; }
 
     public virtual DbSet<VerificationCode> VerificationCodes { get; set; }
+
+    public virtual DbSet<WritingStatus> WritingStatuses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -101,6 +105,9 @@ public partial class User1Context : DbContext
                 .HasColumnName("id");
             entity.Property(e => e.AvatarUrl).HasColumnName("avatar_url");
             entity.Property(e => e.ProfileDescription).HasColumnName("profile_description");
+            entity.Property(e => e.RegistrationDate)
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("registration_date");
             entity.Property(e => e.WritingGoal)
                 .HasDefaultValue(0)
                 .HasColumnName("writing_goal");
@@ -139,6 +146,7 @@ public partial class User1Context : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BookId).HasColumnName("book_id");
             entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.Image).HasColumnName("image");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Personality).HasColumnName("personality");
 
@@ -218,6 +226,7 @@ public partial class User1Context : DbContext
                 .HasDefaultValueSql("now()")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("updated_at");
+            entity.Property(e => e.WordCount).HasColumnName("word_count");
 
             entity.HasOne(d => d.Book).WithMany(p => p.BookChapters)
                 .HasForeignKey(d => d.BookId)
@@ -295,6 +304,35 @@ public partial class User1Context : DbContext
                 .HasForeignKey(d => d.ReaderId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("bookreviews_reader_id_fkey");
+        });
+
+        modelBuilder.Entity<ElectronicBooksInfo>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("electronic_books_info_pkey");
+
+            entity.ToTable("electronic_books_info");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.ChapterCount).HasColumnName("chapter_count");
+            entity.Property(e => e.CurrentWordCount).HasColumnName("current_word_count");
+            entity.Property(e => e.EndDate).HasColumnName("end_date");
+            entity.Property(e => e.EstimatedPageCount).HasColumnName("estimated_page_count");
+            entity.Property(e => e.IsPublic)
+                .HasDefaultValue(false)
+                .HasColumnName("is_public");
+            entity.Property(e => e.StartDate).HasColumnName("start_date");
+            entity.Property(e => e.StatusId).HasColumnName("status_id");
+            entity.Property(e => e.TargetWordCount).HasColumnName("target_word_count");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.ElectronicBooksInfos)
+                .HasForeignKey(d => d.BookId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("electronic_books_info_book_id_fkey");
+
+            entity.HasOne(d => d.Status).WithMany(p => p.ElectronicBooksInfos)
+                .HasForeignKey(d => d.StatusId)
+                .HasConstraintName("electronic_books_info_status_id_fkey");
         });
 
         modelBuilder.Entity<Friend>(entity =>
@@ -642,6 +680,18 @@ public partial class User1Context : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.VerificationCodes)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("fk_user");
+        });
+
+        modelBuilder.Entity<WritingStatus>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("writing_statuses_pkey");
+
+            entity.ToTable("writing_statuses");
+
+            entity.HasIndex(e => e.Name, "writing_statuses_name_key").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name).HasColumnName("name");
         });
 
         OnModelCreatingPartial(modelBuilder);

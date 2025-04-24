@@ -15,5 +15,7 @@ public partial class AuthorBookCharacter
 
     public string? Personality { get; set; }
 
+    public string? Image { get; set; }
+
     public virtual Book? Book { get; set; }
 }

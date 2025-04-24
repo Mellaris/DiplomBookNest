@@ -19,5 +19,7 @@ public partial class BookChapter
 
     public DateTime? UpdatedAt { get; set; }
 
+    public int? WordCount { get; set; }
+
     public virtual Book? Book { get; set; }
 }

@@ -6,8 +6,9 @@
         x:Class="DiplomTwo.MainWindow"
 		x:CompileBindings="False"
 		Width="1440"
+		Name="Main"
 		MinWidth="1440" MinHeight="600"
-        Title="DiplomTwo">
+        Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
 			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
