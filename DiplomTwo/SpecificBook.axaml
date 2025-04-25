@@ -5,6 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2675"
         x:Class="DiplomTwo.SpecificBook"
 		Name="SpecificBookIcon"
+		Width="1440"
+		WindowState="Maximized"
         Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>

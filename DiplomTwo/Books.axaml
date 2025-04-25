@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.Books"
 		x:CompileBindings="False"
 		Width="1440"
+		WindowState="Maximized"
 	MinWidth="1440" MinHeight="600"
 		Name="BooksIcon"
         Title="BookNest">
@@ -63,9 +64,9 @@
 
 				<ComboBox SelectionChanged="NewRatingSelection" PlaceholderText="Рейтинг" PlaceholderForeground="#042A99" FontSize="26" Foreground="#042A99" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
 					<ComboBox.Items>По возрастанию</ComboBox.Items>
-					<ComboBox.Items>По уьыванию</ComboBox.Items>
+					<ComboBox.Items>По убыванию</ComboBox.Items>
 				</ComboBox>
-				<TextBox Margin="264,0,0,0" FontSize="26" Foreground="#042A99"  CornerRadius="12" Width="517" Height="46" Background="#E4EFFD"></TextBox>
+				<TextBox TextChanged="TextBox_TextChanged" Margin="264,0,0,0" FontSize="26" Foreground="#042A99"  CornerRadius="12" Width="517" Height="46" Background="#E4EFFD"></TextBox>
 				
 			</StackPanel>
 
@@ -83,13 +84,13 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Width="163" Height="235" Source="{Binding CoverBitmap}"/>
                     <StackPanel Margin="10,0,0,0" VerticalAlignment="Top">
-                        <TextBlock Foreground="#042A99" FontSize="24" Text="{Binding Title}" Width="358" TextWrapping="Wrap"/>
-                        <TextBlock MaxHeight="240" Width="340" TextWrapping="Wrap" FontSize="16" Foreground="#637BC0" Text="{Binding Synopsis}"/>
+                        <TextBlock Margin="15,0,0,0" Foreground="#042A99" FontSize="24" Text="{Binding Title}" Width="358" TextWrapping="Wrap"/>
+                        <TextBlock Margin="0,14,0,0" Height="240" MaxHeight="240" Width="340" TextWrapping="Wrap" FontSize="16" Foreground="#637BC0" Text="{Binding Synopsis}"/>
                         <StackPanel Margin="0,21,0,0" Orientation="Horizontal">
                             <Image Margin="0,0,5,0" Source="\Imoges\Star 7.png"/>
                             <TextBlock FontSize="32" Foreground="#2344A6" Text="{Binding Rating}"/>
                         </StackPanel>
-                        <Button Margin="0,10,0,0" Width="100" Height="32">
+                        <Button Click="OpenSelectBook" Tag="{Binding Id}" Margin="0,10,0,0" Width="100" Height="32">
                             <TextBlock Text="Открыть" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>

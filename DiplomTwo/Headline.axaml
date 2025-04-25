@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2947"
         x:Class="DiplomTwo.Headline"
 		x:CompileBindings="False"
+		WindowState="Maximized"
   Width="1440" Name="HeadlineIcon"
         Title="BookNest">
 	<ScrollViewer>

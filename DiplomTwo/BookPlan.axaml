@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.BookPlan"
 		Width="1440"
 		x:CompileBindings="False"
+		WindowState="Maximized"
 		Name="BookPlanIcon"
         Title="BookNest">
 	<ScrollViewer>

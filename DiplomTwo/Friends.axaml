@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.Friends"
 		x:CompileBindings="False"
 		Width="1440"
+		WindowState="Maximized"
 		Name="FriendsIcon"
         Title="BookNest">
 	<ScrollViewer>

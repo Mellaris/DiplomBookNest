@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.SelectedUser"
 		Width="1440"
 		Name="SelectedUserIcon"
+		WindowState="Maximized"
         Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>

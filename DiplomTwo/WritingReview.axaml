@@ -5,6 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2735"
         x:Class="DiplomTwo.WritingReview"
 		Name="WritingReviewIcon"
+		Width="1440"
+		WindowState="Maximized"
         Title="BookNest">
 	<ScrollViewer>
 		<StackPanel >

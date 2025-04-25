@@ -7,6 +7,7 @@
 		x:CompileBindings="False"
 		Width="1440"
 		Name="Main"
+		WindowState="Maximized"
 		MinWidth="1440" MinHeight="600"
         Title="BookNest">
 	<ScrollViewer>

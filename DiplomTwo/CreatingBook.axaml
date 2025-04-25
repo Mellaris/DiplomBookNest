@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1935"
         x:Class="DiplomTwo.CreatingBook"
 		Width="1440"
+		WindowState="Maximized"
 		x:CompileBindings="False"
 		Name="CreatingBookIcon"
         Title="BookNest">
@@ -66,8 +67,8 @@
 			</StackPanel>
 			<StackPanel Name="panelForText" IsVisible="False">
 				<TextBox IsEnabled="False" Name="textForTitle" Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBox>
-				<Border Margin="0,32,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="658">
-					<TextBox TextChanged="TextBox_TextChanged" Name="textForContent" IsEnabled="False" FontSize="21" BorderThickness="5" BorderBrush="#EAF2FF" CornerRadius="8" Width="1140" Height="658"></TextBox>
+				<Border Margin="0,32,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="558">
+					<TextBox AcceptsReturn="True" TextChanged="TextBox_TextChanged" Name="textForContent" IsEnabled="False" FontSize="21" BorderThickness="5" BorderBrush="#EAF2FF" TextWrapping="Wrap" CornerRadius="8" Width="1140" Height="558"></TextBox>
 				</Border>
 				<StackPanel Margin="160,24,0,0" Orientation="Horizontal">
 					<Button Click="UpdateOurChapter" FontSize="24" Background="#EAF2FF">Сохранить</Button>

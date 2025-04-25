@@ -7,6 +7,7 @@
 		Width="1440"
 		MinWidth="1000"
 		MinHeight="600" Name="LogInIcon"
+		WindowState="Maximized"
 		x:CompileBindings="False"
         Title="BookNest">
 	<Grid Background="#98A1FF">

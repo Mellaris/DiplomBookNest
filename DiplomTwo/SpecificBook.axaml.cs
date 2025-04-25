@@ -11,6 +11,10 @@ public partial class SpecificBook : Window
     public SpecificBook()
     {
         InitializeComponent();
+    }
+    public SpecificBook(int idForBook)
+    {
+        InitializeComponent();
         try
         {
             SpecificBookIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));

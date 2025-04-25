@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.AllAuthors"
 		Width="1440"
 		x:CompileBindings="False"
+		WindowState="Maximized"
 		Name="AllAuthorsIcon"
         Title="BookNest">
 	<ScrollViewer>

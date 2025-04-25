@@ -6,6 +6,7 @@
 		x:CompileBindings="False"
 		Width="1440"
         x:Class="DiplomTwo.MyBooks"
+		WindowState="Maximized"
 		Name="MyBooksIcon"
         Title="BookNest">
 	<ScrollViewer>

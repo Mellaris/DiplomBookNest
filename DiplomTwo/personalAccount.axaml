@@ -6,6 +6,7 @@
         x:Class="DiplomTwo.personalAccount"
 		x:CompileBindings="False" 
 		Width="1440"
+		WindowState="Maximized"
 		Name="personalAccountIcon"
         Title="BookNest">
 	<ScrollViewer>
