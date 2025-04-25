@@ -16,10 +16,10 @@
 
 
 					<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
-						<Button Height="40" Background="White" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
-						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
-						<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
-						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
+						<Button Click="Back" Height="40" Background="White" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
+						<Button Click="OpenBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
+						<Button Click="OpenAuthors" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
+						<Button Click="OpenNews" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
 					</StackPanel>
 
 					<Button  Background="White" Margin="297,28,0,0">
@@ -31,23 +31,23 @@
 
 			<StackPanel Margin="0,59,0,0" Orientation="Horizontal" Width="1140" Height="690" HorizontalAlignment="Center">
 				<StackPanel>
-					<Image Width="395" Height="520" Source="D:\Work\DiplomTwo\DiplomTwo\Imoges\image 13.png"></Image>
+					<Image Name="imageForBook" Width="395" Height="520" Source="\Imoges\image 13.png"></Image>
 					<Button Margin="49,32,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59"></Button>
 					<Button Margin="49,20,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59"></Button>
 				</StackPanel>
 				
 				<StackPanel Margin="56,0,0,0">
 					<StackPanel Orientation="Horizontal">
-						<TextBlock FontSize="64" Foreground="#042A99">Первый раунд</TextBlock>
-						<TextBlock Margin="104,0,0,0" VerticalAlignment="Center" FontSize="36" Foreground="#042A99">5</TextBlock>
+						<TextBlock TextWrapping="Wrap" MaxHeight="250" Width="530" Name="titleForBook" FontSize="52" Foreground="#042A99">Двойной латте в дождливый день</TextBlock>
+						<TextBlock Name="ratingForBook" Margin="104,0,0,0" VerticalAlignment="Center" FontSize="34" Foreground="#042A99">5</TextBlock>
 					</StackPanel>
-					<TextBlock Margin="0,2,0,0" FontSize="32" Foreground="#3250A6">Грейс Райли</TextBlock>
-					<Border Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="301">
+					<TextBlock Name="authorForBook" Margin="0,2,0,0" FontSize="32" Foreground="#3250A6">Грейс Райли</TextBlock>
+					<Border HorizontalAlignment="Left" Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="301">
 						
-							<TextBlock Foreground="#3250A6" FontSize="20" Margin="18,20,0,0" HorizontalAlignment="Left" Width="626" TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
+							<TextBlock Name="contetForBook" Foreground="#3250A6" FontSize="20" Margin="18,20,0,0" HorizontalAlignment="Left" Width="626" TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
 						
 					</Border>
-					<Border Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">
+					<Border HorizontalAlignment="Left" Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock></TextBlock>
 							<TextBlock></TextBlock>
@@ -57,35 +57,36 @@
 					</Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Margin="0,24,0,0" Foreground="#042A99" FontSize="20">Количество страниц:</TextBlock>
-						<TextBlock></TextBlock>
+						<TextBlock Margin="10,24,0,0" Foreground="#042A99" FontSize="20" Name="colPagesForBook"></TextBlock>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Margin="0,24,0,0" Foreground="#042A99" FontSize="20">Ограничение:</TextBlock>
-						<TextBlock></TextBlock>
+						<TextBlock Margin="10,24,0,0" Foreground="#042A99" FontSize="20" Name="ageForBook"></TextBlock>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Margin="0,24,0,0" Foreground="#042A99" FontSize="20">Серия:</TextBlock>
-						<TextBlock></TextBlock>
-						<TextBlock></TextBlock>
+						<TextBlock Margin="30,24,0,0" Foreground="#042A99" FontSize="20" Name="nameSeriesForBook"></TextBlock>
+						<TextBlock Name="numberForBook" Margin="30,24,0,0" Foreground="#042A99" FontSize="20"></TextBlock>
+						<TextBlock  Margin="30,24,0,0" Foreground="#042A99" FontSize="20" VerticalAlignment="Bottom">Книга</TextBlock>
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
 
 			<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Width="1141" Height="125" Orientation="Horizontal">
 				<StackPanel  Width="261" Height="125" Background="#E6ECFF">
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
+					<TextBlock Name="kolReadForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
 					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Прочитали</TextBlock>
 				</StackPanel>
 				<StackPanel Margin="33,0,0,0" Width="261" Height="125" Background="#E6ECFF">
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
+					<TextBlock Name="kolPlanForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
 					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Планируют</TextBlock>
 				</StackPanel>
 				<StackPanel  Margin="33,0,0,0" Width="261" Height="125" Background="#E6ECFF">
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
+					<TextBlock Name="kolRewForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
 					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Рецензий</TextBlock>
 				</StackPanel>
 				<StackPanel  Margin="33,0,0,0" Width="261" Height="125" Background="#E6ECFF">
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
+					<TextBlock Name="kolKVForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
 					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">КВ 2025</TextBlock>
 				</StackPanel>
 			</StackPanel>
