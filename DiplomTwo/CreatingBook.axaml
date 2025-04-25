@@ -37,7 +37,7 @@
 								<TextBlock FontSize="24" Foreground="#108DE8">Окружающий мир</TextBlock>
 							</Button>
 							<Button Background="White">
-								<TextBlock FontSize="24" Foreground="#108DE8">Заметки</TextBlock>
+								<TextBlock FontSize="24" Foreground="#108DE8">Настройки</TextBlock>
 							</Button>
 						</StackPanel>
 					</StackPanel>
@@ -49,10 +49,10 @@
 							<Border CornerRadius="8" Width="813" Height="80" Background="#F6F7FF">
 								<StackPanel Orientation="Horizontal">
 									<TextBlock Text="{Binding Title}"></TextBlock>
-									<Button Margin="87,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+									<Button Tag="{Binding Id}" Click="OpenOurChapter" Margin="87,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Открыть</TextBlock>
 									</Button>
-									<Button Margin="32,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+									<Button Click="DeleteThisChapter" Tag="{Binding Id}" Margin="32,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Удалить</TextBlock>
 									</Button>
 								</StackPanel>
@@ -64,24 +64,26 @@
 					<TextBlock FontSize="24" Foreground="#9AC6FF" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить главу</TextBlock>
 				</Button>
 			</StackPanel>
+			<StackPanel Name="panelForText" IsVisible="False">
+				<TextBox IsEnabled="False" Name="textForTitle" Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBox>
+				<Border Margin="0,32,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="658">
+					<TextBox TextChanged="TextBox_TextChanged" Name="textForContent" IsEnabled="False" FontSize="21" BorderThickness="5" BorderBrush="#EAF2FF" CornerRadius="8" Width="1140" Height="658"></TextBox>
+				</Border>
+				<StackPanel Margin="160,24,0,0" Orientation="Horizontal">
+					<Button Click="UpdateOurChapter" FontSize="24" Background="#EAF2FF">Сохранить</Button>
+					<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Дата последнего обновления:</TextBlock>
+					<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="dateUpdateLast"></TextBlock>
 
-			<TextBox IsEnabled="False" Name="textForTitle" Margin="0,32,0,0" HorizontalAlignment="Center" Foreground="#0C5489" FontSize="36">Название главы</TextBox>
-			<Border Margin="0,24,0,0" CornerRadius="8" BorderBrush="#EAF2FF" Width="1140" Height="758">
-				<TextBox Name="textForContent" IsEnabled="False" FontSize="21" BorderThickness="5" BorderBrush="#EAF2FF" CornerRadius="8" Width="1140" Height="758"></TextBox>
-			</Border>
-			<StackPanel Margin="160,24,0,0" Orientation="Horizontal">
-				<Button FontSize="24" Background="#EAF2FF">Сохранить</Button>
-				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Дата последнего обновления:</TextBlock>
-				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="dateUpdateLast"></TextBlock>
-				
+
+				</StackPanel>
+				<StackPanel Margin="142,16,0,0" Orientation="Horizontal">
+					<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество слов:</TextBlock>
+					<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countWordLast"></TextBlock>
+					<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество страниц:</TextBlock>
+					<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countPageLast"></TextBlock>
+				</StackPanel>
+			</StackPanel>
 			
-			</StackPanel>
-			<StackPanel Margin="142,16,0,0" Orientation="Horizontal">
-				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество слов:</TextBlock>
-				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countWordLast"></TextBlock>
-				<TextBlock Foreground="#0C5489" Margin="20,0,0,0" FontSize="24" VerticalAlignment="Center">Количество страниц:</TextBlock>
-				<TextBlock Foreground="#0C5489" Margin="10,0,0,0" FontSize="24" VerticalAlignment="Center" Name="countPageLast"></TextBlock>
-			</StackPanel>
 		</StackPanel>
 	</ScrollViewer>
 </Window>
