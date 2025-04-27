@@ -36,6 +36,8 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<Bookreview> Bookreviews { get; set; }
 
+    public virtual DbSet<Comment> Comments { get; set; }
+
     public virtual DbSet<ElectronicBooksInfo> ElectronicBooksInfos { get; set; }
 
     public virtual DbSet<Friend> Friends { get; set; }
@@ -304,6 +306,29 @@ public partial class User1Context : DbContext
                 .HasForeignKey(d => d.ReaderId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("bookreviews_reader_id_fkey");
+        });
+
+        modelBuilder.Entity<Comment>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("comments_pkey");
+
+            entity.ToTable("comments");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.ChapterId).HasColumnName("chapter_id");
+            entity.Property(e => e.Content).HasColumnName("content");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("created_at");
+            entity.Property(e => e.ReaderId).HasColumnName("reader_id");
+
+            entity.HasOne(d => d.Chapter).WithMany(p => p.Comments)
+                .HasForeignKey(d => d.ChapterId)
+                .HasConstraintName("comments_chapter_id_fkey");
+
+            entity.HasOne(d => d.Reader).WithMany(p => p.Comments)
+                .HasForeignKey(d => d.ReaderId)
+                .HasConstraintName("comments_reader_id_fkey");
         });
 
         modelBuilder.Entity<ElectronicBooksInfo>(entity =>

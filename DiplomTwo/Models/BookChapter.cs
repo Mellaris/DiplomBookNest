@@ -13,7 +13,7 @@ public partial class BookChapter
 
     public string Title { get; set; } = null!;
 
-    public string Content { get; set; } = null!;
+    public string? Content { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -22,4 +22,6 @@ public partial class BookChapter
     public int? WordCount { get; set; }
 
     public virtual Book? Book { get; set; }
+
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }
