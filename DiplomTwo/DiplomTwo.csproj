@@ -16,6 +16,8 @@
     <None Remove="Imoges\award-solid.png" />
     <None Remove="Imoges\book-reader-solid.png" />
     <None Remove="Imoges\burn-solid.png" />
+    <None Remove="Imoges\comment-alt-block.png" />
+    <None Remove="Imoges\comment-alt-check.png" />
     <None Remove="Imoges\Group 226.png" />
     <None Remove="Imoges\Group 229.png" />
     <None Remove="Imoges\Group 242.png" />
@@ -124,6 +126,8 @@
     <AvaloniaResource Include="Imoges\award-solid.png" />
     <AvaloniaResource Include="Imoges\book-reader-solid.png" />
     <AvaloniaResource Include="Imoges\burn-solid.png" />
+    <AvaloniaResource Include="Imoges\comment-alt-block.png" />
+    <AvaloniaResource Include="Imoges\comment-alt-check.png" />
     <AvaloniaResource Include="Imoges\Group 226.png" />
     <AvaloniaResource Include="Imoges\Group 229.png" />
     <AvaloniaResource Include="Imoges\Group 242.png" />

@@ -33,7 +33,9 @@
 				<StackPanel>
 					<Image Name="imageForBook" Width="395" Height="520" Source="\Imoges\image 13.png"></Image>
 					<Button Margin="49,32,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59"></Button>
-					<Button Margin="49,20,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59"></Button>
+					<Button Click="OpenReadABook" IsVisible="False" Name="readABook" Margin="49,20,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="#042A99">Читать</TextBlock>
+					</Button>
 				</StackPanel>
 				
 				<StackPanel Margin="56,0,0,0">

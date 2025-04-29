@@ -20,6 +20,7 @@ namespace DiplomTwo
         public static List<Series> listAllSeries = new List<Series>();
         public static List<BookChapter> listAllBookChapter = new List<BookChapter>();
         public static List<BookGenre> listAllBookGenres = new List<BookGenre>();
+        public static List<Comment> listAllComment = new List<Comment>();
 
         public static int currentAccount = -1;
     }

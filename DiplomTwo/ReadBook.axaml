@@ -1,0 +1,107 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="926"
+        x:Class="DiplomTwo.ReadBook"
+		 MinWidth="1024" MaxWidth="1920"
+        MinHeight="700" MaxHeight="926"
+        Width="1440" Height="926"
+		Name="ReadBookIcon"
+        WindowState="Maximized"
+		x:CompileBindings="False"
+        Title="BookNest">
+	<ScrollViewer>
+		<DockPanel LastChildFill="True">
+
+			<!-- Верхняя панель меню -->
+			<Border DockPanel.Dock="Top" Height="120" Background="White">
+				<StackPanel>
+					<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,16,0,0" Orientation="Horizontal">
+						<!-- Логотип -->
+						<TextBlock Foreground="#637BC0" FontSize="64" Text="BookNest"/>
+
+						<!-- Кнопки меню -->
+						<StackPanel Orientation="Horizontal" Background="White"
+									VerticalAlignment="Top" Margin="127,34,0,0" Height="60" Width="382">
+							<Button Click="GoToHome" Background="White" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Дом"/>
+							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
+							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Авторы"/>
+							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Новости"/>
+						</StackPanel>
+
+						<!-- Аватар -->
+						<Button Click="MyAccount" Background="White" Margin="297,28,0,0">
+							<Image Source="\Imoges\userPurple.png" Width="45" Height="35"/>
+						</Button>
+
+					</StackPanel>
+					<StackPanel Background="#D7D7D7" Height="4">
+					</StackPanel>
+				</StackPanel>
+				
+				
+			</Border>
+			
+			<!-- Контентное тело -->
+			<Grid Margin="0,10,20,10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="336"/>
+					<ColumnDefinition Width="*" MinWidth="300"/>
+					<ColumnDefinition Width="336"/>
+				</Grid.ColumnDefinitions>
+
+				<!-- Левая панель: главы -->
+				<StackPanel Grid.Column="0" Margin="0,40,0,0">
+					<Border Margin="24,0,0,0" HorizontalAlignment="Left" CornerRadius="12" Width="189" Height="50" Background="#506AB8">
+						<TextBlock FontSize="24" Foreground="#FFFFFD" VerticalAlignment="Center" HorizontalAlignment="Center">Навигация</TextBlock>
+					</Border>
+					<TextBlock Foreground="#042A99" Text="Главы" FontSize="40" Margin="24,40,0,0"/>
+					<ListBox Background="White" SelectionChanged="ListBox_SelectionChanged" Name="AllChapter" Margin="0,18,0,0" Width="336" Height="496">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel VerticalAlignment="Center" Background="#D7D7D7" Width="336" Height="52">
+									<TextBlock Text="{Binding Title}" Margin="25,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#3151AD"></TextBlock>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+
+				<!-- Центральная панель: текст главы -->
+				<StackPanel Margin="32,72,0,0" Grid.Column="1" HorizontalAlignment="Center">
+					<TextBlock Name="titleChapter" Foreground="#042A99" Text="Заголовок главы" FontSize="48" Margin="0,0,0,27"/>
+					<ScrollViewer Height="629" Width="704">
+						<TextBlock Name="contentChapter" Foreground="#1A1A1A" TextWrapping="Wrap"
+								   FontSize="20"
+								   Width="704"
+								   Text="Здесь текст главы..."/>
+					</ScrollViewer>
+				</StackPanel>
+
+				<!-- Правая панель: комментарии -->
+				<StackPanel Grid.Column="2" Margin="20,50,0,0">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Foreground="#506AB8" Text="Комментарии" FontSize="24" Margin="0,0,0,43"/>
+						<Button Margin="20,0,0,40" Background="White">
+							<Image Source="\Imoges\comment-alt-block.png"></Image>
+						</Button>
+						<Button Margin="10,0,0,40" Background="White">
+							<Image Source="\Imoges\comment-alt-check.png"></Image>
+						</Button>
+					</StackPanel>
+					<ListBox Background="White" Name="AllComment" Width="297" Height="531">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Background="#D7D7D7" Margin="0,0,0,18" Height="165" Width="297">
+									<TextBlock Text="{Binding Content}"></TextBlock>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<TextBox Foreground="#2344A6" BorderBrush="#5974C0" CornerRadius="12" Width="273" Height="38" Margin="0,90,0,27" VerticalContentAlignment="Center" FontSize="13" Watermark="Оставьте комментарий..."/>
+				</StackPanel>
+			</Grid>
+		</DockPanel>
+	</ScrollViewer>
+</Window>

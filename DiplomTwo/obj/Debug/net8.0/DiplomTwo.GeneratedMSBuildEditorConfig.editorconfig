@@ -53,6 +53,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Work/DiplomTwo/DiplomTwo/CreatingBook.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Work/DiplomTwo/DiplomTwo/ErrorReport.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Work/DiplomTwo/DiplomTwo/Friends.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -72,6 +75,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Work/DiplomTwo/DiplomTwo/personalAccount.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Work/DiplomTwo/DiplomTwo/ReadBook.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Work/DiplomTwo/DiplomTwo/Registration.axaml]

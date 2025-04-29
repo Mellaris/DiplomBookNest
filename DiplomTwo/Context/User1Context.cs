@@ -213,8 +213,6 @@ public partial class User1Context : DbContext
 
             entity.ToTable("book_chapters");
 
-            entity.HasIndex(e => e.ChapterNumber, "book_chapters_chapter_number_key").IsUnique();
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BookId).HasColumnName("book_id");
             entity.Property(e => e.ChapterNumber).HasColumnName("chapter_number");

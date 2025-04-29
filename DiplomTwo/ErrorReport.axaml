@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="520" d:DesignHeight="325"
+        x:Class="DiplomTwo.ErrorReport"
+		Width="520" Height="325"
+		MinHeight="325" MaxHeight="325"
+		MinWidth="520" MaxWidth="520"
+		Name="ErrorReportIcon"
+        Title="ErrorReport">
+	
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="429" Height="248" Background="#E6ECFF">
+			<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">Ошибка!</TextBlock>
+			<TextBlock Name="error" TextWrapping="Wrap" Margin="0,37,0,0" FontSize="16" Width="257" HorizontalAlignment="Center"></TextBlock>
+		</StackPanel>
+	
+</Window>

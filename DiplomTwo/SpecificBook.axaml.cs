@@ -10,6 +10,7 @@ namespace DiplomTwo;
 
 public partial class SpecificBook : Window
 {
+    private int idThisBook;
     public SpecificBook()
     {
         InitializeComponent();
@@ -36,9 +37,15 @@ public partial class SpecificBook : Window
                 kolReadForBook.Text = book.Kolread.ToString();
                 kolPlanForBook.Text = book.Kolplan.ToString();
                 kolRewForBook.Text = book.Kolrev.ToString();
+                if(book.IsAuthorBook == true)
+                {
+                    readABook.IsVisible = true;
+                }
                 break;
             }
         }
+        idThisBook = idForBook;
+        
     }
     private void CallBaza()
     {
@@ -94,5 +101,19 @@ public partial class SpecificBook : Window
     {
         new Headline().Show();
         Close();
+    }
+
+    private void OpenReadABook(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if(ListsStaticClass.currentAccount != -1)
+        {
+            new ReadBook(idThisBook).Show();
+            Close();
+        }
+        else
+        {
+
+        }
+
     }
 }
