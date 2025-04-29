@@ -119,18 +119,19 @@
 
 						<Image Width="35" Height="27" Source="\Imoges\StrelkaLeft.png"></Image>
 						<!-- ListBox с горизонтальной прокруткой -->
-						<ListBox Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+						<ListBox Name="myLoveBook" Width="945" Height="236" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
              SelectionMode="Single" BorderThickness="0">
 							<ListBox.ItemsPanel>
 								<ItemsPanelTemplate>
-									<!-- Книги располагаются горизонтально -->
-									<StackPanel Orientation="Horizontal" />
+									<StackPanel Orientation="Horizontal"/>
 								</ItemsPanelTemplate>
 							</ListBox.ItemsPanel>
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<!-- Изображение книги -->
-									<Image  Width="163" Height="235" Margin="5" />
+									<StackPanel>
+										<Image Source="{Binding CoverBitmap}" Width="163" Height="235" />
+									</StackPanel>
+
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>

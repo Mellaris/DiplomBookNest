@@ -5,11 +5,13 @@ using System.Linq;
 using DiplomTwo.Models;
 using System;
 using Avalonia.Media.Imaging;
+using System.Collections.Generic;
 
 namespace DiplomTwo;
 
 public partial class personalAccount : Window
 {
+    private List<Personallibrary> personallibrarySort = new List<Personallibrary>();
     public personalAccount()
     {
         InitializeComponent();
@@ -41,6 +43,27 @@ public partial class personalAccount : Window
                         pl.DateAdd.HasValue &&
                         pl.DateAdd.Value.Year == currentYear);
         sumThisYear.Text = booksCount.ToString();
+        SortLoveBook();
+    }
+    private void SortLoveBook()
+    {
+        foreach(Personallibrary personallibrary in ListsStaticClass.listAllPersonallLibrary)
+        {
+            if(ListsStaticClass.currentAccount == personallibrary.ReaderId && personallibrary.Rating == 5)
+            {
+               personallibrarySort.Add(personallibrary);
+            }
+        }
+        // Получаем ID книг
+        var lovedBookIds = personallibrarySort.Select(p => p.BookId).ToList();
+
+        // Находим книги по этим ID
+        var lovedBooks = ListsStaticClass.listAllBooks
+            .Where(book => lovedBookIds.Contains(book.Id))
+            .ToList();
+
+        // Устанавливаем в ListBox (предположим, что он называется loveBooksListBox)
+        myLoveBook.ItemsSource = lovedBooks.ToList();
     }
     private async void EditProfile(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
