@@ -39,6 +39,7 @@
     <None Remove="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <None Remove="Imoges\leftDubl.png" />
     <None Remove="Imoges\loveV.png" />
+    <None Remove="Imoges\message.png" />
     <None Remove="Imoges\multiracial-students-study-together-b 1.png" />
     <None Remove="Imoges\pen-solid.png" />
     <None Remove="Imoges\photoThreeBook.png" />
@@ -149,6 +150,7 @@
     <AvaloniaResource Include="Imoges\international-literacy-day-with-lots-books-b 1.png" />
     <AvaloniaResource Include="Imoges\leftDubl.png" />
     <AvaloniaResource Include="Imoges\loveV.png" />
+    <AvaloniaResource Include="Imoges\message.png" />
     <AvaloniaResource Include="Imoges\multiracial-students-study-together-b 1.png" />
     <AvaloniaResource Include="Imoges\pen-solid.png" />
     <AvaloniaResource Include="Imoges\photoThreeBook.png" />

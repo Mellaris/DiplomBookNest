@@ -13,6 +13,7 @@ public partial class ReadBook : Window
 {
     private List<BookChapter> bookChaptersThisBook = new List<BookChapter>();
     private List<Comment> commentsThisBook = new List<Comment>();
+    private int chapterIdThisBook = -1;
     public ReadBook()
     {
         InitializeComponent();
@@ -35,6 +36,41 @@ public partial class ReadBook : Window
         }
         AllChapter.ItemsSource = bookChaptersThisBook.ToList();
     }
+    private void AddNewComment(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if(chapterIdThisBook != -1)
+        {
+            if (!string.IsNullOrEmpty(textForComment.Text))
+            {
+                ListsStaticClass.listAllComment = ListsStaticClass.listAllComment.OrderBy(x => x.Id).ToList();
+                var newComment = new Comment
+                {
+                    Id = ListsStaticClass.listAllComment.LastOrDefault().Id + 1,
+                    ChapterId = chapterIdThisBook,
+                    ReaderId = ListsStaticClass.currentAccount,
+                    Content = textForComment.Text,
+                    CreatedAt = DateTime.Now,
+                };
+                Baza.DbContext.Comments.Add(newComment);
+                Baza.DbContext.SaveChanges();
+
+                CallBaza();
+                OpenAllComment(chapterIdThisBook);
+                textForComment.Text = null;
+            }
+            else
+            {
+                string error = "Вы должны что-нибудь написать, чтобы отправить комментарий!";
+                new ErrorReport(error).ShowDialog(this);
+            }
+        }
+        else
+        {
+            string error = "Вы должны выбрать главу, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
+        }
+       
+    }
     private void ListBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
         if(AllChapter.SelectedItem != null)
@@ -42,13 +78,27 @@ public partial class ReadBook : Window
             var selectedChapter = AllChapter.SelectedItem as BookChapter;
             if (selectedChapter != null)
             {
-                int chapterId = selectedChapter.Id; // Получаем id главы
-                OpenNewChapter(chapterId);
+                chapterIdThisBook = selectedChapter.Id; // Получаем id главы
+                OpenNewChapter(chapterIdThisBook);
             }
         }
     }
+    private void OpenAllComment(int id)
+    {
+        commentsThisBook.Clear();
+        AllComment.ItemsSource = commentsThisBook.ToList();
+        foreach (Comment comment in ListsStaticClass.listAllComment)
+        {
+            if (comment.ChapterId == id)
+            {
+                commentsThisBook.Add(comment);
+            }
+        }
+        AllComment.ItemsSource = commentsThisBook.ToList();
+    }
     private void OpenNewChapter(int idThisChaper)
     {
+        int id = idThisChaper;
         foreach(BookChapter bookChapter in bookChaptersThisBook)
         {
             if(bookChapter.Id == idThisChaper)
@@ -58,14 +108,7 @@ public partial class ReadBook : Window
                 break;
             }
         }
-        foreach(Comment comment in ListsStaticClass.listAllComment)
-        {
-            if(comment.ChapterId == idThisChaper)
-            {
-                commentsThisBook.Add(comment);
-            }
-        }
-        AllComment.ItemsSource = commentsThisBook.ToList();
+        OpenAllComment(id);
     }
     private void CallBaza()
     {
@@ -124,5 +167,14 @@ public partial class ReadBook : Window
         Close();
     }
 
-  
+    private void OpenLookComment(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        AllComment.IsVisible = true;
+        commentPanel.IsVisible = true;
+    }
+    private void CloseLookComment(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        AllComment.IsVisible = false;
+        commentPanel.IsVisible = false;
+    }
 }

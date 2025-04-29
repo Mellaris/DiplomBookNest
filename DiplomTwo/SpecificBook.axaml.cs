@@ -112,6 +112,8 @@ public partial class SpecificBook : Window
         }
         else
         {
+            string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
 
         }
 

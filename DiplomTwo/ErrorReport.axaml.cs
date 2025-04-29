@@ -10,4 +10,9 @@ public partial class ErrorReport : Window
     {
         InitializeComponent();
     }
+    public ErrorReport(string errorThis)
+    {
+        InitializeComponent();
+        error.Text = errorThis;
+    }
 }
