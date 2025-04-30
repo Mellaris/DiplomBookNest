@@ -46,8 +46,19 @@ public partial class AuthorBoard : Window
     private void SortForAppList()
     {
         booksMyAll.Clear();
-        booksMyAll = ListsStaticClass.listAllBooks.Where(x => x.IsAuthorBook == true).ToList();
-        myBooks.ItemsSource = booksMyAll.ToList();
+
+        // Получаем все id книг, написанных текущим автором
+        var myBookIds = ListsStaticClass.listAllBookAuthors
+            .Where(x => x.AppAuthorId == ListsStaticClass.currentAccount)
+            .Select(x => x.BookId)
+            .ToList();
+
+        // Отбираем книги, которые электронные и принадлежат текущему автору
+        booksMyAll = ListsStaticClass.listAllBooks
+            .Where(x => x.IsAuthorBook == true && myBookIds.Contains(x.Id))
+            .ToList();
+
+        myBooks.ItemsSource = booksMyAll;
     }
     private void CallBaza()
     {
@@ -68,6 +79,15 @@ public partial class AuthorBoard : Window
             IsAuthorBook = book.IsAuthorBook,
             Dateadd = book.Dateadd,
             SeriesId = book.SeriesId,
+        }).ToList();
+
+        ListsStaticClass.listAllBookAuthors.Clear();
+        ListsStaticClass.listAllBookAuthors = Baza.DbContext.Bookauthors.Select(bookAuthors => new Bookauthor
+        {
+            Id = bookAuthors.Id,
+            BookId = bookAuthors.BookId,
+            AuthorId = bookAuthors.AuthorId,
+            AppAuthorId = bookAuthors.AppAuthorId,
         }).ToList();
     }
     private void AddNewBook(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

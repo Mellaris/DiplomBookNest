@@ -21,6 +21,8 @@ namespace DiplomTwo
         public static List<BookChapter> listAllBookChapter = new List<BookChapter>();
         public static List<BookGenre> listAllBookGenres = new List<BookGenre>();
         public static List<Comment> listAllComment = new List<Comment>();
+        public static List<Prioritylevel> listAllPrioritylevel = new List<Prioritylevel>();
+        public static List<Bookplan> listAllBookPlan = new List<Bookplan>();
 
         public static int currentAccount = -1;
     }

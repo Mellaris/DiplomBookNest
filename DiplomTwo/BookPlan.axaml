@@ -49,15 +49,18 @@
 
 			<TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="48" Foreground="#3B57FF">Книги для прочтения</TextBlock>
 
-			<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#98A7FF">Название, автор</TextBlock>
+			<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#98A7FF">Название, приоритет</TextBlock>
 
-			<Border Width="1140" Height="813" CornerRadius="8" BorderBrush="#656DCE">
-				<ListBox Width="1008" Height="718">
+			<Border Width="1140" Height="660" CornerRadius="8" BorderBrush="#656DCE">
+				<ListBox Background="White" Name="myPlan" Width="800" Height="550">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<StackPanel Margin="12" Background="#EAF2FF" Orientation="Horizontal">
-								<ComboBox Margin="32,36,0,0" Background="White" Width="261" Height="57"></ComboBox>
-								<CheckBox Margin="618,36,0,0" Width="65" Height="57"></CheckBox>
+								<TextBlock FontSize="20" Foreground="#3B57FF" Text="{Binding BookTitle}" Width="300" VerticalAlignment="Center" />
+								<Button Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
+								<Button Tag="{Binding BookId}" Background="#EAF2FF" Margin="20,0,0,0" Click="EditPrioritet">
+									<Image Source="\Imoges\pen-solid.png" />
+								</Button>
 							</StackPanel>
 						</DataTemplate>
 					</ListBox.ItemTemplate>

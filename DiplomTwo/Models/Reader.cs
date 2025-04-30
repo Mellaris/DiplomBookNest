@@ -17,6 +17,8 @@ public partial class Reader
 
     public virtual Appauthor? Appauthor { get; set; }
 
+    public virtual ICollection<Bookplan> Bookplans { get; set; } = new List<Bookplan>();
+
     public virtual ICollection<Bookreview> Bookreviews { get; set; } = new List<Bookreview>();
 
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
@@ -26,8 +28,6 @@ public partial class Reader
     public virtual ICollection<Quote> Quotes { get; set; } = new List<Quote>();
 
     public virtual ICollection<Readerfavoritebook> Readerfavoritebooks { get; set; } = new List<Readerfavoritebook>();
-
-    public virtual ICollection<Readingplan> Readingplans { get; set; } = new List<Readingplan>();
 
     public virtual User? User { get; set; }
 

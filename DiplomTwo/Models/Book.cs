@@ -47,6 +47,8 @@ public partial class Book
 
     public virtual ICollection<Bookauthor> Bookauthors { get; set; } = new List<Bookauthor>();
 
+    public virtual ICollection<Bookplan> Bookplans { get; set; } = new List<Bookplan>();
+
     public virtual ICollection<Bookreview> Bookreviews { get; set; } = new List<Bookreview>();
 
     public virtual ICollection<ElectronicBooksInfo> ElectronicBooksInfos { get; set; } = new List<ElectronicBooksInfo>();
@@ -56,8 +58,6 @@ public partial class Book
     public virtual ICollection<Quote> Quotes { get; set; } = new List<Quote>();
 
     public virtual ICollection<Readerfavoritebook> Readerfavoritebooks { get; set; } = new List<Readerfavoritebook>();
-
-    public virtual ICollection<Readingplan> Readingplans { get; set; } = new List<Readingplan>();
 
     public virtual Series? Series { get; set; }
 

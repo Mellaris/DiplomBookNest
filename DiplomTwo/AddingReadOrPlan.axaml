@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="523" d:DesignHeight="380"
+        x:Class="DiplomTwo.AddingReadOrPlan"
+		x:CompileBindings="False"
+		Width="523" Height="380"
+		
+        Title="AddingReadOrPlan">
+	<StackPanel>
+		<StackPanel Margin="0,67,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+			<Button Click="AddPlan" Width="208" Height="55" Background="#E6ECFF">
+				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Книжный план</TextBlock>
+			</Button>
+			<Button IsVisible="True" Name="readPanel" Margin="36,0,0,0" Width="208" Height="55" Background="#E6ECFF">
+				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Прочитанное</TextBlock>
+			</Button>
+		</StackPanel>
+		<StackPanel Name="panelVisible" IsVisible="False" Margin="36,0,0,0" Orientation="Horizontal">
+			<Image Name="imageForPlan" Margin="0,36,0,0"  Width="137" Height="198"></Image>
+			<StackPanel Margin="110,30,0,0">
+				<ComboBox SelectionChanged="ComboBox_SelectionChanged" Name="boxForPrior" Width="160">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"></TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+				<Button Click="AddInPlan" Margin="0,140,0,0" Width="160" Height="40" Background="#E6ECFF">
+					<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Сохранить</TextBlock>
+				</Button>
+			</StackPanel>
+		</StackPanel>
+		
+	</StackPanel>
+	
+</Window>

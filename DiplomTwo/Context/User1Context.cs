@@ -34,6 +34,8 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<Bookauthor> Bookauthors { get; set; }
 
+    public virtual DbSet<Bookplan> Bookplans { get; set; }
+
     public virtual DbSet<Bookreview> Bookreviews { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
@@ -50,15 +52,13 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<Personallibrary> Personallibraries { get; set; }
 
-    public virtual DbSet<Priority> Priorities { get; set; }
+    public virtual DbSet<Prioritylevel> Prioritylevels { get; set; }
 
     public virtual DbSet<Quote> Quotes { get; set; }
 
     public virtual DbSet<Reader> Readers { get; set; }
 
     public virtual DbSet<Readerfavoritebook> Readerfavoritebooks { get; set; }
-
-    public virtual DbSet<Readingplan> Readingplans { get; set; }
 
     public virtual DbSet<Role> Roles { get; set; }
 
@@ -281,6 +281,31 @@ public partial class User1Context : DbContext
                 .HasConstraintName("bookauthors_book_id_fkey");
         });
 
+        modelBuilder.Entity<Bookplan>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("bookplan_pkey");
+
+            entity.ToTable("bookplan");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.PriorityId).HasColumnName("priority_id");
+            entity.Property(e => e.ReaderId).HasColumnName("reader_id");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.Bookplans)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("fk_book");
+
+            entity.HasOne(d => d.Priority).WithMany(p => p.Bookplans)
+                .HasForeignKey(d => d.PriorityId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("fk_priority");
+
+            entity.HasOne(d => d.Reader).WithMany(p => p.Bookplans)
+                .HasForeignKey(d => d.ReaderId)
+                .HasConstraintName("fk_reader");
+        });
+
         modelBuilder.Entity<Bookreview>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("bookreviews_pkey");
@@ -465,15 +490,14 @@ public partial class User1Context : DbContext
                 .HasConstraintName("personallibrary_reader_id_fkey");
         });
 
-        modelBuilder.Entity<Priority>(entity =>
+        modelBuilder.Entity<Prioritylevel>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("priority_pkey");
+            entity.HasKey(e => e.Id).HasName("prioritylevel_pkey");
 
-            entity.ToTable("priority");
-
-            entity.HasIndex(e => e.Name, "priority_name_key").IsUnique();
+            entity.ToTable("prioritylevel");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Color).HasColumnName("color");
             entity.Property(e => e.Name).HasColumnName("name");
         });
 
@@ -538,32 +562,6 @@ public partial class User1Context : DbContext
             entity.HasOne(d => d.Reader).WithMany(p => p.Readerfavoritebooks)
                 .HasForeignKey(d => d.ReaderId)
                 .HasConstraintName("readerfavoritebooks_reader_id_fkey");
-        });
-
-        modelBuilder.Entity<Readingplan>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("readingplan_pkey");
-
-            entity.ToTable("readingplan");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BookId).HasColumnName("book_id");
-            entity.Property(e => e.PriorityId).HasColumnName("priority_id");
-            entity.Property(e => e.ReaderId).HasColumnName("reader_id");
-
-            entity.HasOne(d => d.Book).WithMany(p => p.Readingplans)
-                .HasForeignKey(d => d.BookId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("readingplan_book_id_fkey");
-
-            entity.HasOne(d => d.Priority).WithMany(p => p.Readingplans)
-                .HasForeignKey(d => d.PriorityId)
-                .HasConstraintName("readingplan_priority_id_fkey");
-
-            entity.HasOne(d => d.Reader).WithMany(p => p.Readingplans)
-                .HasForeignKey(d => d.ReaderId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("readingplan_reader_id_fkey");
         });
 
         modelBuilder.Entity<Role>(entity =>

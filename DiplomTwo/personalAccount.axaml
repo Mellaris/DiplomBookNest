@@ -85,7 +85,7 @@
 							</Button>
 							
 						</Border>
-						<Button Height="400" Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
+						<Button Click="OpenBookPlan" Height="400" Background="#DFF2BF" Width="300" CornerRadius="10" Margin="50,30,0,-197">
 							<TextBlock Margin="12" FontWeight="Bold" FontSize="24" Foreground="White" Text="Книжный план" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 						</Button>
 

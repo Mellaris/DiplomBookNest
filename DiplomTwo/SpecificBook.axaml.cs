@@ -47,6 +47,19 @@ public partial class SpecificBook : Window
         idThisBook = idForBook;
         
     }
+    private void Add(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if(ListsStaticClass.currentAccount != -1)
+        {
+            new AddingReadOrPlan(idThisBook).ShowDialog(this);
+        }
+        else
+        {
+            string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
+        }
+       
+    }
     private void CallBaza()
     {
         ListsStaticClass.listAllBooks.Clear();
@@ -118,4 +131,6 @@ public partial class SpecificBook : Window
         }
 
     }
+
+   
 }

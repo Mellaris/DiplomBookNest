@@ -45,6 +45,11 @@ public partial class personalAccount : Window
         sumThisYear.Text = booksCount.ToString();
         SortLoveBook();
     }
+    private void OpenBookPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new BookPlan().Show();
+        Close();
+    }
     private void SortLoveBook()
     {
         foreach(Personallibrary personallibrary in ListsStaticClass.listAllPersonallLibrary)
@@ -169,7 +174,4 @@ public partial class personalAccount : Window
         new MainWindow().Show();
         Close();
     }
-   
-
-   
 }
