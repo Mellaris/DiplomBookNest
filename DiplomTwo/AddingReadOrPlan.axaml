@@ -6,8 +6,8 @@
         x:Class="DiplomTwo.AddingReadOrPlan"
 		x:CompileBindings="False"
 		Width="523" Height="380"
-		
-        Title="AddingReadOrPlan">
+		Name="AddingReadOrPlanIcon"
+        Title="BookNest">
 	<StackPanel>
 		<StackPanel Margin="0,67,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
 			<Button Click="AddPlan" Width="208" Height="55" Background="#E6ECFF">

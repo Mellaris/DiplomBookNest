@@ -5,12 +5,14 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DiplomTwo;
 
 public partial class BookPlan : Window
 {
+    private List<BookPlanDisplay> bookDisplayModels = new List<BookPlanDisplay>();
     public BookPlan()
     {
         InitializeComponent();
@@ -27,6 +29,7 @@ public partial class BookPlan : Window
             book => book.Id,
         (plan, book) => new BookPlanDisplay
         {
+            Id = plan.Id,
             BookId = book.Id,
             BookTitle = book.Title,
             PriorityId = plan.PriorityId,
@@ -41,11 +44,16 @@ public partial class BookPlan : Window
     .ToList();
 
         myPlan.ItemsSource = planList.ToList();
+        bookDisplayModels = planList.ToList();
     }
     private void EditPrioritet(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         int selectId = (int)(sender as Button).Tag;
-        
+        var button = bookDisplayModels.FirstOrDefault(x => x.Id == selectId);
+        if(button != null)
+        {
+           new ChangingThePriority(button).ShowDialog(this);
+        }
     }
     private void MyAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -106,6 +114,7 @@ public partial class BookPlan : Window
 }
 public class BookPlanDisplay
 {
+    public int Id { get; set; }
     public int BookId { get; set; }
     public string BookTitle { get; set; }
     public int PriorityId {  get; set; }

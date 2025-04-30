@@ -1,7 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
+using System;
 using System.Linq;
 
 namespace DiplomTwo;
@@ -18,6 +20,11 @@ public partial class AddingReadOrPlan : Window
     public AddingReadOrPlan(int id)
     {
         InitializeComponent();
+        try
+        {
+            AddingReadOrPlanIcon.Icon = new WindowIcon(new Bitmap(Environment.CurrentDirectory + "/" + "icon.ico"));
+        }
+        catch { }
         idThis = id;
         CallBaza();
     }

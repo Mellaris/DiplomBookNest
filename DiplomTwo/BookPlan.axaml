@@ -58,7 +58,7 @@
 							<StackPanel Margin="12" Background="#EAF2FF" Orientation="Horizontal">
 								<TextBlock FontSize="20" Foreground="#3B57FF" Text="{Binding BookTitle}" Width="300" VerticalAlignment="Center" />
 								<Button Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
-								<Button Tag="{Binding BookId}" Background="#EAF2FF" Margin="20,0,0,0" Click="EditPrioritet">
+								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="20,0,0,0" Click="EditPrioritet">
 									<Image Source="\Imoges\pen-solid.png" />
 								</Button>
 							</StackPanel>
