@@ -24,8 +24,6 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<AuthorBookCharacter> AuthorBookCharacters { get; set; }
 
-    public virtual DbSet<AuthorBookWorld> AuthorBookWorlds { get; set; }
-
     public virtual DbSet<Book> Books { get; set; }
 
     public virtual DbSet<BookChapter> BookChapters { get; set; }
@@ -37,6 +35,8 @@ public partial class User1Context : DbContext
     public virtual DbSet<Bookplan> Bookplans { get; set; }
 
     public virtual DbSet<Bookreview> Bookreviews { get; set; }
+
+    public virtual DbSet<Character> Characters { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
 
@@ -71,6 +71,10 @@ public partial class User1Context : DbContext
     public virtual DbSet<Userachievement> Userachievements { get; set; }
 
     public virtual DbSet<VerificationCode> VerificationCodes { get; set; }
+
+    public virtual DbSet<WorldSection> WorldSections { get; set; }
+
+    public virtual DbSet<WorldSectionContent> WorldSectionContents { get; set; }
 
     public virtual DbSet<WritingStatus> WritingStatuses { get; set; }
 
@@ -156,23 +160,6 @@ public partial class User1Context : DbContext
                 .HasForeignKey(d => d.BookId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("author_book_characters_book_id_fkey");
-        });
-
-        modelBuilder.Entity<AuthorBookWorld>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("author_book_world_pkey");
-
-            entity.ToTable("author_book_world");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BookId).HasColumnName("book_id");
-            entity.Property(e => e.Content).HasColumnName("content");
-            entity.Property(e => e.Section).HasColumnName("section");
-
-            entity.HasOne(d => d.Book).WithMany(p => p.AuthorBookWorlds)
-                .HasForeignKey(d => d.BookId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("author_book_world_book_id_fkey");
         });
 
         modelBuilder.Entity<Book>(entity =>
@@ -329,6 +316,38 @@ public partial class User1Context : DbContext
                 .HasForeignKey(d => d.ReaderId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("bookreviews_reader_id_fkey");
+        });
+
+        modelBuilder.Entity<Character>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("characters_pkey");
+
+            entity.ToTable("characters");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Age).HasColumnName("age");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.Ethnicity).HasColumnName("ethnicity");
+            entity.Property(e => e.Fears).HasColumnName("fears");
+            entity.Property(e => e.GenderId).HasColumnName("gender_id");
+            entity.Property(e => e.Goal).HasColumnName("goal");
+            entity.Property(e => e.Hobbies).HasColumnName("hobbies");
+            entity.Property(e => e.ImageName).HasColumnName("image_name");
+            entity.Property(e => e.Name).HasColumnName("name");
+            entity.Property(e => e.Occupation).HasColumnName("occupation");
+            entity.Property(e => e.Personality).HasColumnName("personality");
+            entity.Property(e => e.Strengths).HasColumnName("strengths");
+            entity.Property(e => e.Weaknesses).HasColumnName("weaknesses");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.Characters)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("fk_character_book");
+
+            entity.HasOne(d => d.Gender).WithMany(p => p.Characters)
+                .HasForeignKey(d => d.GenderId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_character_gender");
         });
 
         modelBuilder.Entity<Comment>(entity =>
@@ -701,6 +720,45 @@ public partial class User1Context : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.VerificationCodes)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("fk_user");
+        });
+
+        modelBuilder.Entity<WorldSection>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("world_sections_pkey");
+
+            entity.ToTable("world_sections");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name).HasColumnName("name");
+            entity.Property(e => e.ShortDescription).HasColumnName("short_description");
+        });
+
+        modelBuilder.Entity<WorldSectionContent>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("world_section_contents_pkey");
+
+            entity.ToTable("world_section_contents");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.Content).HasColumnName("content");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("created_at");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("updated_at");
+            entity.Property(e => e.WorldSectionId).HasColumnName("world_section_id");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.WorldSectionContents)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("fk_content_book");
+
+            entity.HasOne(d => d.WorldSection).WithMany(p => p.WorldSectionContents)
+                .HasForeignKey(d => d.WorldSectionId)
+                .HasConstraintName("fk_content_section");
         });
 
         modelBuilder.Entity<WritingStatus>(entity =>

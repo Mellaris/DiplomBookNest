@@ -254,7 +254,7 @@ public partial class CreatingBook : Window
 
     private void NewWorld(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new SurroundingWorld().Show();
+        new SurroundingWorld(idForBook).Show();
         Close();
     }
 }

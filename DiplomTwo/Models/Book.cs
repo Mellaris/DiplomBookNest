@@ -39,8 +39,6 @@ public partial class Book
 
     public virtual ICollection<AuthorBookCharacter> AuthorBookCharacters { get; set; } = new List<AuthorBookCharacter>();
 
-    public virtual ICollection<AuthorBookWorld> AuthorBookWorlds { get; set; } = new List<AuthorBookWorld>();
-
     public virtual ICollection<BookChapter> BookChapters { get; set; } = new List<BookChapter>();
 
     public virtual ICollection<BookGenre> BookGenres { get; set; } = new List<BookGenre>();
@@ -50,6 +48,8 @@ public partial class Book
     public virtual ICollection<Bookplan> Bookplans { get; set; } = new List<Bookplan>();
 
     public virtual ICollection<Bookreview> Bookreviews { get; set; } = new List<Bookreview>();
+
+    public virtual ICollection<Character> Characters { get; set; } = new List<Character>();
 
     public virtual ICollection<ElectronicBooksInfo> ElectronicBooksInfos { get; set; } = new List<ElectronicBooksInfo>();
 
@@ -62,6 +62,8 @@ public partial class Book
     public virtual Series? Series { get; set; }
 
     public virtual ICollection<Seriesbook> Seriesbooks { get; set; } = new List<Seriesbook>();
+
+    public virtual ICollection<WorldSectionContent> WorldSectionContents { get; set; } = new List<WorldSectionContent>();
     public Bitmap CoverBitmap
     {
         get

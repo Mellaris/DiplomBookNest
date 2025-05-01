@@ -51,27 +51,28 @@
 				<!-- Левая панель: главы -->
 				<StackPanel Grid.Column="0" Margin="0,40,0,0">
 					<TextBlock Foreground="#042A99" Text="Разделы" FontSize="40" Margin="24,0,0,0"/>
-					<ListBox Background="White" Name="AllChapter" Margin="0,18,0,0" Width="336" Height="496">
+					<ListBox SelectionChanged="ListBox_SelectionChanged" Background="White" Name="AllSections" Margin="0,18,0,0" Width="336" Height="496">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel VerticalAlignment="Center" Background="#D7D7D7" Width="335" Height="52">
-									<TextBlock Text="{Binding Title}" Margin="25,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#3151AD"></TextBlock>
+									<TextBlock Text="{Binding Name}" Margin="25,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#3151AD"></TextBlock>
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-					<Button HorizontalContentAlignment="Center" Margin="24,80,0,0" Height="40" FontSize="24" Width="200" VerticalContentAlignment="Center" VerticalAlignment="Bottom">Добавить</Button>
 				</StackPanel>
 
 				<!-- Центральная панель: текст главы -->
 				<StackPanel Margin="32,44,0,0" Grid.Column="1" HorizontalAlignment="Center">
-					<TextBlock Name="titleChapter" Foreground="#042A99" Text="Заголовок раздела" FontSize="48" Margin="0,0,0,27"/>
-					<ScrollViewer Height="350" Width="800">
-						<TextBox Margin="0,0,0,0" Name="contentChapter" Foreground="#1A1A1A" TextWrapping="Wrap"
+					<TextBlock Name="titleSection" Foreground="#042A99" Text="Заголовок раздела" FontSize="48" Margin="0,0,0,27"/>
+					<ScrollViewer Height="500" Width="800">
+						<TextBox Margin="0,0,0,0" Name="contentSection" Foreground="#1A1A1A" TextWrapping="Wrap"
 								   FontSize="20"
 								   Width="800" 
 								   Text="Здесь текст раздела..."/>
 					</ScrollViewer>
+					<Button Click="SaveSection" Foreground="#042A99" Background="White" HorizontalContentAlignment="Center" Margin="0,48,0,0" Height="40" FontSize="24" Width="200" VerticalContentAlignment="Center" VerticalAlignment="Bottom">Сохранить</Button>
+
 				</StackPanel>
 
 				<!-- Правая панель: комментарии -->
