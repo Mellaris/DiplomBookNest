@@ -12,6 +12,7 @@ namespace DiplomTwo;
 public partial class personalAccount : Window
 {
     private List<Personallibrary> personallibrarySort = new List<Personallibrary>();
+    private List<Achievement> achievementSort = new List<Achievement>();
     public personalAccount()
     {
         InitializeComponent();
@@ -44,6 +45,21 @@ public partial class personalAccount : Window
                         pl.DateAdd.Value.Year == currentYear);
         sumThisYear.Text = booksCount.ToString();
         SortLoveBook();
+        foreach(Userachievement userachievement in ListsStaticClass.listAllUserachievement)
+        {
+            if(userachievement.Id == ListsStaticClass.currentAccount)
+            {
+                foreach(Achievement achievement in ListsStaticClass.listAllAchievement)
+                {
+                    if(userachievement.AchievementId == achievement.Id)
+                    {
+                        achievementSort.Add(achievement);
+                    }
+                }
+                break;
+            }
+        }
+        listWithAch.ItemsSource = achievementSort.ToList();
     }
     private void OpenBookPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -155,6 +171,24 @@ public partial class personalAccount : Window
             MeaningRating = library.MeaningRating,
             DateAdd = library.DateAdd,
             Feedback = library.Feedback,
+        }).ToList();
+
+        ListsStaticClass.listAllUserachievement.Clear();
+        ListsStaticClass.listAllUserachievement = Baza.DbContext.Userachievements.Select(userA => new Userachievement
+        {
+            Id = userA.Id,
+            ReaderId = userA.ReaderId,
+            AchievementId = userA.AchievementId,
+            EarnedAt = userA.EarnedAt,
+        }).ToList();
+
+        ListsStaticClass.listAllAchievement.Clear();
+        ListsStaticClass.listAllAchievement = Baza.DbContext.Achievements.Select(achievement => new Achievement
+        {
+            Id = achievement.Id,
+            Name = achievement.Name,
+            Picturename = achievement.Picturename,
+            Description = achievement.Description,
         }).ToList();
     }
     private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

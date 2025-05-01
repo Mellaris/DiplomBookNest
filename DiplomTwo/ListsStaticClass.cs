@@ -23,6 +23,8 @@ namespace DiplomTwo
         public static List<Comment> listAllComment = new List<Comment>();
         public static List<Prioritylevel> listAllPrioritylevel = new List<Prioritylevel>();
         public static List<Bookplan> listAllBookPlan = new List<Bookplan>();
+        public static List<Achievement> listAllAchievement = new List<Achievement>();
+        public static List<Userachievement> listAllUserachievement = new List<Userachievement>();
 
         public static int currentAccount = -1;
     }

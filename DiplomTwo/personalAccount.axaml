@@ -169,7 +169,7 @@
 			
 				<StackPanel Margin="0,32,0,0" Width="1100" Height="284" Background="#B1D3FF">
 					<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#FF7979">Прогресс</TextBlock>
-					<ListBox Margin="0,24,0,0" Background="" Width="1100" Height="125" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+					<ListBox Name="listWithAch" Margin="0,24,0,0" Background="#B1D3FF" Width="800" Height="125" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
 						   SelectionMode="Single" BorderThickness="0">
 						<ListBox.ItemsPanel>
 							<ItemsPanelTemplate>
@@ -180,7 +180,7 @@
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<!-- Изображение книги -->
-								<Image Width="125" Height="125" Margin="60,0,0,60" />
+								<Image Source="{Binding CoverBitmap}" Width="120" Height="120" Margin="5" />
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>

@@ -8,6 +8,16 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="achievementsPhotos\Eight.png" />
+    <None Remove="achievementsPhotos\Five.png" />
+    <None Remove="achievementsPhotos\Four.png" />
+    <None Remove="achievementsPhotos\Nine.png" />
+    <None Remove="achievementsPhotos\One.png" />
+    <None Remove="achievementsPhotos\Seven.png" />
+    <None Remove="achievementsPhotos\Six.png" />
+    <None Remove="achievementsPhotos\Ten.png" />
+    <None Remove="achievementsPhotos\Three.png" />
+    <None Remove="achievementsPhotos\Two.png" />
     <None Remove="Imoges\angle-app.png" />
     <None Remove="Imoges\angle-double-down-solid.png" />
     <None Remove="Imoges\angle-down.png" />
@@ -119,6 +129,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaResource Include="achievementsPhotos\Eight.png" />
+    <AvaloniaResource Include="achievementsPhotos\Five.png" />
+    <AvaloniaResource Include="achievementsPhotos\Four.png" />
+    <AvaloniaResource Include="achievementsPhotos\Nine.png" />
+    <AvaloniaResource Include="achievementsPhotos\One.png" />
+    <AvaloniaResource Include="achievementsPhotos\Seven.png" />
+    <AvaloniaResource Include="achievementsPhotos\Six.png" />
+    <AvaloniaResource Include="achievementsPhotos\Ten.png" />
+    <AvaloniaResource Include="achievementsPhotos\Three.png" />
+    <AvaloniaResource Include="achievementsPhotos\Two.png" />
     <AvaloniaResource Include="Imoges\angle-app.png" />
     <AvaloniaResource Include="Imoges\angle-double-down-solid.png" />
     <AvaloniaResource Include="Imoges\angle-down.png" />

@@ -55,10 +55,10 @@
 				<ListBox Background="White" Name="myPlan" Width="800" Height="550">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<StackPanel Margin="12" Background="#EAF2FF" Orientation="Horizontal">
-								<TextBlock FontSize="20" Foreground="#3B57FF" Text="{Binding BookTitle}" Width="300" VerticalAlignment="Center" />
-								<Button Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
-								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="20,0,0,0" Click="EditPrioritet">
+							<StackPanel Margin="6" Background="#EAF2FF" Orientation="Horizontal">
+								<TextBlock Margin="10,0,0,0" FontSize="18" Foreground="#3B57FF" Text="{Binding BookTitle}" TextWrapping="Wrap" Width="300" VerticalAlignment="Center" />
+								<Button Margin="40,0,0,0" Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
+								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="240,0,0,0" Click="EditPrioritet">
 									<Image Source="\Imoges\pen-solid.png" />
 								</Button>
 							</StackPanel>
@@ -80,9 +80,9 @@
 							<StackPanel>
 								<StackPanel Orientation="Horizontal">
 									<Border Margin="33,36,0,0" Width="261" Height="132" Background="#8299D9" CornerRadius="12">
-										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+										<TextBox Foreground="Black" IsEnabled="False" KeyDown="TextBox_KeyDown" IsReadOnly="True" Name="textForGoal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="261" Height="132" Background="#8299D9" CornerRadius="12" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
 									</Border>
-									<Button Margin="32,0,0,90" Background="White">
+									<Button Click="EditGoal" Margin="32,0,0,90" Background="White">
 										<Image  Source="\Imoges\pen-solid.png"></Image>
 									</Button>
 								</StackPanel>

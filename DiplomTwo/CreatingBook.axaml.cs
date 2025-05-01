@@ -251,4 +251,10 @@ public partial class CreatingBook : Window
         new Books().Show();
         Close();
     }
+
+    private void NewWorld(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new SurroundingWorld().Show();
+        Close();
+    }
 }

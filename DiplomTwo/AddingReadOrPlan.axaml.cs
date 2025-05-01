@@ -60,8 +60,12 @@ public partial class AddingReadOrPlan : Window
                 break;
             }
         }
+        ListsStaticClass.listAllPrioritylevel.Clear();
+        boxForPrior.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
+        CallBaza();
         if(check == 0)
         {
+            buttonForClick.IsEnabled = false;
             panelVisible.IsVisible = true;
             readPanel.IsVisible = false;
 
@@ -106,6 +110,7 @@ public partial class AddingReadOrPlan : Window
             Color = plan.Color,
             Name = plan.Name,
         }).ToList();
+        ListsStaticClass.listAllPrioritylevel = ListsStaticClass.listAllPrioritylevel.OrderBy(p => p.Id).ToList();
 
         ListsStaticClass.listAllBookPlan.Clear();
         ListsStaticClass.listAllBookPlan = Baza.DbContext.Bookplans.Select(bookPlan => new Bookplan
@@ -114,6 +119,14 @@ public partial class AddingReadOrPlan : Window
             BookId = bookPlan.BookId,
             ReaderId = bookPlan.ReaderId,
             PriorityId = bookPlan.PriorityId,
+        }).ToList();
+
+        ListsStaticClass.listAllPersonallLibrary.Clear();
+        ListsStaticClass.listAllPersonallLibrary = Baza.DbContext.Personallibraries.Select(personal => new Personallibrary
+        {
+            Id = personal.Id,
+            ReaderId = personal.ReaderId,
+            BookId = personal.BookId,
         }).ToList();
     }
 
