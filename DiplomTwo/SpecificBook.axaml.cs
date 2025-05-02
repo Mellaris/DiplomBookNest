@@ -11,6 +11,8 @@ namespace DiplomTwo;
 public partial class SpecificBook : Window
 {
     private int idThisBook;
+    private int selectAuthor = -1;
+    private int selectAuthorApp = -1;
     public SpecificBook()
     {
         InitializeComponent();
@@ -45,7 +47,41 @@ public partial class SpecificBook : Window
             }
         }
         idThisBook = idForBook;
-        
+        var bookTwo = ListsStaticClass.listAllBooks.FirstOrDefault(b => b.Id == idThisBook);
+        if (bookTwo is null) return;
+
+        var bookAuthor = ListsStaticClass.listAllBookAuthors
+           .FirstOrDefault(ba => ba.BookId == idThisBook);
+
+        if (bookAuthor != null)
+        {
+            if (bookTwo.IsAuthorBook)
+            {
+                selectAuthorApp = bookAuthor.AppAuthorId ?? -1;
+            }
+            else
+            {
+                selectAuthor = bookAuthor.AuthorId ?? -1;
+            }
+        }
+        if (selectAuthor != -1)
+        {
+            var author = ListsStaticClass.listAllAuthors
+                .FirstOrDefault(a => a.Id == selectAuthor);
+            if (author != null)
+            {
+                authorForBook.Text = author.Name;
+            }
+        }
+        else
+        {
+            var user = ListsStaticClass.listAllUsers
+                .FirstOrDefault(u => u.Id == selectAuthorApp);
+            if (user != null)
+            {
+                authorForBook.Text = user.Login;
+            }
+        }
     }
     private void Add(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

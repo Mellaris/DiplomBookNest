@@ -13,7 +13,7 @@
 			<Button Name="buttonForClick" IsEnabled="True" Click="AddPlan" Width="208" Height="55" Background="#E6ECFF">
 				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Книжный план</TextBlock>
 			</Button>
-			<Button IsVisible="True" Name="readPanel" Margin="36,0,0,0" Width="208" Height="55" Background="#E6ECFF">
+			<Button Click="AddInRead" IsVisible="True" Name="readPanel" Margin="36,0,0,0" Width="208" Height="55" Background="#E6ECFF">
 				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Прочитанное</TextBlock>
 			</Button>
 		</StackPanel>

@@ -27,6 +27,7 @@ namespace DiplomTwo
         public static List<Userachievement> listAllUserachievement = new List<Userachievement>();
         public static List<WorldSection> listAllWorldSection = new List<WorldSection>();
         public static List<WorldSectionContent> listAllWorldsectionContent = new List<WorldSectionContent>();
+        public static List<Seriesbook> listAllSeriesbook = new List<Seriesbook>();
 
         public static int currentAccount = -1;
     }

@@ -129,6 +129,14 @@ public partial class AddingReadOrPlan : Window
             BookId = personal.BookId,
         }).ToList();
     }
-
-    
+    private void Open()
+    {
+        new WritingReview(idThis).Show();
+        Close();
+    }
+    private void AddInRead(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        Close(this);
+        Open();
+    }
 }
