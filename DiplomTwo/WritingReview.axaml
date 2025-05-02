@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2835"
         x:Class="DiplomTwo.WritingReview"
 		Name="WritingReviewIcon"
+		x:CompileBindings="False"
 		Width="1440"
 		WindowState="Maximized"
         Title="BookNest">
@@ -69,39 +70,44 @@
 					</StackPanel>
 				</Border>
 			</StackPanel>
-			<TextBlock Margin="0,64,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Мои впечатления</TextBlock>
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+				<TextBlock Margin="0,64,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Мои впечатления</TextBlock>
+				<Button Background="White" Margin="40,60,0,0">
+					<Image Source="\Imoges\pen-solid.png"></Image>
+				</Button>
+			</StackPanel>
 			<Border Margin="0,28,40,0" Width="900" Height="352" Background="#E6ECFF" CornerRadius="12">
 				<StackPanel Orientation="Horizontal">
 					<StackPanel>
 						<StackPanel Margin="12,24,0,0" Orientation="Horizontal">
 							<Image Width="40" Height="40" Source="\Imoges\award-solid.png"></Image>
 							<TextBlock Width="350" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Оригинальность сюжета:</TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
+							<TextBox Name="original" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
 						</StackPanel>
 						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
 							<Image Source="\Imoges\user-friends-solid.png"></Image>
 							<TextBlock Width="350" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Персонажи:</TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
+							<TextBox Name="characters" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
 						</StackPanel>
 						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
 							<Image Source="\Imoges\book-reader-solid.png"></Image>
 							<TextBlock Width="350" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Мир внутри книги:</TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
+							<TextBox Name="worldInside" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
 						</StackPanel>
 						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
 							<Image Source="\Imoges\loveV.png"></Image>
 							<TextBlock Width="350" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Любовная линия: </TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="24,0,0,0"></TextBox>
+							<TextBox Name="love" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="24,0,0,0"></TextBox>
 						</StackPanel>
 						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
 							<Image Source="\Imoges\burn-solid.png"></Image>
 							<TextBlock Width="350" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Юмор:</TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
+							<TextBox Name="ha" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
 						</StackPanel>
 						<StackPanel Margin="12,12,0,0" Orientation="Horizontal">
 							<Image Source="\Imoges\smisl.png"></Image>
 							<TextBlock Width="350" Margin="16,0,0,0" VerticalAlignment="Center" FontSize="24" Foreground="#506AB8">Смысловая нагрузка:</TextBlock>
-							<TextBox BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
+							<TextBox Name="things" BorderBrush="#E6ECFF" FontSize="20" Foreground="#042A99" Margin="20,0,0,0"></TextBox>
 						</StackPanel>
 						
 
@@ -112,25 +118,24 @@
 				</StackPanel>
 				
 			</Border>
-			<Button Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+			<Button Click="AddPersonally" Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 				<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Сохранить</TextBlock>
 			</Button>
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Мои цитаты</TextBlock>
-			<ListBox Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
+			<ListBox Name="listAllQ" Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-
-
+						<TextBlock Text="{Binding text}"></TextBlock>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Button Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+			<Button Click="AddNewQ" Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить цитату</TextBlock>
 			</Button>
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Моя рецензия</TextBlock>
-			<TextBox Margin="0,44,0,0" CornerRadius="8" BorderBrush="#EAF2FF" BorderThickness="5" Width="1140" Height="322" TextWrapping="Wrap"></TextBox>
+			<TextBox Name="textForRevu" Margin="0,44,0,0" CornerRadius="8" BorderBrush="#EAF2FF" BorderThickness="5" Width="1140" Height="322" TextWrapping="Wrap"></TextBox>
 			<StackPanel Orientation="Horizontal">
-				<Button Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+				<Button Click="AddNewRev" Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Сохранить</TextBlock>
 				</Button>
 				<Button Margin="34,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">

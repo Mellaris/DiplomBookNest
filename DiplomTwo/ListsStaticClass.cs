@@ -28,6 +28,8 @@ namespace DiplomTwo
         public static List<WorldSection> listAllWorldSection = new List<WorldSection>();
         public static List<WorldSectionContent> listAllWorldsectionContent = new List<WorldSectionContent>();
         public static List<Seriesbook> listAllSeriesbook = new List<Seriesbook>();
+        public static List<Quote> listAllQuote = new List<Quote>();
+        public static List<Bookreview> listAllBookreview = new List<Bookreview>();
 
         public static int currentAccount = -1;
     }

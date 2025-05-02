@@ -304,6 +304,7 @@ public partial class User1Context : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("created_at");
+            entity.Property(e => e.IsHaveRev).HasColumnName("is_have_rev");
             entity.Property(e => e.ReaderId).HasColumnName("reader_id");
             entity.Property(e => e.ReviewText).HasColumnName("review_text");
 

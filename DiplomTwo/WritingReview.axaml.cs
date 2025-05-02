@@ -92,10 +92,87 @@ public partial class WritingReview : Window
                 seria.Text = series.Title;
             }
         }
+        listAllQ.ItemsSource = ListsStaticClass.listAllQuote.ToList();
+    }
+    private void AddNewRev(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
 
+    }
+    private void AddNewQ(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new AddingQuotes(idThisBook).ShowDialog(this);
+    }
+    private void AddPersonally(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if(!string.IsNullOrEmpty(original.Text) && !string.IsNullOrEmpty(love.Text) && !string.IsNullOrEmpty(characters.Text) && !string.IsNullOrEmpty(worldInside.Text) 
+            && !string.IsNullOrEmpty(ha.Text) && !string.IsNullOrEmpty(things.Text))
+        {
+            bool isValid = int.TryParse(original.Text, out int originalVal) &&
+                      int.TryParse(love.Text, out int loveVal) &&
+                      int.TryParse(characters.Text, out int charactersVal) &&
+                      int.TryParse(worldInside.Text, out int worldVal) &&
+                      int.TryParse(ha.Text, out int haVal) &&
+                      int.TryParse(things.Text, out int thingsVal) &&
+                      Enumerable.Range(1, 5).Contains(originalVal) &&
+                      Enumerable.Range(1, 5).Contains(loveVal) &&
+                      Enumerable.Range(1, 5).Contains(charactersVal) &&
+                      Enumerable.Range(1, 5).Contains(worldVal) &&
+                      Enumerable.Range(1, 5).Contains(haVal) &&
+                      Enumerable.Range(1, 5).Contains(thingsVal);
+
+            if (isValid)
+            {
+                float raitingAll = (Convert.ToInt32(original.Text) + Convert.ToInt32(love.Text) + Convert.ToInt32(ha.Text) 
+                    + Convert.ToInt32(things.Text) + Convert.ToInt32(characters.Text) + Convert.ToInt32(worldInside.Text)) / 6;
+                ListsStaticClass.listAllPersonallLibrary = ListsStaticClass.listAllPersonallLibrary.OrderBy(x => x.Id).ToList();
+                var newLibrary = new Personallibrary
+                {
+                    Id = ListsStaticClass.listAllPersonallLibrary.LastOrDefault().Id + 1,
+                    BookId = idThisBook,
+                    ReaderId = ListsStaticClass.currentAccount,
+                    Rating = raitingAll,
+                    PlotRating = Convert.ToInt32(original.Text),
+                    HumorRating = Convert.ToInt32(ha.Text),
+                    CharactersRating = Convert.ToInt32(characters.Text),
+                    MeaningRating = Convert.ToInt32(things.Text),
+                    WorldRating = Convert.ToInt32(worldInside.Text),
+                    RomanceRating = Convert.ToInt32(love.Text),
+                    DateAdd = DateTime.Now,
+                };
+                Baza.DbContext.Personallibraries.Add(newLibrary);
+                Baza.DbContext.SaveChanges();
+            }
+            else
+            {
+                string error = "Все поля должны содержать число от 1 до 5!";
+                new ErrorReport(error).ShowDialog(this);
+            }
+        }
+        else
+        {
+            string error = "Все поля должны быть заполнены!";
+            new ErrorReport(error).ShowDialog(this);        
+        }
     }
     private void CallBaza()
     {
+        ListsStaticClass.listAllPersonallLibrary.Clear();
+        ListsStaticClass.listAllPersonallLibrary = Baza.DbContext.Personallibraries.Select(personal => new Personallibrary
+        {
+            Id = personal.Id,
+            BookId = personal.BookId,
+            ReaderId = personal.ReaderId,
+            Rating = personal.Rating,
+            PlotRating = personal.PlotRating,
+            HumorRating = personal.HumorRating,
+            CharactersRating = personal.CharactersRating,
+            MeaningRating = personal.MeaningRating,
+            DateAdd = personal.DateAdd,
+            Feedback = personal.Feedback,
+            WorldRating = personal.WorldRating,
+            RomanceRating = personal.RomanceRating,
+        }).ToList();
+
         ListsStaticClass.listAllBooks.Clear();
         ListsStaticClass.listAllBooks = Baza.DbContext.Books.Select(book => new Book
         {
@@ -155,5 +232,27 @@ public partial class WritingReview : Window
             Id = user.Id,
             Login = user.Login,
         }).ToList();
+
+        ListsStaticClass.listAllQuote.Clear();
+        ListsStaticClass.listAllQuote = Baza.DbContext.Quotes.Select(quotes => new Quote
+        {
+            Id = quotes.Id,
+            BookId= quotes.BookId,
+            ReaderId = quotes.ReaderId,
+            Text = quotes.Text,
+        }).ToList();
+
+        ListsStaticClass.listAllBookreview.Clear();
+        ListsStaticClass.listAllBookreview = Baza.DbContext.Bookreviews.Select(Bookreview => new Bookreview
+        {
+            Id = Bookreview.Id,
+            BookId = Bookreview.BookId,
+            ReaderId= Bookreview.ReaderId,
+            ReviewText = Bookreview.ReviewText,
+            CreatedAt = Bookreview.CreatedAt,
+            IsHaveRev = Bookreview.IsHaveRev,
+        }).ToList();
     }
+
+
 }

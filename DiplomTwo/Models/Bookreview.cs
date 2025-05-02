@@ -15,6 +15,8 @@ public partial class Bookreview
 
     public DateTime? CreatedAt { get; set; }
 
+    public bool? IsHaveRev { get; set; }
+
     public virtual Book? Book { get; set; }
 
     public virtual Reader? Reader { get; set; }

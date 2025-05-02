@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="712" d:DesignHeight="205"
+        x:Class="DiplomTwo.AddingQuotes"
+		Width="712" Height="205"
+		Background="#E6ECFF"
+        Title="AddingQuotes">
+	<StackPanel>
+		<TextBlock Margin="0,25,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Напиши текст цитаты и сохрани!</TextBlock>
+		<TextBox Name="textForAdd" FontSize="12" Foreground="#042A99" BorderBrush="White" Background="White" Margin="0,26,0,0" Width="600" Height="46" HorizontalAlignment="Center"></TextBox>
+		<TextBlock Name="textError" IsVisible="False" Foreground="Red" Margin="0,10,0,0" HorizontalAlignment="Center">Поле не может быть пустым!</TextBlock>
+		<Button Click="SafeThis" Margin="56,14,0,0" Background="#506AB8" CornerRadius="12" Width="139" Height="28">
+			<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Сохранить</TextBlock>
+		</Button>
+	</StackPanel>
+</Window>
