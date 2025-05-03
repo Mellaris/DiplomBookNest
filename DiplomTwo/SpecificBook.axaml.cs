@@ -5,6 +5,7 @@ using Avalonia.Media.Imaging;
 using System;
 using System.Linq;
 using DiplomTwo.Models;
+using System.Collections.Generic;
 
 namespace DiplomTwo;
 
@@ -13,6 +14,8 @@ public partial class SpecificBook : Window
     private int idThisBook;
     private int selectAuthor = -1;
     private int selectAuthorApp = -1;
+    private List<Genre> genreList = new List<Genre>();
+    int idGenreThis;
     public SpecificBook()
     {
         InitializeComponent();
@@ -26,27 +29,47 @@ public partial class SpecificBook : Window
         }
         catch { }
         CallBaza();
-        foreach(Book book in ListsStaticClass.listAllBooks)
+        foreach (Book book in ListsStaticClass.listAllBooks)
         {
-            if(book.Id ==  idForBook)
+            if (book.Id == idForBook)
             {
                 imageForBook.Source = book.CoverBitmap;
                 titleForBook.Text = book.Title;
-                ratingForBook.Text = book.Rating.ToString();
+                ratingForBook.Text = book.Rating.HasValue
+                ? book.Rating.Value.ToString("0.0")
+                : "0.0";
                 contetForBook.Text = book.Description;
                 colPagesForBook.Text = book.PageCount.ToString();
                 ageForBook.Text = book.AgeLimit.ToString();
-                kolReadForBook.Text = book.Kolread.ToString();
-                kolPlanForBook.Text = book.Kolplan.ToString();
-                kolRewForBook.Text = book.Kolrev.ToString();
-                if(book.IsAuthorBook == true)
+                if (book.IsAuthorBook == true)
                 {
                     readABook.IsVisible = true;
                 }
                 break;
             }
         }
+
         idThisBook = idForBook;
+        // Считаем, сколько раз книга встречается в Personallibrary
+        int readCount = Baza.DbContext.Personallibraries
+            .Count(p => p.BookId == idForBook);
+
+        // Считаем, сколько раз книга встречается в BookPlan
+        int planCount = Baza.DbContext.Bookplans
+            .Count(p => p.BookId == idForBook);
+
+        // Считаем, сколько рецензий написано на книгу с пометкой IsHaveRev == true
+        int reviewCount = Baza.DbContext.Bookreviews
+            .Count(r => r.BookId == idForBook && r.IsHaveRev == true);
+
+        int countQ = Baza.DbContext.Quotes
+            .Count(p => p.BookId == idForBook);
+
+        // Присваиваем значения в поля
+        kolReadForBook.Text = readCount.ToString();
+        kolPlanForBook.Text = planCount.ToString();
+        kolRewForBook.Text = reviewCount.ToString();
+        kolKVForBook.Text = countQ.ToString();
         var bookTwo = ListsStaticClass.listAllBooks.FirstOrDefault(b => b.Id == idThisBook);
         if (bookTwo is null) return;
 
@@ -82,10 +105,84 @@ public partial class SpecificBook : Window
                 authorForBook.Text = user.Login;
             }
         }
+        foreach (BookGenre bookGenre in ListsStaticClass.listAllBookGenres)
+        {
+            if (bookGenre.BookId == idThisBook)
+            {
+                idGenreThis = bookGenre.GenreId;
+                foreach (Genre genre in ListsStaticClass.listAllGenres)
+                {
+                    if (genre.Id == idGenreThis)
+                    {
+                        genreList.Add(genre);
+                        break;
+                    }
+                }
+
+            }
+        }
+        listForGenre.ItemsSource = genreList.ToList();
+
+        var reviewsWithUsernames = (from review in Baza.DbContext.Bookreviews
+                                    join user in Baza.DbContext.Users
+                                    on review.ReaderId equals user.Id
+                                    where review.BookId == idForBook && review.IsHaveRev == true
+                                    select new
+                                    {
+                                        ReaderId = review.ReaderId,
+                                        Login = user.Login,
+                                        ReviewText = review.ReviewText,
+                                        CreatedAt = review.CreatedAt.HasValue
+                                            ? review.CreatedAt.Value.ToString("dd.MM.yyyy")
+                                            : ""
+                                    }).ToList();
+
+        // Привязка к ListBox
+        listForBookAndRev.ItemsSource = reviewsWithUsernames.ToList();
+        var quotesForBook = Baza.DbContext.Quotes
+            .Where(q => q.BookId == idForBook)
+            .Select(q => new
+            {
+                Text = q.Text
+            }).ToList();
+
+        listForBookAndQ.ItemsSource = quotesForBook.ToList();
+        SortForBookSame();
+    }
+    private void SortForBookSame()
+    {
+        // Получаем список жанров текущей книги
+        List<int> genreIdsForThisBook = ListsStaticClass.listAllBookGenres
+            .Where(bg => bg.BookId == idThisBook)
+            .Select(bg => bg.GenreId)
+            .Distinct()
+            .ToList();
+
+        // Находим книги с количеством совпадений по жанрам
+        var similarBookMatches = ListsStaticClass.listAllBookGenres
+            .Where(bg => bg.BookId != idThisBook && genreIdsForThisBook.Contains(bg.GenreId))
+            .GroupBy(bg => bg.BookId)
+            .Select(group => new
+            {
+                BookId = group.Key,
+                MatchCount = group.Count()
+            })
+            .OrderByDescending(x => x.MatchCount)
+            .Take(10)
+            .ToList();
+
+        // Получаем сами книги
+        List<Book> similarBooks = ListsStaticClass.listAllBooks
+            .Where(book => similarBookMatches.Any(m => m.BookId == book.Id))
+            .ToList();
+
+        // Привязка к ListBox
+        sameBook.ItemsSource = similarBooks.ToList();
+
     }
     private void Add(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if(ListsStaticClass.currentAccount != -1)
+        if (ListsStaticClass.currentAccount != -1)
         {
             new AddingReadOrPlan(idThisBook).ShowDialog(this);
         }
@@ -94,7 +191,7 @@ public partial class SpecificBook : Window
             string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
             new ErrorReport(error).ShowDialog(this);
         }
-       
+
     }
     private void CallBaza()
     {
@@ -126,7 +223,21 @@ public partial class SpecificBook : Window
             Name = author.Name,
         }).ToList();
 
-        
+        ListsStaticClass.listAllBookGenres.Clear();
+        ListsStaticClass.listAllBookGenres = Baza.DbContext.BookGenres.Select(bookGenre => new BookGenre
+        {
+            Id = bookGenre.Id,
+            BookId = bookGenre.BookId,
+            GenreId = bookGenre.GenreId,
+        }).ToList();
+
+        ListsStaticClass.listAllGenres.Clear();
+        ListsStaticClass.listAllGenres = Baza.DbContext.Genres.Select(genre => new Genre
+        {
+            Id = genre.Id,
+            Name = genre.Name,
+        }).ToList();
+
     }
 
     private void Back(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -143,7 +254,7 @@ public partial class SpecificBook : Window
 
     private void OpenAuthors(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new AllAuthors().Show(); 
+        new AllAuthors().Show();
         Close();
     }
     private void OpenNews(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -154,7 +265,7 @@ public partial class SpecificBook : Window
 
     private void OpenReadABook(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if(ListsStaticClass.currentAccount != -1)
+        if (ListsStaticClass.currentAccount != -1)
         {
             new ReadBook(idThisBook).Show();
             Close();
@@ -168,5 +279,5 @@ public partial class SpecificBook : Window
 
     }
 
-   
+
 }

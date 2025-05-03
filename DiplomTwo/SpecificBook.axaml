@@ -7,6 +7,7 @@
 		Name="SpecificBookIcon"
 		Width="1440"
 		WindowState="Maximized"
+		x:CompileBindings="False"
         Title="BookNest">
 	<ScrollViewer>
 		<StackPanel>
@@ -54,10 +55,23 @@
 					</Border>
 					<Border HorizontalAlignment="Left" Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">
 						<StackPanel Orientation="Horizontal">
-							<TextBlock></TextBlock>
-							<TextBlock></TextBlock>
-							<TextBlock></TextBlock>
-							<TextBlock></TextBlock>
+							<ListBox Name="listForGenre" Background="White"
+         Margin="0"
+         HorizontalAlignment="Center"
+         Width="678"
+         Height="40"
+         ScrollViewer.HorizontalScrollBarVisibility="Auto">
+								<ListBox.ItemsPanel>
+									<ItemsPanelTemplate>
+										<StackPanel Orientation="Horizontal"/>
+									</ItemsPanelTemplate>
+								</ListBox.ItemsPanel>
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<TextBlock Background="White" Foreground="#042A99" FontSize="16" Text="{Binding Name}" Margin="5,0"/>
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
 						</StackPanel>
 					</Border>
 					<StackPanel Orientation="Horizontal">
@@ -92,29 +106,20 @@
 				</StackPanel>
 				<StackPanel  Margin="33,0,0,0" Width="261" Height="125" Background="#E6ECFF">
 					<TextBlock Name="kolKVForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
-					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">КВ 2025</TextBlock>
+					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Цитат</TextBlock>
 				</StackPanel>
 			</StackPanel>
 
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Рецензии</TextBlock>
-			<ListBox Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
+			<ListBox Name="listForBookAndRev" Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<StackPanel Orientation="Horizontal">
-							<StackPanel>
-								<Image></Image>
-								<Border>
-									<StackPanel Orientation="Horizontal">
-										<TextBlock></TextBlock>
-										<TextBlock></TextBlock>
-									</StackPanel>
-								</Border>
+						<StackPanel>
+							<StackPanel Margin="10,5,0,0" Orientation="Horizontal">
+								<TextBlock Text="{Binding Login}" FontSize="16" Foreground="#042A99"></TextBlock>
+								<TextBlock Text="{Binding CreatedAt}" Margin="10,0,0,0" Foreground="#042A99" FontSize="12"></TextBlock>
 							</StackPanel>
-							<StackPanel>
-								<Border>
-									<TextBlock></TextBlock>
-								</Border>
-							</StackPanel>
+							<TextBlock Width="1000" Height="100" TextWrapping="Wrap" Text="{Binding ReviewText}" FontSize="14" Foreground="#042A99" Margin="10,10,0,0"></TextBlock>
 						</StackPanel>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
@@ -124,11 +129,10 @@
 			</Button>
 			
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Цитаты</TextBlock>
-			<ListBox Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
+			<ListBox Name="listForBookAndQ" Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						
-						
+						<TextBlock Text="{Binding Text}" Margin="5" FontSize="16" Foreground="#042A99"></TextBlock>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
@@ -136,7 +140,21 @@
 				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить цитату</TextBlock>
 			</Button>
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Похожие книги</TextBlock>
+			<ListBox Background="White" Name="sameBook" Width="1200" Height="246" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionMode="Single" BorderThickness="0">
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel>
+							<Image Source="{Binding CoverBitmap}" Width="163" Height="235" />
+						</StackPanel>
 
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
 		</StackPanel>
 	</ScrollViewer>
 </Window>

@@ -12,7 +12,7 @@ public partial class AddingReadOrPlan : Window
 {
     private int idThis;
     private int check = 0;
-    private int select = 1;
+    private int select = 4;
     public AddingReadOrPlan()
     {
         InitializeComponent();
@@ -50,9 +50,9 @@ public partial class AddingReadOrPlan : Window
     }
     private void AddPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        foreach(Bookplan book in ListsStaticClass.listAllBookPlan)
+        foreach (Bookplan book in ListsStaticClass.listAllBookPlan)
         {
-            if(ListsStaticClass.currentAccount == book.ReaderId && book.BookId == idThis)
+            if (ListsStaticClass.currentAccount == book.ReaderId && book.BookId == idThis)
             {
                 string error = "¬ы уже добавл€ли эту книгу в книжный план!";
                 check = 1;
@@ -60,10 +60,12 @@ public partial class AddingReadOrPlan : Window
                 break;
             }
         }
+
         ListsStaticClass.listAllPrioritylevel.Clear();
         boxForPrior.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
         CallBaza();
-        if(check == 0)
+
+        if (check == 0)
         {
             buttonForClick.IsEnabled = false;
             panelVisible.IsVisible = true;
@@ -76,11 +78,26 @@ public partial class AddingReadOrPlan : Window
                     imageForPlan.Source = a.CoverBitmap;
                 }
             }
-            boxForPrior.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
-            boxForPrior.SelectedIndex = 0;
+
+            // ѕроверка: есть ли книга в персональной библиотеке текущего пользовател€
+            bool alreadyInLibrary = Baza.DbContext.Personallibraries
+                .Any(p => p.BookId == idThis && p.ReaderId == ListsStaticClass.currentAccount);
+
+            if (alreadyInLibrary)
+            {
+                boxForPrior.SelectedIndex = 4;
+                boxForPrior.IsEnabled = false; // «апрет изменени€
+
+            }
+            else
+            {
+                boxForPrior.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
+                boxForPrior.SelectedIndex = 0;
+                boxForPrior.IsEnabled = true; // –азрешить выбор
+            }
         }
-        
     }
+
     private void CallBaza()
     {
         ListsStaticClass.listAllBooks.Clear();

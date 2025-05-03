@@ -33,8 +33,6 @@ namespace DiplomTwo
             if (selectedBook != null)
             {
                 int bookId = selectedBook.Id; // Получаем id книги
-
-                // Открываем окно для написания главы
                 new SpecificBook(bookId).Show();
                 Close();
             }

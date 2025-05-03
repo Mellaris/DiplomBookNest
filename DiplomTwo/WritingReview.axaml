@@ -17,8 +17,8 @@
 
 
 					<StackPanel Orientation="Horizontal" Background="#E4EAFF" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
-						<Button Height="40" Background="#E4EAFF" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
-						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
+						<Button Click="Home" Height="40" Background="#E4EAFF" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
+						<Button Click="AllBookOpen" Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
 						<Button Height="40" Background="#E4EAFF" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
 						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
 					</StackPanel>
@@ -63,10 +63,23 @@
 				</StackPanel>
 				<Border Margin="0,24,0,0" Background="#E4EAFF" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">
 					<StackPanel Orientation="Horizontal">
-						<TextBlock></TextBlock>
-						<TextBlock></TextBlock>
-						<TextBlock></TextBlock>
-						<TextBlock></TextBlock>
+						<ListBox Name="listForGenre" Background="#E4EAFF"
+         Margin="0"
+         HorizontalAlignment="Center"
+         Width="678"
+         Height="40"
+         ScrollViewer.HorizontalScrollBarVisibility="Auto">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<StackPanel Orientation="Horizontal"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}" Margin="5,0"/>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
 					</StackPanel>
 				</Border>
 			</StackPanel>
@@ -125,7 +138,7 @@
 			<ListBox Name="listAllQ" Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<TextBlock Text="{Binding text}"></TextBlock>
+						<TextBlock Text="{Binding Text}"></TextBlock>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
@@ -133,13 +146,16 @@
 				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить цитату</TextBlock>
 			</Button>
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Моя рецензия</TextBlock>
-			<TextBox Name="textForRevu" Margin="0,44,0,0" CornerRadius="8" BorderBrush="#EAF2FF" BorderThickness="5" Width="1140" Height="322" TextWrapping="Wrap"></TextBox>
+			<TextBox AcceptsReturn="True" Name="textForRevu" Margin="0,44,0,0" CornerRadius="8" BorderBrush="#EAF2FF" BorderThickness="5" Width="1140" Height="322" TextWrapping="Wrap"></TextBox>
 			<StackPanel Orientation="Horizontal">
 				<Button Click="AddNewRev" Margin="146,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Сохранить</TextBlock>
 				</Button>
-				<Button Margin="34,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+				<Button Click="AddOpen" Name="buttonForRev" IsVisible="False" Margin="34,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Опубликовать</TextBlock>
+				</Button>
+				<Button Click="CloseAdd" Name="CloseButton" IsVisible="False" Margin="34,44,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+					<TextBlock Foreground="#042A99" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">Скрыть</TextBlock>
 				</Button>
 			</StackPanel>
 		

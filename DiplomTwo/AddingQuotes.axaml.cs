@@ -3,21 +3,29 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System.Linq;
 using DiplomTwo.Models;
+using System;
 
 namespace DiplomTwo;
 
 public partial class AddingQuotes : Window
 {
     private int idThis;
+    private WritingReview parentWindow;
     public AddingQuotes()
     {
         InitializeComponent();
     }
-    public AddingQuotes(int id)
+    public AddingQuotes(int id, WritingReview parent)
     {
         InitializeComponent();
         CallBaza();
         idThis = id;
+        parentWindow = parent;
+    }
+    protected override void OnClosed(EventArgs e)
+    {
+        base.OnClosed(e);
+        parentWindow.RefreshQuotesList();
     }
     private void SafeThis(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -39,7 +47,7 @@ public partial class AddingQuotes : Window
             catch
             {
                 textError.IsVisible = true;
-                textError.Text = "ќщибка!";
+                textError.Text = "ќшибка!";
             }
             
         }
