@@ -129,4 +129,22 @@ public partial class SurroundingWorld : Window
         }
         Check = 0;
     }
+
+    private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
+    }
+
+    private void OpenB(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Books().Show();
+        Close();
+    }
+
+    private void My(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new personalAccount().Show();
+        Close();
+    }
 }

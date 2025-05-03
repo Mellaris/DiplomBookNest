@@ -17,7 +17,7 @@
 
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 					<Button Click="Home" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
+					<Button Click="OpenB" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
 					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
 					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
 				</StackPanel>

@@ -193,7 +193,7 @@ public partial class BookDownload : Window
 
     private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new LogIn().Show();
+        new personalAccount().Show();
         Close();
     }
 

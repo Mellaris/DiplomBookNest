@@ -469,5 +469,9 @@ public partial class WritingReview : Window
         Close();
     }
 
-
+    private void My(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new personalAccount().Show();
+        Close();
+    }
 }

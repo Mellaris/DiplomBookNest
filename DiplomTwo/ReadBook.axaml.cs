@@ -177,4 +177,10 @@ public partial class ReadBook : Window
         AllComment.IsVisible = false;
         commentPanel.IsVisible = false;
     }
+
+    private void OpenB(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Books().Show();
+        Close();
+    }
 }

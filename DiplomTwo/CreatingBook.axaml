@@ -31,7 +31,7 @@
 					<StackPanel>
 						<TextBlock Name="nameBook" Margin="0,8,0,0" HorizontalAlignment="Center" FontSize="48" Foreground="#0C5489">Название книги</TextBlock>
 						<StackPanel Margin="0,30,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-							<Button Margin="0,0,80,0" Background="White">
+							<Button Click="OpenChar" Margin="0,0,80,0" Background="White">
 								<TextBlock FontSize="24" Foreground="#108DE8">Персонажи</TextBlock>
 							</Button>
 							<Button Click="NewWorld" Margin="0,0,90,0" Background="White">

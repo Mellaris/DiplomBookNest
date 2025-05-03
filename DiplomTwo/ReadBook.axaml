@@ -25,7 +25,7 @@
 						<StackPanel Orientation="Horizontal" Background="White"
 									VerticalAlignment="Top" Margin="127,34,0,0" Height="60" Width="382">
 							<Button Click="GoToHome" Background="White" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Дом"/>
-							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
+							<Button Click="OpenB" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
 							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Авторы"/>
 							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Новости"/>
 						</StackPanel>

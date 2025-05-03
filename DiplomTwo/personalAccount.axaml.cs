@@ -208,4 +208,10 @@ public partial class personalAccount : Window
         new MainWindow().Show();
         Close();
     }
+
+    private void OpenB(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Books().Show();
+        Close();
+    }
 }

@@ -242,7 +242,7 @@ public partial class CreatingBook : Window
 
     private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new LogIn().Show();
+        new personalAccount().Show();
         Close();
     }
 
@@ -255,6 +255,12 @@ public partial class CreatingBook : Window
     private void NewWorld(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         new SurroundingWorld(idForBook).Show();
+        Close();
+    }
+
+    private void OpenChar(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Character—reation().Show();
         Close();
     }
 }

@@ -279,5 +279,9 @@ public partial class SpecificBook : Window
 
     }
 
-
+    private void My(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new personalAccount().Show();
+        Close();
+    }
 }

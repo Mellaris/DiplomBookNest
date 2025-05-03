@@ -124,5 +124,15 @@ public partial class Books : Window
         DisplayForAllFiltr();
     }
 
-    
+    private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
+    }
+
+    private void MeAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new personalAccount().Show();
+        Close();
+    }
 }

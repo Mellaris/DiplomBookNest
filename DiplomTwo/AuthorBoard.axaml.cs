@@ -126,5 +126,9 @@ public partial class AuthorBoard : Window
         Close();
     }
 
-
+    private void MyAc(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new personalAccount().Show();
+        Close();
+    }
 }

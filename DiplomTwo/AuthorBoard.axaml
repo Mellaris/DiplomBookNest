@@ -22,7 +22,7 @@
 					<Button Click="OpenNews" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
 				</StackPanel>
 
-				<Button Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
+				<Button Click="MyAc" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
 					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
 				</Button>
 			</StackPanel>
