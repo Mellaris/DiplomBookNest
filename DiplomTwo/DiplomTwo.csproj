@@ -18,6 +18,8 @@
     <None Remove="achievementsPhotos\Ten.png" />
     <None Remove="achievementsPhotos\Three.png" />
     <None Remove="achievementsPhotos\Two.png" />
+    <None Remove="AvatarPhoto\6884834 1.png" />
+    <None Remove="AvatarPhoto\DJV MAR 1010-07.jpg" />
     <None Remove="Imoges\angle-app.png" />
     <None Remove="Imoges\angle-double-down-solid.png" />
     <None Remove="Imoges\angle-down.png" />
@@ -43,6 +45,7 @@
     <None Remove="Imoges\Group 353.png" />
     <None Remove="Imoges\hand-drawn-book-cartoon-illustration-b 2.png" />
     <None Remove="Imoges\Icon.png" />
+    <None Remove="Imoges\IconForFr.png" />
     <None Remove="Imoges\IconPurple.png" />
     <None Remove="Imoges\image 1.png" />
     <None Remove="Imoges\image 13.png" />
@@ -141,6 +144,8 @@
     <AvaloniaResource Include="achievementsPhotos\Ten.png" />
     <AvaloniaResource Include="achievementsPhotos\Three.png" />
     <AvaloniaResource Include="achievementsPhotos\Two.png" />
+    <AvaloniaResource Include="AvatarPhoto\6884834 1.png" />
+    <AvaloniaResource Include="AvatarPhoto\DJV MAR 1010-07.jpg" />
     <AvaloniaResource Include="Imoges\angle-app.png" />
     <AvaloniaResource Include="Imoges\angle-double-down-solid.png" />
     <AvaloniaResource Include="Imoges\angle-down.png" />
@@ -166,6 +171,7 @@
     <AvaloniaResource Include="Imoges\Group 353.png" />
     <AvaloniaResource Include="Imoges\hand-drawn-book-cartoon-illustration-b 2.png" />
     <AvaloniaResource Include="Imoges\Icon.png" />
+    <AvaloniaResource Include="Imoges\IconForFr.png" />
     <AvaloniaResource Include="Imoges\IconPurple.png" />
     <AvaloniaResource Include="Imoges\image 1.png" />
     <AvaloniaResource Include="Imoges\image 13.png" />

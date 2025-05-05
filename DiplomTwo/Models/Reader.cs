@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Avalonia.Media.Imaging;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DiplomTwo.Models;
 
@@ -32,4 +34,20 @@ public partial class Reader
     public virtual User? User { get; set; }
 
     public virtual ICollection<Userachievement> Userachievements { get; set; } = new List<Userachievement>();
+    public Bitmap CoverBitmap
+    {
+        get
+        {
+            try
+            {
+                string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "AvatarPhoto", AvatarUrl); return new Bitmap(fullPath);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
+                return null;
+            }
+        }
+    }
 }

@@ -181,7 +181,7 @@ namespace DiplomTwo
 
         private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            new AllAuthors().Show();
+            new Friends().Show();
             Close();
         }
 

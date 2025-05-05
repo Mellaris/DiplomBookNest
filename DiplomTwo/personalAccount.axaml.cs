@@ -202,6 +202,11 @@ public partial class personalAccount : Window
         new MyBooks().Show();
         Close();
     }
+    private void OpenFriends(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
 
     private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
