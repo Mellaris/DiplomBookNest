@@ -1,0 +1,98 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="926"
+        x:Class="DiplomTwo.MyOwnFriends"
+		Width="1440"
+		x:CompileBindings="False"
+		WindowState="Maximized"
+		Name="MyOwnFriendsIcon"
+        Title="BookNest">
+	<ScrollViewer>
+		<DockPanel LastChildFill="True">
+
+			<!-- Верхняя панель меню -->
+			<Border DockPanel.Dock="Top" Height="120" Background="White">
+				<StackPanel>
+					<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,16,0,0" Orientation="Horizontal">
+						<!-- Логотип -->
+						<TextBlock Foreground="#637BC0" FontSize="64" Text="BookNest"/>
+
+						<!-- Кнопки меню -->
+						<StackPanel Orientation="Horizontal" Background="White"
+									VerticalAlignment="Top" Margin="127,34,0,0" Height="60" Width="382">
+							<Button Click="Home" Background="White" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Дом"/>
+							<Button Click="AllBook" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
+							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Авторы"/>
+							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Новости"/>
+						</StackPanel>
+
+						<!-- Аватар -->
+						<Button Click="My" Background="White" Margin="297,28,0,0">
+							<Image Source="\Imoges\userPurple.png" Width="45" Height="35"/>
+						</Button>
+
+					</StackPanel>
+					<StackPanel Background="#D7D7D7" Height="4">
+					</StackPanel>
+				</StackPanel>
+
+
+			</Border>
+
+			<!-- Контентное тело -->
+			<Grid Margin="0,10,20,10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="335"/>
+					<ColumnDefinition Width="*" MinWidth="300"/>
+					<ColumnDefinition Width="250"/>
+				</Grid.ColumnDefinitions>
+
+				<!-- Левая панель: главы -->
+				<StackPanel Grid.Column="0" Margin="0,40,0,0">
+					<TextBlock Foreground="#042A99" Text="Друзья" FontSize="40" Margin="24,0,0,0"/>
+					<ListBox Background="White" Name="AllSections" Margin="0,18,0,0" Width="336" Height="496">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel VerticalAlignment="Center" Background="#D7D7D7" Width="371" Height="52">
+								
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<Button Width="336" Height="47" Background="#5974C0">
+						<TextBlock VerticalAlignment="Center" Foreground="White" FontSize="24" HorizontalAlignment="Center">Заявки</TextBlock>
+					</Button>
+					<Button Margin="0,16,0,0" Width="336" Height="47" Background="#5974C0">
+						<TextBlock VerticalAlignment="Center" Foreground="White" FontSize="24" HorizontalAlignment="Center">Черный список</TextBlock>
+					</Button>
+				</StackPanel>
+
+				<!-- Центральная панель: текст главы -->
+				<StackPanel Margin="32,44,0,0" Grid.Column="1" HorizontalAlignment="Left">
+					<TextBlock Name="titleSection" Foreground="#042A99" Text="Заявки" FontSize="48" Margin="0,0,0,27"/>
+					<ListBox Width="736" Height="466" Background="#E6ECFF">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Background="White" Width="684" Height="108" Margin="10" Orientation="Horizontal">
+									<Image></Image>
+									<StackPanel>
+										<TextBlock></TextBlock>
+										<TextBlock></TextBlock>
+									</StackPanel>
+									<Button></Button>
+									<Button></Button>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+
+				</StackPanel>
+
+				<!-- Правая панель: комментарии -->
+
+			</Grid>
+		</DockPanel>
+	</ScrollViewer>
+</Window>

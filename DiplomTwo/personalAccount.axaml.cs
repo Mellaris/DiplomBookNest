@@ -204,7 +204,7 @@ public partial class personalAccount : Window
     }
     private void OpenFriends(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new Friends().Show();
+        new MyOwnFriends().Show();
         Close();
     }
 

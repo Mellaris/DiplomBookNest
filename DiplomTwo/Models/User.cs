@@ -23,9 +23,9 @@ public partial class User
 
     public DateTime? RegistrationDate { get; set; }
 
-    public virtual ICollection<Friend> FriendUser1s { get; set; } = new List<Friend>();
+    public virtual ICollection<Friendrelation> FriendrelationFromusers { get; set; } = new List<Friendrelation>();
 
-    public virtual ICollection<Friend> FriendUser2s { get; set; } = new List<Friend>();
+    public virtual ICollection<Friendrelation> FriendrelationTousers { get; set; } = new List<Friendrelation>();
 
     public virtual Gender? Gender { get; set; }
 

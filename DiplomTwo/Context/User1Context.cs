@@ -42,7 +42,9 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<ElectronicBooksInfo> ElectronicBooksInfos { get; set; }
 
-    public virtual DbSet<Friend> Friends { get; set; }
+    public virtual DbSet<Friendrelation> Friendrelations { get; set; }
+
+    public virtual DbSet<Friendrequeststatus> Friendrequeststatuses { get; set; }
 
     public virtual DbSet<Gender> Genders { get; set; }
 
@@ -403,28 +405,46 @@ public partial class User1Context : DbContext
                 .HasConstraintName("electronic_books_info_status_id_fkey");
         });
 
-        modelBuilder.Entity<Friend>(entity =>
+        modelBuilder.Entity<Friendrelation>(entity =>
         {
-            entity.HasKey(e => new { e.Id, e.User1Id, e.User2Id }).HasName("friends_pkey");
+            entity.HasKey(e => e.Id).HasName("friendrelations_pkey");
 
-            entity.ToTable("friends");
+            entity.ToTable("friendrelations");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("id");
-            entity.Property(e => e.User1Id).HasColumnName("user1_id");
-            entity.Property(e => e.User2Id).HasColumnName("user2_id");
-            entity.Property(e => e.Status)
-                .HasMaxLength(50)
-                .HasColumnName("status");
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Fromuserid).HasColumnName("fromuserid");
+            entity.Property(e => e.Requestdate)
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("requestdate");
+            entity.Property(e => e.Statusid).HasColumnName("statusid");
+            entity.Property(e => e.Touserid).HasColumnName("touserid");
 
-            entity.HasOne(d => d.User1).WithMany(p => p.FriendUser1s)
-                .HasForeignKey(d => d.User1Id)
-                .HasConstraintName("friends_user1_id_fkey");
+            entity.HasOne(d => d.Fromuser).WithMany(p => p.FriendrelationFromusers)
+                .HasForeignKey(d => d.Fromuserid)
+                .HasConstraintName("friendrelations_fromuserid_fkey");
 
-            entity.HasOne(d => d.User2).WithMany(p => p.FriendUser2s)
-                .HasForeignKey(d => d.User2Id)
-                .HasConstraintName("friends_user2_id_fkey");
+            entity.HasOne(d => d.Status).WithMany(p => p.Friendrelations)
+                .HasForeignKey(d => d.Statusid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("friendrelations_statusid_fkey");
+
+            entity.HasOne(d => d.Touser).WithMany(p => p.FriendrelationTousers)
+                .HasForeignKey(d => d.Touserid)
+                .HasConstraintName("friendrelations_touserid_fkey");
+        });
+
+        modelBuilder.Entity<Friendrequeststatus>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("friendrequeststatuses_pkey");
+
+            entity.ToTable("friendrequeststatuses");
+
+            entity.HasIndex(e => e.Name, "friendrequeststatuses_name_key").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(20)
+                .HasColumnName("name");
         });
 
         modelBuilder.Entity<Gender>(entity =>
