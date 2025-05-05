@@ -260,7 +260,7 @@ public partial class CreatingBook : Window
 
     private void OpenChar(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new Character—reation().Show();
+        new Character—reation(idForBook).Show();
         Close();
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Avalonia.Media.Imaging;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DiplomTwo.Models;
 
@@ -38,4 +40,20 @@ public partial class Character
     public virtual Book Book { get; set; } = null!;
 
     public virtual Gender Gender { get; set; } = null!;
+    public Bitmap CoverBitmap
+    {
+        get
+        {
+            try
+            {
+                string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "PhotosForCharacters", ImageName); return new Bitmap(fullPath);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
+                return null;
+            }
+        }
+    }
 }

@@ -107,6 +107,8 @@
     <None Remove="PhotoForBook\yl9KIkAF-ipad.jpeg" />
     <None Remove="PhotoForBook\zQAtIESP-ipad.jpeg" />
     <None Remove="PhotoForBook\ZyRxrJmq-ipad.jpeg" />
+    <None Remove="PhotosForCharacters\One.jpg" />
+    <None Remove="PhotosForCharacters\photoCheck.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -227,5 +229,7 @@
     <AvaloniaResource Include="PhotoForBook\yl9KIkAF-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\zQAtIESP-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\ZyRxrJmq-ipad.jpeg" />
+    <AvaloniaResource Include="PhotosForCharacters\One.jpg" />
+    <AvaloniaResource Include="PhotosForCharacters\photoCheck.jpeg" />
   </ItemGroup>
 </Project>
