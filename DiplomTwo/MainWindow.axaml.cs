@@ -181,8 +181,12 @@ namespace DiplomTwo
 
         private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            new Friends().Show();
-            Close();
+            if (ListsStaticClass.currentAccount != -1)
+            {
+                new Friends().Show();
+                Close();
+            }
+            
         }
 
         

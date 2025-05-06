@@ -49,22 +49,22 @@
 					<ColumnDefinition Width="250"/>
 				</Grid.ColumnDefinitions>
 
-				<!-- Левая панель: главы -->
+				<!-- Левая панель: друзья -->
 				<StackPanel Grid.Column="0" Margin="0,40,0,0">
 					<TextBlock Foreground="#042A99" Text="Друзья" FontSize="40" Margin="24,0,0,0"/>
-					<ListBox Background="White" Name="AllSections" Margin="0,18,0,0" Width="336" Height="496">
+					<ListBox Background="White" Name="allMyFr" Margin="0,18,0,0" Width="336" Height="496">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel VerticalAlignment="Center" Background="#D7D7D7" Width="371" Height="52">
-								
+									<TextBlock HorizontalAlignment="Center" Text="{Binding Login}"></TextBlock>
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-					<Button Width="336" Height="47" Background="#5974C0">
+					<Button Click="LoadIncomingFriendRequests" Width="336" Height="47" Background="#5974C0">
 						<TextBlock VerticalAlignment="Center" Foreground="White" FontSize="24" HorizontalAlignment="Center">Заявки</TextBlock>
 					</Button>
-					<Button Margin="0,16,0,0" Width="336" Height="47" Background="#5974C0">
+					<Button Click="OpenBlackList" Margin="0,16,0,0" Width="336" Height="47" Background="#5974C0">
 						<TextBlock VerticalAlignment="Center" Foreground="White" FontSize="24" HorizontalAlignment="Center">Черный список</TextBlock>
 					</Button>
 				</StackPanel>
@@ -72,22 +72,21 @@
 				<!-- Центральная панель: текст главы -->
 				<StackPanel Margin="32,44,0,0" Grid.Column="1" HorizontalAlignment="Left">
 					<TextBlock Name="titleSection" Foreground="#042A99" Text="Заявки" FontSize="48" Margin="0,0,0,27"/>
-					<ListBox Width="736" Height="466" Background="#E6ECFF">
+					<ListBox Name="myApplications" Width="736" Height="466" Background="#E6ECFF">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel Background="White" Width="684" Height="108" Margin="10" Orientation="Horizontal">
-									<Image></Image>
-									<StackPanel>
-										<TextBlock></TextBlock>
-										<TextBlock></TextBlock>
+									<Image Source="{Binding CoverBitmap}" Width="80" Height="80" Margin="10"/>
+									<StackPanel Margin="10,0">
+										<TextBlock Text="{Binding Login}" FontWeight="Bold"/>
+										<TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
 									</StackPanel>
-									<Button></Button>
-									<Button></Button>
+									<Button Click="AcceptFriendRequest" Content="Принять" Tag="{Binding Id}" />
+									<Button Click="RejectFriendRequest" Content="Отклонить" Tag="{Binding Id}" />
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-
 				</StackPanel>
 
 				<!-- Правая панель: комментарии -->
