@@ -32,6 +32,7 @@ public partial class personalAccount : Window
                     if(reader.IdReader == ListsStaticClass.currentAccount)
                     {
                         profileText.Text = reader.ProfileDescription;
+                        imageForAvatar.Source = reader.CoverBitmap;
                         break;
                     }
                 }
@@ -60,6 +61,80 @@ public partial class personalAccount : Window
             }
         }
         listWithAch.ItemsSource = achievementSort.ToList();
+
+
+        // Получаем все книги пользователя из персональной библиотеки
+        var userLibraryBooks = ListsStaticClass.listAllPersonallLibrary
+            .Where(pl => pl.ReaderId == ListsStaticClass.currentAccount)
+            .Select(pl => pl.BookId)
+            .Distinct()
+            .ToList();
+
+        // Получаем все жанры этих книг (многие ко многим)
+        var genresCount = new Dictionary<int, int>(); // id жанра -> сколько раз встречается
+
+        foreach (var bookId in userLibraryBooks)
+        {
+            var genreIds = ListsStaticClass.listAllBookGenres
+                .Where(bg => bg.BookId == bookId)
+                .Select(bg => bg.GenreId);
+
+            foreach (var genreId in genreIds)
+            {
+                if (genresCount.ContainsKey(genreId))
+                    genresCount[genreId]++;
+                else
+                    genresCount[genreId] = 1;
+            }
+        }
+
+        // Находим топ-3 жанра
+        var topGenres = genresCount
+            .OrderByDescending(g => g.Value)
+            .Take(3)
+            .ToList();
+
+        // Сохраняем названия и количества в переменные
+        string? topGenreName1 = null, topGenreName2 = null, topGenreName3 = null;
+        int topGenreCount1 = 0, topGenreCount2 = 0, topGenreCount3 = 0;
+
+        for (int i = 0; i < topGenres.Count; i++)
+        {
+            var genreId = topGenres[i].Key;
+            var count = topGenres[i].Value;
+            var genreName = ListsStaticClass.listAllGenres.FirstOrDefault(g => g.Id == genreId)?.Name;
+
+            if (i == 0) { topGenreName1 = genreName; topGenreCount1 = count; }
+            else if (i == 1) { topGenreName2 = genreName; topGenreCount2 = count; }
+            else if (i == 2) { topGenreName3 = genreName; topGenreCount3 = count; }
+        }
+        countOne.Text = topGenreCount2.ToString();
+        nameOne.Text = topGenreName2;
+        countTwo.Text = topGenreCount1.ToString();
+        nameTwo.Text = topGenreName1;
+        countThree.Text = topGenreCount3.ToString();
+        nameThree.Text = topGenreName3;
+
+        LoadUserStats();
+    }
+    private void LoadUserStats()
+    {
+        int userId = ListsStaticClass.currentAccount;
+
+        // Количество книг
+        int bookCount = ListsStaticClass.listAllPersonallLibrary
+     .Count(pl => pl.ReaderId == userId);
+        countBookThis.Text = bookCount.ToString();
+
+        // Количество цитат
+        int quoteCount = ListsStaticClass.listAllQuote
+     .Count(q => q.ReaderId == userId);
+        countQThis.Text = quoteCount.ToString();
+
+        // Количество рецензий
+        int reviewCount = ListsStaticClass.listAllBookreview
+     .Count(r => r.ReaderId == userId);
+        countRevThis.Text = reviewCount.ToString();
     }
     private void OpenBookPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -189,6 +264,41 @@ public partial class personalAccount : Window
             Name = achievement.Name,
             Picturename = achievement.Picturename,
             Description = achievement.Description,
+        }).ToList();
+
+        ListsStaticClass.listAllBookGenres.Clear();
+        ListsStaticClass.listAllBookGenres = Baza.DbContext.BookGenres.Select(bookGenres => new BookGenre
+        {
+            Id=bookGenres.Id,
+            GenreId = bookGenres.GenreId,
+            BookId = bookGenres.BookId,
+        }).ToList();
+
+        ListsStaticClass.listAllGenres.Clear();
+        ListsStaticClass.listAllGenres = Baza.DbContext.Genres.Select(genres => new Genre
+        {
+            Id = genres.Id,
+            Name = genres.Name,
+        }).ToList();
+        
+        ListsStaticClass.listAllQuote.Clear();
+        ListsStaticClass.listAllQuote = Baza.DbContext.Quotes.Select(q => new Quote
+        {
+            Id = q.Id,
+            BookId= q.BookId,
+            Text = q.Text,
+            ReaderId = q.ReaderId,  
+        }).ToList();
+
+        ListsStaticClass.listAllBookreview.Clear();
+        ListsStaticClass.listAllBookreview = Baza.DbContext.Bookreviews.Select(br => new Bookreview
+        {
+            Id = br.Id,
+            ReaderId = br.ReaderId,
+            BookId = br.BookId,
+            ReviewText = br.ReviewText,
+            IsHaveRev = br.IsHaveRev,
+            CreatedAt = br.CreatedAt,
         }).ToList();
     }
     private void Log(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

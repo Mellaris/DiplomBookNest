@@ -12,23 +12,32 @@
 			<Button Click="Back" Foreground="#042A99" Background="#E4EAFF" FontSize="24" Margin="26,20,0,0" CornerRadius="8">Назад</Button>
 			<TextBlock Margin="0,16,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Редактирование профиля!</TextBlock>
 			<TextBlock Margin="0,8,0,0" FontSize="24" Foreground="#5974C0" HorizontalAlignment="Center">Здесь вы можете изменить свой логин и описание профиля</TextBlock>
+			<StackPanel Orientation="Horizontal">
+				<StackPanel>
+					<TextBlock Margin="66,64,0,0" FontSize="32" Foreground="#042A99">Логин:</TextBlock>
+					<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
+						<TextBox IsEnabled="False" Name="newLogin" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="53"></TextBox>
+						<Button Click="OpenEditLogin" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
+							<Image Source="\Imoges\pen-solid.png"></Image>
+						</Button>
+						
+					</StackPanel>
+					<TextBlock Margin="66,0,0,0" FontSize="32" Foreground="#042A99">Описание профиля:</TextBlock>
+					<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
 
-			<TextBlock Margin="66,64,0,0" FontSize="32" Foreground="#042A99">Логин:</TextBlock>
-			<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
-				<TextBox IsEnabled="False" Name="newLogin" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="53"></TextBox>
-				<Button Click="OpenEditLogin" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
-					<Image Source="\Imoges\pen-solid.png"></Image>
-				</Button>
-				<TextBlock IsVisible="False" Name="errorMassege" Margin="63,0,0,0" Width="390" Height="99" TextWrapping="Wrap"></TextBlock>
+						<TextBox TextWrapping="Wrap" IsEnabled="False" Name="newDescription" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="124"></TextBox>
+						<Button Click="OpenEditDescription" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
+							<Image Source="\Imoges\pen-solid.png"></Image>
+						</Button>
+					</StackPanel>
+				</StackPanel>
+				<StackPanel>
+					<Image Name="editAvatar" Margin="100,50,0,0" HorizontalAlignment="Center" Width="200" Height="250" Source="/AvatarPhoto/6884834 1.png"></Image>
+					<Button Click="NewEditAvatar" Margin="120,0,0,0" HorizontalAlignment="Center">Изменить фото</Button>
+				</StackPanel>
 			</StackPanel>
-			<TextBlock Margin="66,0,0,0" FontSize="32" Foreground="#042A99">Описание профиля:</TextBlock>
-			<StackPanel Margin="66,16,0,0" Orientation="Horizontal">
-				
-				<TextBox TextWrapping="Wrap" IsEnabled="False" Name="newDescription" VerticalAlignment="Top" BorderBrush="White" CornerRadius="12" Background="White" Width="488" Height="124"></TextBox>
-				<Button Click="OpenEditDescription" Margin="32,0,0,0" VerticalAlignment="Top" Background="#E4EAFF">
-					<Image Source="\Imoges\pen-solid.png"></Image>
-				</Button>
-			</StackPanel>
+			
+			
 			<Button Click="EditAndBack" Margin="0,81,0,0" HorizontalAlignment="Center" Background="#506AB8" Width="358" Height="47" CornerRadius="16">
 				<TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Редактировать</TextBlock>
 			</Button>

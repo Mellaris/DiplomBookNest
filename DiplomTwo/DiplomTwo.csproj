@@ -93,6 +93,7 @@
     <None Remove="PhotoForBook\I2kXGa1r-ipad.jpeg" />
     <None Remove="PhotoForBook\iVj1dT3H-ipad.jpeg" />
     <None Remove="PhotoForBook\jg8WQw0Z-ipad.jpeg" />
+    <None Remove="PhotoForBook\JLGoXTZc-ipad.jpeg" />
     <None Remove="PhotoForBook\KTcTOokT-ipad.jpeg" />
     <None Remove="PhotoForBook\L2YmEk3H-ipad.jpeg" />
     <None Remove="PhotoForBook\lGFuC4Lu-ipad.jpeg" />
@@ -219,6 +220,7 @@
     <AvaloniaResource Include="PhotoForBook\I2kXGa1r-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\iVj1dT3H-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\jg8WQw0Z-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\JLGoXTZc-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\KTcTOokT-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\L2YmEk3H-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\lGFuC4Lu-ipad.jpeg" />

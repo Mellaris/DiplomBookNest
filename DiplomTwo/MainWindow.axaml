@@ -17,8 +17,7 @@
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" HorizontalAlignment="Stretch">
 					<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Дом</Button>
 					<Button Click="AllBooks" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Книги</Button>
-					<Button Click="Button_Click_1" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Авторы</Button>
-					<Button Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Новости</Button>
+					<Button Click="Button_Click_1" Height="40" Background="White" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24" HorizontalAlignment="Left">Друзья</Button>
 				</StackPanel>
 				<Button Click="Log" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
 					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
@@ -70,7 +69,7 @@
 					<Image Margin="16,16,0,0" Width="394" Height="186" Source="\Imoges\Group 246.png"/>
 					<Image Margin="16,16,0,0" Width="296" Height="186" Source="\Imoges\Group 248.png"/>
 				</StackPanel>
-				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<StackPanel Margin="0,0,0,15" Orientation="Horizontal" HorizontalAlignment="Center">
 					<Image Margin="16,16,0,0" Width="329" Height="186" Source="\Imoges\Group 250.png"/>
 					<Image Margin="16,16,0,0" Width="397" Height="186" Source="\Imoges\Group 252.png"/>
 					<Image Margin="16,16,0,0" Width="292" Height="186" Source="\Imoges\Group 254.png"/>

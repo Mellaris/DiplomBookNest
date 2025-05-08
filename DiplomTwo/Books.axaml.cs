@@ -53,12 +53,44 @@ public partial class Books : Window
     {
         booksForGenre.Clear();
         booksForGenre = ListsStaticClass.listAllBooks.ToList();
+
+        // Фильтрация по жанру
         if (selectedGenreId > 0)
         {
             booksForGenre = booksForGenre
-               .Where(book => book.BookGenres.Any(g => g.GenreId == selectedGenreId))
-               .ToList();           
+            .Where(book => book.BookGenres.Any(g => g.GenreId == selectedGenreId))
+            .ToList();
         }
+
+        // Фильтрация по новинкам
+        if (CheckBoxIsNew.IsChecked == true)
+        {
+            var currentMonth = DateTime.Now.Month;
+            var currentYear = DateTime.Now.Year;
+            booksForGenre = booksForGenre
+            .Where(book => book.Dateadd.HasValue &&
+            book.Dateadd.Value.Month == currentMonth &&
+            book.Dateadd.Value.Year == currentYear)
+            .ToList();
+        }
+
+        // Фильтрация по авторским книгам
+        if (CheckBoxIsAuthorBook.IsChecked == true)
+        {
+            booksForGenre = booksForGenre
+            .Where(book => book.IsAuthorBook == true)
+            .ToList();
+        }
+
+        // Поиск по названию
+        if (!string.IsNullOrEmpty(textForSearch))
+        {
+            booksForGenre = booksForGenre
+            .Where(book => book.Title.ToLower().Contains(textForSearch.ToLower()))
+            .ToList();
+        }
+
+        // Сортировка по рейтингу
         if (selectRatingId == 0)
         {
             booksForGenre = booksForGenre.OrderBy(book => book.Rating).ToList();
@@ -67,11 +99,24 @@ public partial class Books : Window
         {
             booksForGenre = booksForGenre.OrderByDescending(book => book.Rating).ToList();
         }
-        if (!string.IsNullOrEmpty(textForSearch))
-        {
-            booksForGenre = booksForGenre.Where(a => a.Title.ToLower().Contains(textForSearch.ToLower())).ToList();
-        }
-        allBooks.ItemsSource = booksForGenre.ToList();
+
+        allBooks.ItemsSource = booksForGenre;
+    }
+    private void CheckBoxIsNew_Checked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        DisplayForAllFiltr();
+    }
+    private void CheckBoxIsNew_Unchecked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        DisplayForAllFiltr();
+    }
+    private void CheckBoxIsAuthorBook_Checked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        DisplayForAllFiltr();
+    }
+    private void CheckBoxIsAuthorBook_Unchecked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        DisplayForAllFiltr();
     }
 
     private void NewGenreSelection(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
@@ -134,5 +179,14 @@ public partial class Books : Window
     {
         new personalAccount().Show();
         Close();
+    }
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (ListsStaticClass.currentAccount != -1)
+        {
+            new Friends().Show();
+            Close();
+        }
+
     }
 }

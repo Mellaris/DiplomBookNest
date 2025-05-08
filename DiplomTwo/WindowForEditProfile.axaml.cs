@@ -5,11 +5,15 @@ using System.Linq;
 using DiplomTwo.Models;
 using Avalonia.Media.Imaging;
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace DiplomTwo;
 
 public partial class WindowForEditProfile : Window
 {
+    int helpCheckTwo = 0;
+    private string selectedImageFileName = null;
     public WindowForEditProfile()
     {
         InitializeComponent();
@@ -40,56 +44,98 @@ public partial class WindowForEditProfile : Window
             }
         }
     }
+    private async void NewEditAvatar(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        helpCheckTwo = 1;
+        var dialog = new OpenFileDialog
+        {
+            AllowMultiple = false,
+            Filters = new List<FileDialogFilter>
+        {
+            new FileDialogFilter { Name = "Images", Extensions = { "png", "jpg", "jpeg", "bmp" } }
+        }
+        };
+
+        var result = await dialog.ShowAsync(this);
+
+        if (result != null && result.Length > 0)
+        {
+            var sourcePath = result[0];
+            var extension = Path.GetExtension(sourcePath);
+            var fileName = $"bookcover_{Guid.NewGuid()}{extension}";
+
+            var destDir = Path.Combine(AppContext.BaseDirectory, "AvatarPhoto");
+            if (!Directory.Exists(destDir))
+                Directory.CreateDirectory(destDir);
+
+            var destPath = Path.Combine(destDir, fileName);
+            File.Copy(sourcePath, destPath, true);
+
+            selectedImageFileName = fileName;
+
+            using (var stream = File.OpenRead(destPath))
+            {
+                var bitmap = new Avalonia.Media.Imaging.Bitmap(stream);
+                editAvatar.Source = bitmap;
+            }
+        }
+    }
     private void EditAndBack(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if(!string.IsNullOrEmpty(newDescription.Text) && !string.IsNullOrEmpty(newLogin.Text))
+        if (!string.IsNullOrEmpty(newDescription.Text) && !string.IsNullOrEmpty(newLogin.Text))
         {
-            if(newLogin.Text.Count() < 51)
+            if (newLogin.Text.Count() < 51)
             {
                 if (newDescription.Text.Count() < 201)
                 {
-                    errorMassege.IsVisible = false;
                     bool loginExists = ListsStaticClass.listAllUsers
                         .Any(u => u.Login == newLogin.Text && u.Id != ListsStaticClass.currentAccount);
+
                     if (loginExists)
                     {
-                        errorMassege.IsVisible = true;
-                        errorMassege.Text = "Этот логин уже существует";
+                        string errorMassege = "Этот логин уже существует";
+                        new ErrorReport(errorMassege).ShowDialog(this);
                         return;
                     }
 
                     var user = Baza.DbContext.Users.FirstOrDefault(u => u.Id == ListsStaticClass.currentAccount);
                     if (user != null)
                     {
-                        errorMassege.IsVisible = false;
                         user.Login = newLogin.Text;
+
+                        
                     }
 
                     var reader = Baza.DbContext.Readers.FirstOrDefault(u => u.IdReader == ListsStaticClass.currentAccount);
                     if (reader != null)
                     {
                         reader.ProfileDescription = newDescription.Text;
+                        if (!string.IsNullOrEmpty(selectedImageFileName) && reader.AvatarUrl != selectedImageFileName)
+                        {
+                            reader.AvatarUrl = selectedImageFileName;
+                        }
                     }
+
                     Baza.DbContext.SaveChanges();
                     CallBaza();
                     this.Close();
                 }
                 else
                 {
-                    errorMassege.IsVisible = true;
-                    errorMassege.Text = "Описание должно быть меньше 200 символов";
+                    string errorMassege = "Описание должно быть меньше 200 символов";
+                    new ErrorReport(errorMassege).ShowDialog(this);
                 }
             }
             else
             {
-                errorMassege.IsVisible = true;
-                errorMassege.Text = "Логин должен быть меньше 50 символов";
+                string errorMassege = "Логин должен быть меньше 50 символов";
+                new ErrorReport(errorMassege).ShowDialog(this);
             }
         }
         else
         {
-            errorMassege.IsVisible = true;
-            errorMassege.Text = "Заполните поля";
+            string errorMassege = "Заполните поля";
+            new ErrorReport(errorMassege).ShowDialog(this);
         }
     }
     private void OpenEditLogin(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -130,4 +176,6 @@ public partial class WindowForEditProfile : Window
     {
         this.Close();
     }
+
+
 }

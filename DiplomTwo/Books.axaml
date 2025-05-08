@@ -19,8 +19,7 @@
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 					<Button Click="Home" Height="40" Background="White" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Дом</Button>
 					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Книги</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Авторы</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Новости</Button>
+					<Button Click="Button_Click_1" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#CBC9ED" FontSize="24">Друзья</Button>
 				</StackPanel>
 
 				<Button Click="MeAccount" Background="White" Margin="297,28,0,0">
@@ -53,8 +52,10 @@
 						</DataTemplate>
 					</ComboBox.ItemTemplate>
 				</ComboBox>
-				<CheckBox Margin="68,0,0,0" Foreground="#042A99" FontSize="26">Новинки</CheckBox>
-				<CheckBox Margin="44,0,0,0" Foreground="#042A99" FontSize="26">Авторское</CheckBox>
+				<CheckBox  Checked="CheckBoxIsNew_Checked"
+              Unchecked="CheckBoxIsNew_Unchecked" x:Name="CheckBoxIsNew" Margin="68,0,0,0" Foreground="#042A99" FontSize="26">Новинки</CheckBox>
+				<CheckBox Checked="CheckBoxIsAuthorBook_Checked"
+              Unchecked="CheckBoxIsAuthorBook_Unchecked" x:Name="CheckBoxIsAuthorBook" Margin="44,0,0,0" Foreground="#042A99" FontSize="26">Авторское</CheckBox>
 
 				<Image Margin="302,0,0,0" Source="\Imoges\Icon.png"></Image>
 				
@@ -80,11 +81,11 @@
 
     <ListBox.ItemTemplate>
         <DataTemplate>
-            <Border Width="540" Margin="10" Background="White" BorderBrush="#DDD" BorderThickness="1" Padding="10">
+            <Border Width="540" Margin="10" Background="White" BorderBrush="White" BorderThickness="1" Padding="10">
                 <StackPanel Orientation="Horizontal">
                     <Image Width="163" Height="235" Source="{Binding CoverBitmap}"/>
                     <StackPanel Margin="10,0,0,0" VerticalAlignment="Top">
-                        <TextBlock Margin="15,0,0,0" Foreground="#042A99" FontSize="24" Text="{Binding Title}" Width="358" TextWrapping="Wrap"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" Foreground="#042A99" FontSize="24" Text="{Binding Title}" Width="320" TextWrapping="Wrap"/>
                         <TextBlock Margin="0,14,0,0" Height="240" MaxHeight="240" Width="340" TextWrapping="Wrap" FontSize="16" Foreground="#637BC0" Text="{Binding Synopsis}"/>
                         <StackPanel Margin="0,21,0,0" Orientation="Horizontal">
                             <Image Margin="0,0,5,0" Source="\Imoges\Star 7.png"/>
@@ -100,7 +101,7 @@
     </ListBox.ItemTemplate>
 </ListBox>
 
-			<StackPanel Margin="0,32,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+			<StackPanel IsVisible="False" Margin="0,32,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 				<Image Source="\Imoges\StrelkaBooksLeft.png"></Image>
 				<TextBlock Margin="32,0,0,0">1</TextBlock>
 				<TextBlock Margin="12,0,0,12">из</TextBlock>

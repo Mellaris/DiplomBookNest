@@ -159,7 +159,7 @@ public partial class BookDownload : Window
     private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
         var comboBox = sender as ComboBox;
-        if(comboBox?.SelectedItem is Series selectedSeries)
+        if (comboBox?.SelectedItem is Series selectedSeries)
         {
             helpCheck = 1;
             selected = selectedSeries.Id;
