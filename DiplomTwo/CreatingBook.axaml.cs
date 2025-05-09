@@ -263,4 +263,10 @@ public partial class CreatingBook : Window
         new Character—reation(idForBook).Show();
         Close();
     }
+
+    private void OpenSetting(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new SettingBook(idForBook).Show();
+        Close();
+    }
 }
