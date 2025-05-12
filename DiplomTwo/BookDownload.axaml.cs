@@ -141,7 +141,7 @@ public partial class BookDownload : Window
                 BookId = newBookId,
                 TargetWordCount = count,
                 StartDate = DateOnly.FromDateTime(DateTime.Now),
-                IsPublic = false,
+                AccessLevelId = 2,
                 StatusId = 1,
             };
             Baza.DbContext.ElectronicBooksInfos.Add(newAppBook);

@@ -36,6 +36,7 @@ public partial class WindowForEditProfile : Window
                     {
                         newDescription.IsEnabled = true;
                         newDescription.Text = reader.ProfileDescription;
+                        editAvatar.Source = reader.CoverBitmap;
                         newDescription.IsEnabled = false;
                         break;
                     }

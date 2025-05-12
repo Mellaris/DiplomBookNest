@@ -56,6 +56,8 @@ public partial class User1Context : DbContext
 
     public virtual DbSet<Prioritylevel> Prioritylevels { get; set; }
 
+    public virtual DbSet<Publicaccesslevel> Publicaccesslevels { get; set; }
+
     public virtual DbSet<Quote> Quotes { get; set; }
 
     public virtual DbSet<Reader> Readers { get; set; }
@@ -383,17 +385,19 @@ public partial class User1Context : DbContext
             entity.ToTable("electronic_books_info");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.AccessLevelId).HasColumnName("access_level_id");
             entity.Property(e => e.BookId).HasColumnName("book_id");
             entity.Property(e => e.ChapterCount).HasColumnName("chapter_count");
             entity.Property(e => e.CurrentWordCount).HasColumnName("current_word_count");
             entity.Property(e => e.EndDate).HasColumnName("end_date");
             entity.Property(e => e.EstimatedPageCount).HasColumnName("estimated_page_count");
-            entity.Property(e => e.IsPublic)
-                .HasDefaultValue(false)
-                .HasColumnName("is_public");
             entity.Property(e => e.StartDate).HasColumnName("start_date");
             entity.Property(e => e.StatusId).HasColumnName("status_id");
             entity.Property(e => e.TargetWordCount).HasColumnName("target_word_count");
+
+            entity.HasOne(d => d.AccessLevel).WithMany(p => p.ElectronicBooksInfos)
+                .HasForeignKey(d => d.AccessLevelId)
+                .HasConstraintName("fk_access_level");
 
             entity.HasOne(d => d.Book).WithMany(p => p.ElectronicBooksInfos)
                 .HasForeignKey(d => d.BookId)
@@ -539,6 +543,18 @@ public partial class User1Context : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Color).HasColumnName("color");
             entity.Property(e => e.Name).HasColumnName("name");
+        });
+
+        modelBuilder.Entity<Publicaccesslevel>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("access_levels_pkey");
+
+            entity.ToTable("publicaccesslevels");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(100)
+                .HasColumnName("name");
         });
 
         modelBuilder.Entity<Quote>(entity =>

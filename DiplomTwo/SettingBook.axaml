@@ -2,9 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1284"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1320"
         x:Class="DiplomTwo.SettingBook"
 		Name="SettingBookIcon"
+		x:CompileBindings="False"
 		MinWidth="1440" MinHeight="1294" MaxWidth="2000"
 		WindowState="Maximized"
         Title="BookNest">
@@ -28,45 +29,65 @@
 				<TextBlock FontSize="63" Foreground="#042A99">Настройка книги</TextBlock>
 				<StackPanel Margin="0,28,0,0" Orientation="Horizontal" Width="1140">
 					<StackPanel>
-						<Image Width="359" Height="440"></Image>
-						<Button Background="#506AB8" CornerRadius="8" Width="293" Height="57"> 
+						<Image Name="imageBook" Width="359" Height="440"></Image>
+						<Button Click="EditPhotoBook"  Background="#506AB8" CornerRadius="8" Width="293" Height="57"> 
 							<TextBlock VerticalAlignment="Center" FontSize="24" HorizontalAlignment="Center" Foreground="White">Изменить обложку</TextBlock>
 						</Button>
 					</StackPanel>
-					<StackPanel Margin="32,72,0,0">
+					<StackPanel Margin="32,50,0,0">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Возрастной рейтинг:</TextBlock>
-							<TextBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="31,0,0,0" VerticalAlignment="Top" Width="65" Height="43"></TextBox>
+							<TextBox Name="ageBook" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="31,0,0,0" VerticalAlignment="Top" Width="65" Height="43"></TextBox>
 							<TextBlock Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#042A99" FontSize="24">Жанры:</TextBlock>
-							<ComboBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="31,0,0,0" VerticalAlignment="Top" Width="260" Height="43"></ComboBox>
+							<ComboBox Name="genreName" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="31,0,0,0" VerticalAlignment="Top" Width="260" Height="43">
+								<ComboBox.ItemTemplate>
+									<DataTemplate>
+										<TextBlock Text="{Binding Name}"></TextBlock>
+									</DataTemplate>
+								</ComboBox.ItemTemplate>
+							</ComboBox>
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Margin="0,36,0,0">
 							<TextBlock VerticalAlignment="Top" Foreground="#042A99" FontSize="24">Описание:</TextBlock>
-							<TextBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="46,0,0,0" VerticalAlignment="Top" Width="586" Height="172"></TextBox>
+							<TextBox Name="descriptBook" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="46,0,0,0" VerticalAlignment="Top" Width="586" Height="172"></TextBox>
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Margin="0,36,0,0">
 							<TextBlock VerticalAlignment="Top" Foreground="#042A99" FontSize="24">Синопсис:</TextBlock>
-							<TextBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="46,0,0,0" VerticalAlignment="Top" Width="586" Height="66"></TextBox>
+							<TextBox Name="sinopsisBook" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="46,0,0,0" VerticalAlignment="Top" Width="586" Height="66"></TextBox>
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Margin="0,36,0,0">
 							<TextBlock VerticalAlignment="Top" Foreground="#042A99" FontSize="24">Цитата:</TextBlock>
-							<TextBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="82,0,0,0" VerticalAlignment="Top" Width="586" Height="42"></TextBox>
+							<TextBox Name="qBook" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="82,0,0,0" VerticalAlignment="Top" Width="586" Height="42"></TextBox>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Margin="0,36,0,0">
+							<TextBlock VerticalAlignment="Top" Foreground="#042A99" FontSize="24">Название:</TextBlock>
+							<TextBox Name="nameBook" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="50,0,0,0" VerticalAlignment="Top" Width="586" Height="42"></TextBox>
 						</StackPanel>
 					</StackPanel>
 				</StackPanel>
-				<TextBlock Margin="0,54,0,0" Foreground="#042A99" FontSize="24">Статус книги:</TextBlock>
-				<ComboBox Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="0,14,0,0" VerticalAlignment="Top" Width="360" Height="50"></ComboBox>
+				<TextBlock Margin="0,0,0,0" Foreground="#042A99" FontSize="24">Статус книги:</TextBlock>
+				<ComboBox Name="nameStatus" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="0,14,0,0" VerticalAlignment="Top" Width="360" Height="50">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"></TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
 				<TextBlock Margin="0,28,0,0" Foreground="#042A99" FontSize="24">Уровень доступа:</TextBlock>
-				
-					<CheckBox Margin="0,20,0,0" Foreground="#042A99" FontSize="24">Только для друзей</CheckBox>
-				<CheckBox Margin="0,12,0,0" Foreground="#042A99" FontSize="24">Для всех</CheckBox>
-				<CheckBox Margin="0,12,0,0" Foreground="#042A99" FontSize="24">Никто</CheckBox>
+				<ComboBox Name="nameLevel" Foreground="#042A99" FontSize="20" BorderBrush="#E6ECFF" Background="#E6ECFF" Margin="0,14,0,0" VerticalAlignment="Top" Width="360" Height="50">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"></TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+
 
 				<StackPanel Margin="33,80,0,0" Orientation="Horizontal">
-					<Button Background="#506AB8" CornerRadius="8" Width="293" Height="57">
+					<Button Click="SaveAndBack" Background="#506AB8" CornerRadius="8" Width="293" Height="57">
 						<TextBlock VerticalAlignment="Center" FontSize="24" HorizontalAlignment="Center" Foreground="White">Сохранить</TextBlock>
 					</Button>
-					<Button Margin="65,0,0,0" Background="#506AB8" CornerRadius="8" Width="293" Height="57">
+					<Button Click="DeleteThisBook" Margin="65,0,0,0" Background="#506AB8" CornerRadius="8" Width="293" Height="57">
 						<TextBlock VerticalAlignment="Center" FontSize="24" HorizontalAlignment="Center" Foreground="White">Удалить</TextBlock>
 					</Button>
 				</StackPanel>

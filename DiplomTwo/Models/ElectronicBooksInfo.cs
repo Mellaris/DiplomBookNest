@@ -21,9 +21,11 @@ public partial class ElectronicBooksInfo
 
     public DateOnly? EndDate { get; set; }
 
-    public bool? IsPublic { get; set; }
-
     public int? StatusId { get; set; }
+
+    public int? AccessLevelId { get; set; }
+
+    public virtual Publicaccesslevel? AccessLevel { get; set; }
 
     public virtual Book? Book { get; set; }
 
