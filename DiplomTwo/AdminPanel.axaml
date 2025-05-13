@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="900"
+        x:Class="DiplomTwo.AdminPanel"
+	    MinWidth="1440" MinHeight="900" Width="1440"
+		WindowState="Maximized"
+        Title="AdminPanel">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">	
+				</StackPanel>
+				<Button Click="LigInBack" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
+				</Button>
+			</StackPanel>
+			<StackPanel Background="#EAF2FF" Height="5"></StackPanel>
+			<StackPanel HorizontalAlignment="Center" Width="1140">
+				<TextBlock Margin="0,75,0,0" FontSize="48" Foreground="#108DE8">Здравствуйте, Анастасия!</TextBlock>
+				<TextBlock Margin="0,12,0,0" FontSize="24" Foreground="#9AC6FF">С чего вы хотите начать работу?</TextBlock>
+
+				<StackPanel Margin="0,60,0,0" Width="1140" Height="465">
+					<StackPanel Orientation="Horizontal">
+						<Button Width="554" Height="215" Background="White" CornerRadius="20">
+							<Border CornerRadius="20" Width="554" Height="215" Background="#FFF1C3">
+								<StackPanel>
+									<TextBlock Margin="63,25,0,0" FontSize="36" Foreground="White">Работа с Книгами!</TextBlock>
+									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Добавление, удаление, редактирование</TextBlock>
+
+								</StackPanel>
+							</Border>
+						</Button>
+						<Button Margin="32,0,0,0" Width="554" Height="215" CornerRadius="20">
+							<Border Margin="0,0,0,0" CornerRadius="20" Width="554" Height="215" Background="#DCCDED">
+								<StackPanel>
+									<TextBlock Margin="63,25,0,0" FontSize="36" Foreground="White">Авторы!</TextBlock>
+									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Добавление, удаление, редактирование</TextBlock>
+
+								</StackPanel>
+							</Border>
+						</Button>
+					</StackPanel>
+					<StackPanel Margin="0,35,0,0" Orientation="Horizontal">
+						<Button Click="OpenMod" Width="554" Height="215" Background="White" CornerRadius="20">
+							<Border CornerRadius="20" Width="554" Height="215" Background="#EDF2D2">
+								<StackPanel>
+									<TextBlock Margin="63,25,0,0" FontSize="36" Foreground="White">Модерация!</TextBlock>
+									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Удаление рецензий, цитат, комментариев</TextBlock>
+
+								</StackPanel>
+							</Border>
+						</Button>
+						<Button Margin="32,0,0,0" Width="554" Height="215" CornerRadius="20">
+							<Border Margin="0,0,0,0" CornerRadius="20" Width="554" Height="215" Background="#FFD2E0">
+								<StackPanel>
+									<TextBlock Margin="63,25,0,0" FontSize="36" Foreground="White">Жанры!</TextBlock>
+									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Добавление, удаление</TextBlock>
+
+								</StackPanel>
+							</Border>
+						</Button>
+					</StackPanel>
+				</StackPanel>
+				
+			</StackPanel>
+		
+		
+		
+		</StackPanel>
+	</ScrollViewer>
+</Window>

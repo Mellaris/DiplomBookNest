@@ -30,6 +30,8 @@
     <None Remove="Imoges\burn-solid.png" />
     <None Remove="Imoges\comment-alt-block.png" />
     <None Remove="Imoges\comment-alt-check.png" />
+    <None Remove="Imoges\corner-up-left-alt.png" />
+    <None Remove="Imoges\deleteTrash.png" />
     <None Remove="Imoges\Group 226.png" />
     <None Remove="Imoges\Group 229.png" />
     <None Remove="Imoges\Group 242.png" />
@@ -157,6 +159,8 @@
     <AvaloniaResource Include="Imoges\burn-solid.png" />
     <AvaloniaResource Include="Imoges\comment-alt-block.png" />
     <AvaloniaResource Include="Imoges\comment-alt-check.png" />
+    <AvaloniaResource Include="Imoges\corner-up-left-alt.png" />
+    <AvaloniaResource Include="Imoges\deleteTrash.png" />
     <AvaloniaResource Include="Imoges\Group 226.png" />
     <AvaloniaResource Include="Imoges\Group 229.png" />
     <AvaloniaResource Include="Imoges\Group 242.png" />

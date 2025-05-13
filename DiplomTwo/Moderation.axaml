@@ -1,0 +1,150 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1857"
+        x:Class="DiplomTwo.Moderation"
+		MinWidth="1440" MinHeight="1000" Width="1440"
+		WindowState="Maximized"
+		x:CompileBindings="False"
+        Title="Moderation">
+	<ScrollViewer>
+		<StackPanel>
+			<StackPanel VerticalAlignment="Top" Margin="0,16,0,0"  Width="1125" Height="77" Orientation="Horizontal">
+				<TextBlock Foreground="#108DE8" FontSize="64">BookNest</TextBlock>
+				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
+				</StackPanel>
+				<Button Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
+					<Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="\Imoges\user.png" Width="45" Height="35"/>
+				</Button>
+			</StackPanel>
+			<StackPanel Background="#EAF2FF" Height="5"></StackPanel>
+			<StackPanel Margin="0,75,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+				<Button Click="Back" Background="White">
+					<Image Source="\Imoges\corner-up-left-alt.png"></Image>
+				</Button>
+				<TextBlock Margin="12,0,0,0" Foreground="#108DE8" FontSize="48">Модерация</TextBlock>
+			</StackPanel>
+
+			<StackPanel Margin="0,31,0,0" Height="534" Background="#E4EFFD">
+				<StackPanel Width="1140">
+					<StackPanel Margin="0,40,0,0" Width="1140" Orientation="Horizontal">
+						<TextBlock FontSize="48" Foreground="#108DE8">Рецензии</TextBlock>
+						<ComboBox SelectionChanged="BoxForDateAndReviews" Margin="63,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Дата">
+							<ComboBoxItem>По возрастанию</ComboBoxItem>
+							<ComboBoxItem>По убыванию</ComboBoxItem>
+						</ComboBox>
+						<ComboBox SelectionChanged="BoxForBooksAndReviews" Name="allBooksOne" Margin="32,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Книга">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Title}"></TextBlock>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</StackPanel>
+					<ListBox Name="allReviewsListBox" HorizontalAlignment="Left" Margin="0,46,0,0" Width="1042" Height="312" Background="White">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Background="#E4EFFD" Width="984" Height="257" HorizontalAlignment="Center">
+									<StackPanel Orientation="Horizontal">
+										<StackPanel Margin="37,40,0,0">
+											<TextBlock Text="{Binding Login}" TextWrapping="Wrap" FontSize="20" Background="White" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+											<TextBlock Text="{Binding BookTitle}" TextWrapping="Wrap" FontSize="20" Background="White" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+											<Button Click="DeleteReviews" Tag="{Binding Id}" Background="#E4EFFD">
+												<Image Source="\Imoges\deleteTrash.png">
+												</Image>
+											</Button>
+										</StackPanel>
+										<StackPanel Margin="60,40,0,0">
+											<ScrollViewer>
+												<TextBlock Text="{Binding ReviewText}" TextWrapping="Wrap" FontSize="16" Background="White" Foreground="#108DE8" Width="521" Height="165"></TextBlock>
+											</ScrollViewer>
+										</StackPanel>
+									</StackPanel>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+				
+			</StackPanel>
+			<StackPanel Margin="0,40,0,0" Width="1140" Orientation="Horizontal">
+				<TextBlock FontSize="48" Foreground="#108DE8">Цитаты</TextBlock>
+				<ComboBox SelectionChanged="BoxForBooksAndQut" Name="allBooksTwo" Margin="63,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="#E4EFFD" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Книга">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Title}"></TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</StackPanel>
+			<StackPanel Width="1140">
+				<ListBox Name="allQuotesListBox" HorizontalAlignment="Left" Margin="0,46,0,0" Width="1042" Height="312" Background="#E4EFFD">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Background="White" Width="984" Height="257" HorizontalAlignment="Center">
+								<StackPanel Orientation="Horizontal">
+									<StackPanel Margin="37,40,0,0">
+										<TextBlock Text="{Binding Login}" TextWrapping="Wrap" FontSize="20" Background="#E4EFFD" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+										<TextBlock Text="{Binding BookTitle}" TextWrapping="Wrap" FontSize="20" Background="White" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+										<Button Click="DeleteQ" Tag="{Binding Id}" Background="White">
+											<Image Source="\Imoges\deleteTrash.png">
+											</Image>
+										</Button>
+									</StackPanel>
+									<StackPanel Margin="60,40,0,0">
+										<TextBlock Text="{Binding QuoteText}" TextWrapping="Wrap" FontSize="16" Background="#E4EFFD" Foreground="#108DE8" Width="521" Height="165"></TextBlock>
+									</StackPanel>
+								</StackPanel>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+
+			</StackPanel>
+
+			<StackPanel Margin="0,48,0,0" Height="538" Background="#E4EFFD">
+				<StackPanel Width="1140">
+					<StackPanel Margin="0,40,0,0" Width="1140" Orientation="Horizontal">
+						<TextBlock FontSize="48" Foreground="#108DE8">Комментарии</TextBlock>
+						<ComboBox SelectionChanged="BoxForDateAndComments" Margin="63,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Дата">
+							<ComboBoxItem>По возрастанию</ComboBoxItem>
+							<ComboBoxItem>По убыванию</ComboBoxItem>
+						</ComboBox>
+						<ComboBox SelectionChanged="BoxForBooksAndComments" Name="allBooksThree" Margin="32,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Книга">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Title}"></TextBlock>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</StackPanel>
+					<ListBox Name="allCommentsListBox" HorizontalAlignment="Left" Margin="0,46,0,0" Width="1042" Height="312" Background="White">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Background="#E4EFFD" Width="984" Height="257" HorizontalAlignment="Center">
+									<StackPanel Orientation="Horizontal">
+										<StackPanel Margin="37,40,0,0">
+											<TextBlock Text="{Binding Login}" TextWrapping="Wrap" FontSize="20" Background="White" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+											<TextBlock Text="{Binding BookTitle}" TextWrapping="Wrap" FontSize="20" Background="White" Foreground="#108DE8" Width="325" Height="58"></TextBlock>
+											<Button Click="DeleteComment" Tag="{Binding Id}" Background="#E4EFFD">
+												<Image Source="\Imoges\deleteTrash.png">
+												</Image>
+											</Button>
+										</StackPanel>
+										<StackPanel Margin="60,40,0,0">
+											<TextBlock Text="{Binding Content}" TextWrapping="Wrap" FontSize="16" Background="White" Foreground="#108DE8" Width="521" Height="165"></TextBlock>
+										</StackPanel>
+									</StackPanel>
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+
+			</StackPanel>
+
+
+		</StackPanel>
+	</ScrollViewer>
+</Window>

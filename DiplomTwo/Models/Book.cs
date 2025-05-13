@@ -51,6 +51,8 @@ public partial class Book
 
     public virtual ICollection<Character> Characters { get; set; } = new List<Character>();
 
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+
     public virtual ICollection<ElectronicBooksInfo> ElectronicBooksInfos { get; set; } = new List<ElectronicBooksInfo>();
 
     public virtual ICollection<Personallibrary> Personallibraries { get; set; } = new List<Personallibrary>();

@@ -14,6 +14,7 @@ public partial class ReadBook : Window
     private List<BookChapter> bookChaptersThisBook = new List<BookChapter>();
     private List<Comment> commentsThisBook = new List<Comment>();
     private int chapterIdThisBook = -1;
+    private int idBookThisHere;
     public ReadBook()
     {
         InitializeComponent();
@@ -35,6 +36,7 @@ public partial class ReadBook : Window
             }
         }
         AllChapter.ItemsSource = bookChaptersThisBook.ToList();
+        idBookThisHere = idBookThis;
     }
     private void AddNewComment(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -50,6 +52,7 @@ public partial class ReadBook : Window
                     ReaderId = ListsStaticClass.currentAccount,
                     Content = textForComment.Text,
                     CreatedAt = DateTime.Now,
+                    BookId = idBookThisHere,
                 };
                 Baza.DbContext.Comments.Add(newComment);
                 Baza.DbContext.SaveChanges();

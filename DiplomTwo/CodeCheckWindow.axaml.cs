@@ -56,7 +56,19 @@ public partial class CodeCheckWindow : Window
                         Baza.DbContext.SaveChanges();
                     }
 
-                    new personalAccount().Show();
+                    var user = Baza.DbContext.Users.FirstOrDefault(u => u.Id == idUserCheck);
+                    if (user != null)
+                    {
+                        if (user.RoleId == 2)
+                        {
+                            new AdminPanel().Show();
+                        }
+                        else
+                        {
+                            new personalAccount().Show();
+                        }
+                    }
+
                     Close();
 
                     loginWindow.Close();

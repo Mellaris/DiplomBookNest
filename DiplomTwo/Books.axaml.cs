@@ -47,8 +47,67 @@ public partial class Books : Window
 
     private void ListForBooks()
     {
-        allBooks.ItemsSource = ListsStaticClass.listAllBooks.ToList();
+        int currentUser = ListsStaticClass.currentAccount; // текущий пользователь
+
+        // Фильтрация списка книг
+        var filteredBooks = ListsStaticClass.listAllBooks.Where(book =>
+        {
+            // Проверка на авторскую книгу
+            if (book.IsAuthorBook)
+            {
+                // Получаем связанные с книгой записи из электронной информации
+                var bookInfo = Baza.DbContext.ElectronicBooksInfos
+                    .FirstOrDefault(info => info.BookId == book.Id);
+
+                if (bookInfo == null)
+                    return false;
+
+                // Проверка по статусу
+                if (bookInfo.StatusId == 2 || bookInfo.StatusId == 3)
+                {
+                    // Если access_level_id = 1, просто показываем книгу
+                    if (bookInfo.AccessLevelId == 1)
+                    {
+                        return true;
+                    }
+
+                    // Если access_level_id = 2, проверяем, является ли текущий пользователь автором
+                    if (bookInfo.AccessLevelId == 2)
+                    {
+                        var bookAuthor = Baza.DbContext.Bookauthors
+                            .FirstOrDefault(ba => ba.BookId == book.Id && ba.AppAuthorId == currentUser);
+
+                        return bookAuthor != null;
+                    }
+
+                    // Если access_level_id = 3, проверяем, есть ли у пользователя в друзьях автор книги
+                    if (bookInfo.AccessLevelId == 3)
+                    {
+                        var bookAuthorId = Baza.DbContext.Bookauthors
+                            .Where(ba => ba.BookId == book.Id)
+                            .Select(ba => ba.AppAuthorId)
+                            .FirstOrDefault();
+
+                        if (bookAuthorId == 0)
+                            return false;
+
+                        var isFriend = Baza.DbContext.Friendrelations
+                            .Any(f => f.Fromuserid == currentUser && f.Touserid == bookAuthorId && f.Statusid == 2 || f.Touserid == currentUser && f.Fromuserid == bookAuthorId && f.Statusid == 2);
+
+                        return isFriend;
+                    }
+                }
+
+                return false;
+            }
+
+            // Если книга не авторская, просто выводим её
+            return true;
+        }).ToList();
+
+        allBooks.ItemsSource = filteredBooks;
     }
+
     private void DisplayForAllFiltr()
     {
         booksForGenre.Clear();

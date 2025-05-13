@@ -37,7 +37,9 @@ public partial class Friends : Window
         // Исключаем текущего пользователя и тех, с кем уже есть какие-либо связи
         var displayList = (from reader in readers
                            join user in users on reader.UserId equals user.Id
-                           where user.Id != currentUserId && !relatedUserIds.Contains(user.Id)
+                           where user.Id != currentUserId
+                                 && !relatedUserIds.Contains(user.Id)
+                                 && user.RoleId != 2 // <-- исключаем администраторов
                            select new ReaderDisplayModel
                            {
                                IdReader = reader.IdReader,

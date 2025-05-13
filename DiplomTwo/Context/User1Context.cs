@@ -362,12 +362,18 @@ public partial class User1Context : DbContext
             entity.ToTable("comments");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
             entity.Property(e => e.ChapterId).HasColumnName("chapter_id");
             entity.Property(e => e.Content).HasColumnName("content");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("created_at");
             entity.Property(e => e.ReaderId).HasColumnName("reader_id");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.Comments)
+                .HasForeignKey(d => d.BookId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("comments_book_id_fkey");
 
             entity.HasOne(d => d.Chapter).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.ChapterId)
@@ -682,8 +688,6 @@ public partial class User1Context : DbContext
             entity.HasIndex(e => e.Email, "users_email_key").IsUnique();
 
             entity.HasIndex(e => e.Login, "users_login_key").IsUnique();
-
-            entity.HasIndex(e => e.Userlastname, "users_userlastname_key").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Email)
