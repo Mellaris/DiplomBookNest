@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="494" d:DesignHeight="640"
+        x:Class="DiplomTwo.WorkingWithGenres"
+		Width="494" Height="640" MaxHeight="640" MinHeight="640" MaxWidth="494" MinWidth="494"
+        x:CompileBindings="False"
+		Title="WorkingWithGenres">
+	<StackPanel>
+		<TextBlock Foreground="#108DE8" Margin="40,40,0,0" FontSize="48">Жанры</TextBlock>
+		<StackPanel Orientation="Horizontal">
+			<TextBox Name="textForGenre" Margin="40,20,0,0" HorizontalAlignment="Left" BorderBrush="#EBF3FD" VerticalContentAlignment="Center" Foreground="#108DE8" Width="356" Height=" 37" Background="#EBF3FD" Watermark="Введите название жанра"></TextBox>
+			<Button Click="AddNewGenre" Margin="10,0,0,0" VerticalAlignment="Bottom" Background="White">
+				<Image Source="\Imoges\plus-square.png"></Image>
+			</Button>
+		</StackPanel>
+		<ListBox Name="allGenres" Margin="40,20,0,0" HorizontalAlignment="Left" Width="322" Height="427" Background="#EBF3FD">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="260" Margin="5" FontSize="16" Foreground="#108DE8" Text="{Binding Name}"></TextBlock>
+						<Button Click="Delete" Tag="{Binding Id}" Margin="10,0,0,0" Background="#EBF3FD" Width="21" Height="21">
+							<Image Width="21" Height="21" Source="\Imoges\deleteTrash.png"></Image>
+						</Button>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</StackPanel>
+</Window>

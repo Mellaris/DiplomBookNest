@@ -119,5 +119,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Work/DiplomTwo/DiplomTwo/WindowForEditProfile.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Work/DiplomTwo/DiplomTwo/WorkingWithGenres.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Work/DiplomTwo/DiplomTwo/WritingReview.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

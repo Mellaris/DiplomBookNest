@@ -22,4 +22,9 @@ public partial class AdminPanel : Window
         new Moderation().Show();
         Close();
     }
+
+    private void OpenWorkGenres(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new WorkingWithGenres().ShowDialog(this);
+    }
 }
