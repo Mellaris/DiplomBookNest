@@ -85,9 +85,7 @@
 			</StackPanel>
 			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
 				<TextBlock Margin="0,64,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">Мои впечатления</TextBlock>
-				<Button Background="White" Margin="40,60,0,0">
-					<Image Source="\Imoges\pen-solid.png"></Image>
-				</Button>
+				<TextBlock Name="rating" IsVisible="False" Margin="40,64,0,0" FontSize="64" Foreground="#042A99" HorizontalAlignment="Center">5</TextBlock>
 			</StackPanel>
 			<Border Margin="0,28,40,0" Width="900" Height="352" Background="#E6ECFF" CornerRadius="12">
 				<StackPanel Orientation="Horizontal">

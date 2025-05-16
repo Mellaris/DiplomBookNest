@@ -34,10 +34,12 @@
 				<StackPanel>
 					<Image Name="imageForBook" Width="395" Height="520" Source="\Imoges\image 13.png"></Image>
 					<Button Click="Add" Margin="49,32,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59">
-						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="#042A99">Добавить</TextBlock>
-
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="#042A99">Прочитано</TextBlock>
 					</Button>
-					<Button Click="OpenReadABook" IsVisible="False" Name="readABook" Margin="49,20,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59">
+					<Button Click="AddPlanNew" Margin="49,10,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="#042A99">Книжный план</TextBlock>
+					</Button>
+					<Button Click="OpenReadABook" IsVisible="False" Name="readABook" Margin="49,10,0,0" Background="#E6ECFF" CornerRadius="12" Width="293" Height="59">
 						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" Foreground="#042A99">Читать</TextBlock>
 					</Button>
 				</StackPanel>
@@ -91,7 +93,7 @@
 				</StackPanel>
 			</StackPanel>
 
-			<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Width="1141" Height="125" Orientation="Horizontal">
+			<StackPanel Margin="0,104,0,0" HorizontalAlignment="Center" Width="1141" Height="125" Orientation="Horizontal">
 				<StackPanel  Width="261" Height="125" Background="#E6ECFF">
 					<TextBlock Name="kolReadForBook" Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="36" Foreground="#042A99">100</TextBlock>
 					<TextBlock Margin="0,16,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#042A99">Прочитали</TextBlock>
@@ -124,7 +126,7 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Button Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+			<Button Click="AddRev" Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить рецензию</TextBlock>
 			</Button>
 			
@@ -136,7 +138,7 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Button Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
+			<Button Click="AddQ" Margin="146,36,0,0" Width="326" Height="59" Background="#E6ECFF" CornerRadius="12">
 				<TextBlock FontSize="24" Foreground="#042A99" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить цитату</TextBlock>
 			</Button>
 			<TextBlock Margin="146,64,0,0" Foreground="#042A99" FontSize="64">Похожие книги</TextBlock>

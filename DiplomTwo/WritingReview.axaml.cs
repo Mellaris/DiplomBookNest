@@ -138,6 +138,7 @@ public partial class WritingReview : Window
                 characters.Text = personallibrary.CharactersRating.ToString();
                 worldInside.Text = personallibrary.WorldRating.ToString();
                 things.Text = personallibrary.MeaningRating.ToString();
+                rating.Text = personallibrary.Rating.ToString();
                 break;
             }
         }
@@ -260,6 +261,7 @@ public partial class WritingReview : Window
                     existingEntry.WorldRating = Convert.ToInt32(worldInside.Text);
                     existingEntry.RomanceRating = Convert.ToInt32(love.Text);
                     existingEntry.DateAdd = DateTime.Now;
+                    rating.Text = existingEntry.Rating.ToString();
                 }
                 else
                 {

@@ -27,29 +27,6 @@ public partial class AddingReadOrPlan : Window
         catch { }
         idThis = id;
         CallBaza();
-    }
-    private void AddInPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        ListsStaticClass.listAllBookPlan = ListsStaticClass.listAllBookPlan.OrderBy(x => x.Id).ToList();
-        var addNewBookPlan = new Bookplan
-        {
-            Id = ListsStaticClass.listAllBookPlan.LastOrDefault().Id + 1,
-            BookId = idThis,
-            ReaderId = ListsStaticClass.currentAccount,
-            PriorityId = select
-        };
-        Baza.DbContext.Bookplans.Add(addNewBookPlan);
-        Baza.DbContext.SaveChanges();
-        Close(this);
-
-    }
-    private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
-    {
-        select = (sender as ComboBox).SelectedIndex;
-        select = select + 1;
-    }
-    private void AddPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
         foreach (Bookplan book in ListsStaticClass.listAllBookPlan)
         {
             if (ListsStaticClass.currentAccount == book.ReaderId && book.BookId == idThis)
@@ -67,9 +44,7 @@ public partial class AddingReadOrPlan : Window
 
         if (check == 0)
         {
-            buttonForClick.IsEnabled = false;
             panelVisible.IsVisible = true;
-            readPanel.IsVisible = false;
 
             foreach (Book a in ListsStaticClass.listAllBooks)
             {
@@ -96,6 +71,26 @@ public partial class AddingReadOrPlan : Window
                 boxForPrior.IsEnabled = true; // Разрешить выбор
             }
         }
+    }
+    private void AddInPlan(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        ListsStaticClass.listAllBookPlan = ListsStaticClass.listAllBookPlan.OrderBy(x => x.Id).ToList();
+        var addNewBookPlan = new Bookplan
+        {
+            Id = ListsStaticClass.listAllBookPlan.LastOrDefault().Id + 1,
+            BookId = idThis,
+            ReaderId = ListsStaticClass.currentAccount,
+            PriorityId = select
+        };
+        Baza.DbContext.Bookplans.Add(addNewBookPlan);
+        Baza.DbContext.SaveChanges();
+        Close(this);
+
+    }
+    private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        select = (sender as ComboBox).SelectedIndex;
+        select = select + 1;
     }
 
     private void CallBaza()

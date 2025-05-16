@@ -28,6 +28,7 @@ public partial class ReadBook : Window
         }
         catch { }
         CallBaza();
+        ListsStaticClass.listAllBookChapter.OrderBy(x => x.Id).ToList();
         foreach(BookChapter bookChapter in ListsStaticClass.listAllBookChapter)
         {
             if(bookChapter.BookId == idBookThis)
@@ -35,6 +36,7 @@ public partial class ReadBook : Window
                 bookChaptersThisBook.Add(bookChapter);
             }
         }
+        bookChaptersThisBook = bookChaptersThisBook.OrderBy(x => x.Id).ToList();
         AllChapter.ItemsSource = bookChaptersThisBook.ToList();
         idBookThisHere = idBookThis;
     }
@@ -86,19 +88,21 @@ public partial class ReadBook : Window
             }
         }
     }
-    private void OpenAllComment(int id)
+    private void OpenAllComment(int chapterId)
     {
-        commentsThisBook.Clear();
-        AllComment.ItemsSource = commentsThisBook.ToList();
-        foreach (Comment comment in ListsStaticClass.listAllComment)
-        {
-            if (comment.ChapterId == id)
+        var commentsWithUsers = ListsStaticClass.listAllComment
+            .Where(c => c.ChapterId == chapterId)
+            .Select(c => new CommentDisplay
             {
-                commentsThisBook.Add(comment);
-            }
-        }
-        AllComment.ItemsSource = commentsThisBook.ToList();
+                Text = c.Content,
+                UserLogin = ListsStaticClass.listAllUsers.FirstOrDefault(u => u.Id == c.ReaderId)?.Login ?? "Неизвестно",
+                DateAdd = c.CreatedAt,
+            })
+            .ToList();
+
+        AllComment.ItemsSource = commentsWithUsers.ToList();
     }
+
     private void OpenNewChapter(int idThisChaper)
     {
         int id = idThisChaper;
@@ -156,6 +160,13 @@ public partial class ReadBook : Window
             UpdatedAt = bookChapter.UpdatedAt,
             BookId = bookChapter.BookId,
         }).ToList();
+
+        ListsStaticClass.listAllUsers.Clear();
+        ListsStaticClass.listAllUsers = Baza.DbContext.Users.Select(user => new User
+        {
+            Id = user.Id,
+            Login = user.Login,
+        }).ToList();
     }
 
     private void GoToHome(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -186,4 +197,10 @@ public partial class ReadBook : Window
         new Books().Show();
         Close();
     }
+}
+public class CommentDisplay
+{
+    public string Text { get; set; }
+    public string UserLogin { get; set; }
+    public DateTime? DateAdd { get; set; }
 }

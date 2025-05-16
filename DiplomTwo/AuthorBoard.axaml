@@ -65,10 +65,10 @@
 
 				<Border CornerRadius="32" Width="391" Height="398" Background="#EAF2FF">
 					<StackPanel>
-						<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Ваши книги прочитали</TextBlock>
+						<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Вы написали:</TextBlock>
 						<StackPanel Margin="0,120,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-							<TextBlock Foreground="#FF7979" FontSize="48">10</TextBlock>
-							<TextBlock Margin="15,0,0,0" Foreground="#FF7979" FontSize="48">Раз</TextBlock>
+							<TextBlock Name="countAllThisAuthor" Foreground="#FF7979" FontSize="48">10</TextBlock>
+							<TextBlock Margin="15,0,0,0" Foreground="#FF7979" FontSize="48">Книг(у)</TextBlock>
 						</StackPanel>
 						
 					</StackPanel>
@@ -76,11 +76,19 @@
 				<Border Margin="97,0,0,0" CornerRadius="32" Width="652" Height="398" Background="#EAF2FF">
 					<StackPanel>
 						<TextBlock Margin="66,12,0,0" FontSize="32" Foreground="#0C5489">Самые популярные книги</TextBlock>
-						<ComboBox Margin="66,24,0,0" Width="360" Height="30"></ComboBox>
+						<ComboBox Name="comboTopType" Margin="66,24,0,0" Width="360" Height="30" SelectionChanged="TopTypeChanged">
+							<ComboBoxItem Content="Топ-3 по комментариям"/>
+							<ComboBoxItem Content="Топ-3 по рейтингу"/>
+							<ComboBoxItem Content="Топ-3 по прочтениям"/>
+						</ComboBox>
 						<StackPanel Margin="0,36,0,0" HorizontalAlignment="Center">
-							<Image Width="130" Height="162"></Image>
-							<Image Width="130" Height="162"></Image>
-							<Image Width="130" Height="162"></Image>
+							<ListBox Name="listSort" Background="#EAF2FF" Width="520" Height="200">
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<Image Width="130" Height="150" Source="{Binding CoverBitmap}"></Image>
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
 						</StackPanel>
 					</StackPanel>
 				</Border> 

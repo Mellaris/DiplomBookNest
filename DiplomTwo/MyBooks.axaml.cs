@@ -10,6 +10,9 @@ namespace DiplomTwo;
 
 public partial class MyBooks : Window
 {
+    private string? currentSearchText = null;
+    private int? currentSortIndex = null;
+
     public MyBooks()
     {
         InitializeComponent();
@@ -19,10 +22,13 @@ public partial class MyBooks : Window
         }
         catch { }
         CallBaza();
-        LoadUserBooks();
+        UpdateDisplayedBooks();
     }
-    private void LoadUserBooks()
+    private void UpdateDisplayedBooks(string? searchText = null, int? sortIndex = null)
     {
+        currentSearchText = searchText ?? currentSearchText;
+        currentSortIndex = sortIndex ?? currentSortIndex;
+
         int currentUserId = ListsStaticClass.currentAccount;
 
         var userBooks = ListsStaticClass.listAllPersonallLibrary
@@ -32,7 +38,6 @@ public partial class MyBooks : Window
                 var book = ListsStaticClass.listAllBooks.FirstOrDefault(b => b.Id == lib.BookId);
                 if (book == null) return null;
 
-                // Найти связь книги с автором
                 var bookAuthor = ListsStaticClass.listAllBookAuthors
                     .FirstOrDefault(ba => ba.BookId == book.Id);
 
@@ -76,8 +81,27 @@ public partial class MyBooks : Window
             .Where(x => x != null)
             .ToList();
 
+        // Поиск по названию
+        if (!string.IsNullOrWhiteSpace(currentSearchText))
+        {
+            userBooks = userBooks
+                .Where(book => book.Title.Contains(currentSearchText, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        // Сортировка по рейтингу
+        if (currentSortIndex == 0) // По возрастанию
+        {
+            userBooks = userBooks.OrderBy(b => b.Rating ?? 0).ToList();
+        }
+        else if (currentSortIndex == 1) // По убыванию
+        {
+            userBooks = userBooks.OrderByDescending(b => b.Rating ?? 0).ToList();
+        }
+
         allMyBooks.ItemsSource = userBooks;
     }
+
     private void CallBaza()
     {
         ListsStaticClass.listAllBooks.Clear();
@@ -292,7 +316,7 @@ public partial class MyBooks : Window
         Baza.DbContext.SaveChanges();
 
         // Обновляем отображение списка
-        LoadUserBooks(); // Или другой метод для обновления интерфейса
+        UpdateDisplayedBooks(); // Или другой метод для обновления интерфейса
     }
 
     private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -300,4 +324,18 @@ public partial class MyBooks : Window
         new Friends().Show();
         Close();
     }
+    private void TextBox_TextChanged(object? sender, Avalonia.Controls.TextChangedEventArgs e)
+    {
+        var textBox = sender as TextBox;
+        string searchText = textBox?.Text ?? "";
+        UpdateDisplayedBooks(searchText: searchText);
+    }
+
+    private void ComboBox_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        var comboBox = sender as ComboBox;
+        int selectedIndex = comboBox?.SelectedIndex ?? 0;
+        UpdateDisplayedBooks(sortIndex: selectedIndex);
+    }
+
 }

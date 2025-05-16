@@ -39,7 +39,14 @@
 					<Image HorizontalAlignment="Right" Margin="80,70,0,0" Source="\Imoges\international-literacy-day-with-lots-books-b 1.png"></Image>		
 				</StackPanel>
 				<Border Margin="0,100,0,0" HorizontalAlignment="Center" CornerRadius="12" Background="White" Width="1009" Height="116">
-					
+					<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+						<TextBox TextChanged="TextBox_TextChanged" Foreground="#3444A2" FontSize="20" BorderBrush="#3444A2" Margin="0,0,0,0" Width="300" Height="46" HorizontalAlignment="Left" Watermark="Поиск"></TextBox>
+						<ComboBox SelectionChanged="ComboBox_SelectionChanged" BorderBrush="#3444A2" Margin="30,0,0,0" VerticalAlignment="Center" PlaceholderText="Рейтинг" PlaceholderForeground="#042A99" FontSize="26" Foreground="#042A99" CornerRadius="12" Width="360" Height="46" Background="#E4EFFD">
+							<ComboBox.Items>По возрастанию</ComboBox.Items>
+							<ComboBox.Items>По убыванию</ComboBox.Items>
+						</ComboBox>
+					</StackPanel>
+				
 				</Border>
 			</StackPanel>
 			<Border Margin="0,64,0,0" CornerRadius="24" Background="#E6ECFF" Width="1139" Height="1106">

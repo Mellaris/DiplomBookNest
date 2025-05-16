@@ -9,13 +9,9 @@
 		Name="AddingReadOrPlanIcon"
         Title="BookNest">
 	<StackPanel>
-		<StackPanel Margin="0,67,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-			<Button Name="buttonForClick" IsEnabled="True" Click="AddPlan" Width="208" Height="55" Background="#E6ECFF">
+		<StackPanel Margin="0,40,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
 				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Книжный план</TextBlock>
-			</Button>
-			<Button Click="AddInRead" IsVisible="True" Name="readPanel" Margin="36,0,0,0" Width="208" Height="55" Background="#E6ECFF">
-				<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Прочитанное</TextBlock>
-			</Button>
+		
 		</StackPanel>
 		<StackPanel Name="panelVisible" IsVisible="False" Margin="36,0,0,0" Orientation="Horizontal">
 			<Image Name="imageForPlan" Margin="0,36,0,0"  Width="137" Height="198"></Image>

@@ -49,11 +49,11 @@
 						<DataTemplate>
 							<Border CornerRadius="8" Width="813" Height="80" Background="#F6F7FF">
 								<StackPanel Orientation="Horizontal">
-									<TextBlock Text="{Binding Title}"></TextBlock>
-									<Button Tag="{Binding Id}" Click="OpenOurChapter" Margin="87,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+									<TextBlock Width="500" Text="{Binding Title}"></TextBlock>
+									<Button Tag="{Binding Id}" Click="OpenOurChapter" Margin="20,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Открыть</TextBlock>
 									</Button>
-									<Button Click="DeleteThisChapter" Tag="{Binding Id}" Margin="32,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+									<Button Click="DeleteThisChapter" Tag="{Binding Id}" Margin="20,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Удалить</TextBlock>
 									</Button>
 								</StackPanel>

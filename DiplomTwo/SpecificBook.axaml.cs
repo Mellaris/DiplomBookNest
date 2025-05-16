@@ -182,9 +182,11 @@ public partial class SpecificBook : Window
     }
     private void Add(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        
         if (ListsStaticClass.currentAccount != -1)
         {
-            new AddingReadOrPlan(idThisBook).ShowDialog(this);
+            new WritingReview(idThisBook).Show();
+            Close();
         }
         else
         {
@@ -281,7 +283,57 @@ public partial class SpecificBook : Window
 
     private void My(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new personalAccount().Show();
-        Close();
+        if (ListsStaticClass.currentAccount != -1)
+        {
+            new personalAccount().Show();
+            Close();
+        }
+        else
+        {
+           new LogIn().Show();
+           Close();
+        }
+        
+    }
+
+    private void AddPlanNew(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (ListsStaticClass.currentAccount != -1)
+        {
+            new AddingReadOrPlan(idThisBook).ShowDialog(this);
+        }
+        else
+        {
+            string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
+        }
+    }
+
+    private void AddRev(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (ListsStaticClass.currentAccount != -1)
+        {
+            new WritingReview(idThisBook).Show();
+            Close();
+        }
+        else
+        {
+            string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
+        }
+    }
+
+    private void AddQ(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (ListsStaticClass.currentAccount != -1)
+        {
+            new WritingReview(idThisBook).Show();
+            Close();
+        }
+        else
+        {
+            string error = "Вы должны войти в аккаунт, чтобы воспользоваться этой функцией!";
+            new ErrorReport(error).ShowDialog(this);
+        }
     }
 }
