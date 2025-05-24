@@ -11,6 +11,7 @@ namespace DiplomTwo;
 public partial class ChangingThePriority : Window
 {
     private BookPlanDisplay _plan;
+    private int _id;
     public ChangingThePriority()
     {
         InitializeComponent();
@@ -25,8 +26,9 @@ public partial class ChangingThePriority : Window
         catch { }
         CallBaza();
         box.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
-        _plan = plan;
-        box.SelectedIndex = _plan.PriorityId - 1;
+        _plan = plan; 
+        _id = plan.BookId;
+        box.SelectedIndex = _plan.PriorityId;
 
         foreach (Book book in ListsStaticClass.listAllBooks)
         {
@@ -40,7 +42,16 @@ public partial class ChangingThePriority : Window
 
     private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
-        int selectId = (sender as ComboBox).SelectedIndex;
+        int select = (sender as ComboBox).SelectedIndex;
+        select = select + 1;
+        var selectBook = Baza.DbContext.Bookplans.FirstOrDefault(x => x.BookId == _id && x.ReaderId == ListsStaticClass.currentAccount);
+        if (selectBook != null)
+        {        
+            selectBook.PriorityId = select;
+            new BookPlan().Show();
+            Close();
+        }
+
     }
     private void CallBaza()
     {

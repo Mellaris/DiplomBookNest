@@ -18,8 +18,8 @@
 					<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 						<Button Click="MyAccount" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
 						<Button Click="AllBooks" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
-						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
-						<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+						<Button Click="Button_Click_1" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Друзья</Button>
+						
 					</StackPanel>
 
 					<Button Click="Log" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
@@ -57,7 +57,7 @@
 						<DataTemplate>
 							<StackPanel Margin="6" Background="#EAF2FF" Orientation="Horizontal">
 								<TextBlock Margin="10,0,0,0" FontSize="18" Foreground="#3B57FF" Text="{Binding BookTitle}" TextWrapping="Wrap" Width="300" VerticalAlignment="Center" />
-								<Button Margin="40,0,0,0" Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
+								<Button Click="OpenAndAdd" Tag="{Binding BookId}" Margin="40,0,0,0" Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
 								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="240,0,0,0" Click="EditPrioritet">
 									<Image Source="\Imoges\pen-solid.png" />
 								</Button>
@@ -89,10 +89,10 @@
 								<TextBlock Margin="30,32,0,0" Foreground="#3B57FF" FontSize="40">Ваш Прогресс</TextBlock>
 								<StackPanel Orientation="Horizontal">
 									<Border Margin="30,40,0,0" Width="293" Height="117" Background="#FFD576" CornerRadius="12">
-										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+										<TextBlock Name="currentProgres" Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
 									</Border>
 									<Border Margin="64,40,0,0"  Width="293" Height="117" Background="#FFC4D3" CornerRadius="12">
-										<TextBlock Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">30</TextBlock>
+										<TextBlock Name="goalTwp" Foreground="#FFFFFD" FontSize="64" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
 									</Border>
 								</StackPanel>
 							</StackPanel>

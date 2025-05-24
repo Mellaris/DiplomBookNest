@@ -256,13 +256,16 @@ public partial class SpecificBook : Window
 
     private void OpenAuthors(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new AllAuthors().Show();
-        Close();
-    }
-    private void OpenNews(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        new Headline().Show();
-        Close();
+        if(ListsStaticClass.currentAccount != -1)
+        {
+            new Friends().Show();
+            Close();
+        }
+        else
+        {
+            string error = "Вы должны войти в аккаунт!";
+            new ErrorReport(error).ShowDialog(this);
+        }
     }
 
     private void OpenReadABook(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

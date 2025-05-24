@@ -7,6 +7,8 @@ using DiplomTwo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using Tmds.DBus.Protocol;
 
 namespace DiplomTwo;
 
@@ -22,6 +24,17 @@ public partial class BookPlan : Window
         }
         catch { }
         CallBaza();
+        foreach(Models.Reader readerr in ListsStaticClass.listAllReaders)
+        {
+            if(readerr.UserId == ListsStaticClass.currentAccount)
+            {
+                textForGoal.Text = readerr.YearlyGoal.ToString();
+                goalTwp.Text = readerr.YearlyGoal.ToString();
+                break;
+            }
+        }
+        var openCount = ListsStaticClass.listAllPersonallLibrary.Where(x => x.ReaderId == ListsStaticClass.currentAccount).ToList();
+        currentProgres.Text = openCount.Count.ToString();
         var planList = ListsStaticClass.listAllBookPlan
             .Where(x => x.ReaderId == ListsStaticClass.currentAccount)
             .Join(ListsStaticClass.listAllBooks,
@@ -46,6 +59,8 @@ public partial class BookPlan : Window
 
         myPlan.ItemsSource = planList.ToList();
         bookDisplayModels = planList.ToList();
+
+        
     }
     private void EditGoal(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -64,6 +79,8 @@ public partial class BookPlan : Window
                 if (user != null)
                 {              
                     user.YearlyGoal = newGoal;
+                    textForGoal.Text = user.YearlyGoal.ToString();
+                    goalTwp.Text = user.YearlyGoal.ToString();
                     Baza.DbContext.SaveChanges();
                     CallBaza();
                     textForGoal.IsReadOnly = true;
@@ -83,7 +100,12 @@ public partial class BookPlan : Window
         var button = bookDisplayModels.FirstOrDefault(x => x.Id == selectId);
         if(button != null)
         {
-           new ChangingThePriority(button).ShowDialog(this);
+            try
+            {
+                new ChangingThePriority(button).Show();
+                Close();
+            }
+            catch { }
         }
     }
     private void MyAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -143,14 +165,22 @@ public partial class BookPlan : Window
         }).ToList();
 
         ListsStaticClass.listAllReaders.Clear();
-        ListsStaticClass.listAllReaders = Baza.DbContext.Readers.Select(reader => new Reader
-        {
-            IdReader = reader.IdReader,
-            UserId = reader.UserId,
-            YearlyGoal = reader.YearlyGoal,
-            AvatarUrl = reader.AvatarUrl,
-            ProfileDescription = reader.ProfileDescription,
-        }).ToList();
+        ListsStaticClass.listAllReaders = Baza.DbContext.Readers.ToList();
+
+      
+    }
+
+    private void OpenAndAdd(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        int idBookCh = (int)(sender as Button).Tag;
+        new WritingReview(idBookCh).Show();
+        Close();
+    }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
     }
 }
 public class BookPlanDisplay

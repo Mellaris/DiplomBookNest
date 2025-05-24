@@ -47,13 +47,13 @@
 				<ListBox Name="listForChapters" Margin="0,12,0,0" Width="1140" Height="439" Background="White">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<Border CornerRadius="8" Width="813" Height="80" Background="#F6F7FF">
+							<Border CornerRadius="8" Width="913" Height="80" Background="#F6F7FF">
 								<StackPanel Orientation="Horizontal">
-									<TextBlock Width="500" Text="{Binding Title}"></TextBlock>
+									<TextBlock Margin="5" Width="500" Text="{Binding Title}"></TextBlock>
 									<Button Tag="{Binding Id}" Click="OpenOurChapter" Margin="20,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
 										<TextBlock>Открыть</TextBlock>
 									</Button>
-									<Button Click="DeleteThisChapter" Tag="{Binding Id}" Margin="20,0,0,0" CornerRadius="8" Background="White" Height="34" Width="164">
+									<Button Click="DeleteThisChapter" Tag="{Binding Id}" Margin="20,0,0,0" CornerRadius="8" Background="White" Height="34" Width="144">
 										<TextBlock>Удалить</TextBlock>
 									</Button>
 								</StackPanel>

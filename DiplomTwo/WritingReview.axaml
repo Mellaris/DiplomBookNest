@@ -19,8 +19,7 @@
 					<StackPanel Orientation="Horizontal" Background="#E4EAFF" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 						<Button Click="Home" Height="40" Background="#E4EAFF" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
 						<Button Click="AllBookOpen" Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
-						<Button Height="40" Background="#E4EAFF" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
-						<Button Height="40" Background="#E4EAFF"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
+						<Button Click="Button_Click_1" Height="40" Background="#E4EAFF" Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Друзья</Button>
 					</StackPanel>
 
 					<Button Click="My" Background="#E4EAFF" Margin="297,28,0,0">
@@ -136,7 +135,10 @@
 			<ListBox Name="listAllQ" Width="1140" Height="278" HorizontalAlignment="Center" Margin="0,24,0,0" Background="#E6ECFF">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<TextBlock Text="{Binding Text}"></TextBlock>
+						<ScrollViewer>
+							<TextBlock HorizontalAlignment="Center" Width="1120" Height="40" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding Text}"></TextBlock>
+						</ScrollViewer>
+						
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>

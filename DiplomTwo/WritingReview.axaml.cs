@@ -335,6 +335,7 @@ public partial class WritingReview : Window
 
                 // Обновим локальный список
                 ListsStaticClass.listAllPersonallLibrary = Baza.DbContext.Personallibraries.ToList();
+
             }
             else
             {
@@ -464,6 +465,9 @@ public partial class WritingReview : Window
             Name = genre.Name,
         }).ToList();
 
+        ListsStaticClass.listAllBookPlan.Clear();
+        ListsStaticClass.listAllBookPlan = Baza.DbContext.Bookplans.ToList();
+
     }
 
     private void Home(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -481,6 +485,12 @@ public partial class WritingReview : Window
     private void My(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         new personalAccount().Show();
+        Close();
+    }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
         Close();
     }
 }
