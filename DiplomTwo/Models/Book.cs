@@ -73,7 +73,6 @@ public partial class Book
             try
             {
                 string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "PhotoForBook", CoverImage); return new Bitmap(fullPath);
-
             }
             catch (Exception ex)
             {

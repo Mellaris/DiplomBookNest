@@ -147,10 +147,6 @@ public partial class AuthorBoard : Window
 
         listSort.ItemsSource = topBookCommentCounts;
     }
-
-
-
-
     private void ShowTopByRating()
     {
         var top = ListsStaticClass.listAllBooks

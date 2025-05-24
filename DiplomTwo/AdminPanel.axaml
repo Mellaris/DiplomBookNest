@@ -33,11 +33,11 @@
 								</StackPanel>
 							</Border>
 						</Button>
-						<Button Margin="32,0,0,0" Width="554" Height="215" CornerRadius="20">
+						<Button Click="WorkWithAuthot" Margin="32,0,0,0" Width="554" Height="215" CornerRadius="20">
 							<Border Margin="0,0,0,0" CornerRadius="20" Width="554" Height="215" Background="#DCCDED">
 								<StackPanel>
 									<TextBlock Margin="63,25,0,0" FontSize="36" Foreground="White">Авторы!</TextBlock>
-									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Добавление, удаление, редактирование</TextBlock>
+									<TextBlock Width="390" TextWrapping="Wrap" Margin="0,12,40,0" FontSize="24" Foreground="White">Добавление, удаление</TextBlock>
 
 								</StackPanel>
 							</Border>

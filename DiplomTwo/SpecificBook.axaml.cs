@@ -336,4 +336,16 @@ public partial class SpecificBook : Window
             new ErrorReport(error).ShowDialog(this);
         }
     }
+
+    private void ListBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        var selectedBook = sameBook.SelectedItem as Book;
+
+        if (selectedBook != null)
+        {
+            int bookId = selectedBook.Id; // Получаем id книги
+            new SpecificBook(bookId).Show();
+            Close();
+        }
+    }
 }

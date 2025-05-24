@@ -164,6 +164,16 @@ public partial class MyOwnFriends : Window
         Close();
     }
 
+    private void ListBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        var selection = allMyFr.SelectedItem as User;
+        if (selection != null)
+        {
+            int userId = selection.Id; // Получаем id пользователя
+            new SelectedUser(userId).Show();
+            Close();
+        }
+    }
 }
 public class FriendRequestDisplay
 {

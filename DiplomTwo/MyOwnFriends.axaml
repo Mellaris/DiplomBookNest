@@ -52,7 +52,7 @@
 				<!-- Левая панель: друзья -->
 				<StackPanel Grid.Column="0" Margin="0,40,0,0">
 					<TextBlock Foreground="#042A99" Text="Друзья" FontSize="40" Margin="24,0,0,0"/>
-					<ListBox Background="White" Name="allMyFr" Margin="0,18,0,0" Width="336" Height="496">
+					<ListBox SelectionChanged="ListBox_SelectionChanged" Background="White" Name="allMyFr" Margin="0,18,0,0" Width="336" Height="496">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel VerticalAlignment="Center" Background="#D7D7D7" Width="371" Height="52">

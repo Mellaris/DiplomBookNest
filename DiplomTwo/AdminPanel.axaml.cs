@@ -27,4 +27,9 @@ public partial class AdminPanel : Window
     {
         new WorkingWithGenres().ShowDialog(this);
     }
+
+    private void WorkWithAuthot(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new WorkingWithAuthors().ShowDialog(this);
+    }
 }
