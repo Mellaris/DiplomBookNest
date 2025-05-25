@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="920"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="960"
         x:Class="DiplomTwo.CharacterСreation"
 		Width="1440"
 		WindowState="Maximized"
@@ -24,8 +24,7 @@
 									VerticalAlignment="Top" Margin="127,34,0,0" Height="60" Width="382">
 							<Button Click="Home" Background="White" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Дом"/>
 							<Button Click="OpenBooks" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
-							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Авторы"/>
-							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Новости"/>
+							<Button Click="Button_Click_1" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Друзья"/>
 						</StackPanel>
 
 						<!-- Аватар -->
@@ -54,6 +53,7 @@
 					
 					
 					<TextBlock Foreground="#042A99" Text="Персонажи" FontSize="40" Margin="24,40,0,0"/>
+					<Button Click="Button_Click_2" FontSize="20" Foreground="#042A99" Background="White" Margin="24,5,0,0">Назад</Button>
 					<ListBox SelectionChanged="ListBox_SelectionChanged" Background="White" Name="allCharacter" Margin="0,18,0,0" Width="336" Height="560">
 						<ListBox.ItemTemplate>
 							<DataTemplate>

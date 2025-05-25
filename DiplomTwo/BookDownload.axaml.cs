@@ -276,4 +276,10 @@ public partial class BookDownload : Window
         new AuthorBoard().Show();
         Close();
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
 }

@@ -269,4 +269,10 @@ public partial class CreatingBook : Window
         new SettingBook(idForBook).Show();
         Close();
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
 }

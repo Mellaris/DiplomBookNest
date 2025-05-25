@@ -246,5 +246,15 @@ public partial class CharacterСreation : Window
         }).ToList();
     }
 
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
 
+    private void Button_Click_2(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new CreatingBook(idThisBook).Show();
+        Close();
+    }
 }

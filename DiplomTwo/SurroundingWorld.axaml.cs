@@ -147,4 +147,16 @@ public partial class SurroundingWorld : Window
         new personalAccount().Show();
         Close();
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
+
+    private void Button_Click_2(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new CreatingBook(idThis).Show();
+        Close();
+    }
 }

@@ -142,6 +142,11 @@ public partial class SettingBook : Window
     }
 
 
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new CreatingBook(currentBookId).Show();
+        Close();
+    }
     private async void EditPhotoBook(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         helpCheckTwo = 1;
@@ -378,4 +383,5 @@ public partial class SettingBook : Window
         new Books().Show();
         Close();
     }
+
 }

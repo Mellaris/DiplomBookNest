@@ -174,6 +174,12 @@ public partial class MyOwnFriends : Window
             Close();
         }
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show(); 
+        Close();
+    }
 }
 public class FriendRequestDisplay
 {

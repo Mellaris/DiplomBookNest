@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2183"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2233"
         x:Class="DiplomTwo.Friends"
 		x:CompileBindings="False"
 		Width="1440"
@@ -18,8 +18,7 @@
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 					<Button Click="Home" Height="40" Background="White" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Дом</Button>
 					<Button Click="AllBook" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Книги</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Авторы</Button>
-					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Новости</Button>
+					<Button Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#637BC0" FontSize="24">Друзья</Button>
 				</StackPanel>
 
 				<Button Click="MyAccount" Background="White" Margin="297,28,0,0">
@@ -36,15 +35,42 @@
 				<Image Margin="460,0,0,0" Source="\Imoges\angle-right-solid.png"></Image>
 			</StackPanel>
 
-			<Border Margin="0,24,0,0" Background="#E4EFFD" CornerRadius="40" Width="1074" Height="405">
+			<Border Margin="0,24,0,0" Background="#E4EFFD" CornerRadius="40" Width="1174" Height="505">
 				<StackPanel>
-					<ListBox>
-						<ListBox.ItemTemplate>
-							<DataTemplate>
-								
-							</DataTemplate>
-						</ListBox.ItemTemplate>
-					</ListBox>
+						<ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="1174" Height="505" Background="#E4EFFD" CornerRadius="40" Name="ListBoxUsers">
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<StackPanel Orientation="Horizontal"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<StackPanel Margin="20,21,20,0">
+										<!-- Ширина по желанию -->
+										<TextBlock Foreground="#5975BF" FontSize="32">Любимые жанры:</TextBlock>
+										<StackPanel Orientation="Horizontal">
+											<StackPanel>
+												<TextBlock Width="553" TextWrapping="Wrap" Margin="0,25,0,0" Foreground="#5975BF" FontSize="24" Text="{Binding TopGenres[0]}" />
+												<TextBlock Width="553" TextWrapping="Wrap" Margin="0,20,0,0" Foreground="#5975BF" FontSize="24" Text="{Binding TopGenres[1]}" />
+												<TextBlock Width="553" TextWrapping="Wrap" Margin="0,20,0,0" Foreground="#5975BF" FontSize="24" Text="{Binding TopGenres[2]}" />
+											</StackPanel>
+											<StackPanel Margin="128,0,0,0" HorizontalAlignment="Center">
+												<Image Width="185" Height="185" Source="{Binding CoverBitmap}" />
+												<TextBlock HorizontalAlignment="Center" FontSize="40" Foreground="#5975BF" Text="{Binding Login}"></TextBlock>
+											</StackPanel>
+										</StackPanel>
+										<TextBlock Margin="0,5,0,0" Foreground="#5975BF" FontSize="32">Совпадения:</TextBlock>
+										<StackPanel HorizontalAlignment="Center" Width="944" Orientation="Horizontal">
+											<Border Margin="20,16,0,0" Width="165" Height="63" CornerRadius="12" Background="White">
+												<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Foreground="#042A99" Text="{Binding CommonBooks}" />
+											</Border>
+											<Button Margin="488,5,0,0" HorizontalAlignment="Right" Foreground="#3444A2" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="White" CornerRadius="12" Width="261" Height="52">Добавить</Button>
+										</StackPanel>
+									</StackPanel>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
 				</StackPanel>
 			</Border>
 

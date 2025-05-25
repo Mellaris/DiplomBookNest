@@ -329,4 +329,10 @@ public partial class personalAccount : Window
         new Books().Show();
         Close();
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
 }

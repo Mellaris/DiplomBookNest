@@ -27,6 +27,7 @@
 			</StackPanel>
 			<StackPanel Margin="0,72,0,0" HorizontalAlignment="Center" Width="1140">
 				<TextBlock FontSize="63" Foreground="#042A99">Настройка книги</TextBlock>
+				<Button Click="Button_Click_1" Foreground="#042A99" FontSize="20" Background="White">Назад</Button>
 				<StackPanel Margin="0,28,0,0" Orientation="Horizontal" Width="1140">
 					<StackPanel>
 						<Image Name="imageBook" Width="359" Height="440"></Image>

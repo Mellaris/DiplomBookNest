@@ -209,7 +209,7 @@ public partial class AuthorBoard : Window
 
     private void OpenAuthors(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        new AllAuthors().Show();
+        new Friends().Show();
         Close();
     }
 

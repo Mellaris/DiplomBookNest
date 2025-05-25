@@ -197,6 +197,18 @@ public partial class ReadBook : Window
         new Books().Show();
         Close();
     }
+
+    private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
+
+    private void Button_Click_2(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new SpecificBook(idBookThisHere).Show();
+        Close();
+    }
 }
 public class CommentDisplay
 {

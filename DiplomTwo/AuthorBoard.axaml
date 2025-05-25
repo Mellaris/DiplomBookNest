@@ -18,8 +18,7 @@
 				<StackPanel Orientation="Horizontal" Background="White" VerticalAlignment="Top" Margin="127,38,0,0" Height="29" Width="382">
 					<Button Click="Home" Height="40" Background="White" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Дом</Button>
 					<Button Click="BooksAll" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Книги</Button>
-					<Button Click="OpenAuthors" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Авторы</Button>
-					<Button Click="OpenNews" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Новости</Button>
+					<Button Click="OpenAuthors" Height="40" Background="White"  Margin="32,0,0,0" VerticalAlignment="Center" Foreground="#9AC6FF" FontSize="24">Друзья</Button>
 				</StackPanel>
 
 				<Button Click="MyAc" Background="White" Margin="297,28,0,0" HorizontalAlignment="Right">
@@ -68,7 +67,6 @@
 						<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="32" Foreground="#0C5489">Вы написали:</TextBlock>
 						<StackPanel Margin="0,120,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 							<TextBlock Name="countAllThisAuthor" Foreground="#FF7979" FontSize="48">10</TextBlock>
-							<TextBlock Margin="15,0,0,0" Foreground="#FF7979" FontSize="48">Книг(у)</TextBlock>
 						</StackPanel>
 						
 					</StackPanel>

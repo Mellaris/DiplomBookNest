@@ -23,8 +23,7 @@
 									VerticalAlignment="Top" Margin="127,34,0,0" Height="60" Width="382">
 							<Button Click="Home" Background="White" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Дом"/>
 							<Button Click="OpenB" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Книги"/>
-							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Авторы"/>
-							<Button Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Новости"/>
+							<Button Click="Button_Click_1" Background="White" Margin="32,0,0,0" Height="50" Foreground="#CBC9ED" FontSize="24" Content="Друзья"/>
 						</StackPanel>
 
 						<!-- Аватар -->
@@ -51,6 +50,8 @@
 				<!-- Левая панель: главы -->
 				<StackPanel Grid.Column="0" Margin="0,40,0,0">
 					<TextBlock Foreground="#042A99" Text="Разделы" FontSize="40" Margin="24,0,0,0"/>
+					<Button Click="Button_Click_2" FontSize="20" Foreground="#042A99" Background="White" Margin="24,5,0,0">Назад</Button>
+
 					<ListBox SelectionChanged="ListBox_SelectionChanged" Background="White" Name="AllSections" Margin="0,18,0,0" Width="336" Height="496">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
