@@ -12,6 +12,7 @@ public partial class ChangingThePriority : Window
 {
     private BookPlanDisplay _plan;
     private int _id;
+    private int select;
     public ChangingThePriority()
     {
         InitializeComponent();
@@ -25,14 +26,14 @@ public partial class ChangingThePriority : Window
         }
         catch { }
         CallBaza();
-        box.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
-        _plan = plan; 
+        box.ItemsSource = ListsStaticClass.listAllPrioritylevel.OrderBy(x => x.Id).ToList();
+        _plan = plan;
         _id = plan.BookId;
-        box.SelectedIndex = _plan.PriorityId;
+        box.SelectedIndex = _plan.PriorityId - 1;
 
         foreach (Book book in ListsStaticClass.listAllBooks)
         {
-            if(book.Id == _plan.BookId)
+            if (book.Id == _plan.BookId)
             {
                 imageThis.Source = book.CoverBitmap;
             }
@@ -42,16 +43,21 @@ public partial class ChangingThePriority : Window
 
     private void ComboBox_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
     {
-        int select = (sender as ComboBox).SelectedIndex;
+        select = (sender as ComboBox).SelectedIndex;
         select = select + 1;
+        
+
+    }
+    private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
         var selectBook = Baza.DbContext.Bookplans.FirstOrDefault(x => x.BookId == _id && x.ReaderId == ListsStaticClass.currentAccount);
         if (selectBook != null)
-        {        
+        {
             selectBook.PriorityId = select;
+            Baza.DbContext.SaveChanges();
             new BookPlan().Show();
             Close();
         }
-
     }
     private void CallBaza()
     {
@@ -92,4 +98,6 @@ public partial class ChangingThePriority : Window
             PriorityId = bookPlan.PriorityId,
         }).ToList();
     }
+
+    
 }

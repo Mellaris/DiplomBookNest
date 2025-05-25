@@ -23,7 +23,7 @@
 						</DataTemplate>
 					</ComboBox.ItemTemplate>
 				</ComboBox>
-				<Button Margin="0,66,0,0" Width="208" Height="55" Background="#E6ECFF">
+				<Button Click="Button_Click" Margin="0,66,0,0" Width="208" Height="55" Background="#E6ECFF">
 					<TextBlock HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Foreground="#042A99">Сохранить</TextBlock>
 				</Button>
 			</StackPanel>
