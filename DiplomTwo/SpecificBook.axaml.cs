@@ -16,6 +16,7 @@ public partial class SpecificBook : Window
     private int selectAuthorApp = -1;
     private List<Genre> genreList = new List<Genre>();
     int idGenreThis;
+    private int check = 0;
     public SpecificBook()
     {
         InitializeComponent();
@@ -240,6 +241,9 @@ public partial class SpecificBook : Window
             Name = genre.Name,
         }).ToList();
 
+        ListsStaticClass.listAllBookPlan.Clear();
+        ListsStaticClass.listAllBookPlan = Baza.DbContext.Bookplans.ToList();
+
     }
 
     private void Back(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -303,7 +307,20 @@ public partial class SpecificBook : Window
     {
         if (ListsStaticClass.currentAccount != -1)
         {
-            new AddingReadOrPlan(idThisBook).ShowDialog(this);
+            foreach (Bookplan book in ListsStaticClass.listAllBookPlan)
+            {
+                if (ListsStaticClass.currentAccount == book.ReaderId && book.BookId == idThisBook)
+                {
+                    check = 1;
+                    string error = "¬ы уже добавл€ли эту книгу в книжный план!";
+                    new ErrorReport(error).ShowDialog(this);
+                    break;
+                }
+            }
+            if(check == 0)
+            {
+                new AddingReadOrPlan(idThisBook).ShowDialog(this);
+            }
         }
         else
         {

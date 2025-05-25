@@ -209,4 +209,22 @@ public partial class SelectedUser : Window
         new personalAccount().Show();
         Close();
     }
+
+    private void OpenFr(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Friends().Show();
+        Close();
+    }
+
+    private void BookOpen(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new Books().Show();
+        Close();
+    }
+
+    private void HomeOpen(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        Close();
+    }
 }

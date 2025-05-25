@@ -5,6 +5,7 @@ using Avalonia.Media.Imaging;
 using DiplomTwo.Models;
 using System;
 using System.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DiplomTwo;
 
@@ -27,17 +28,6 @@ public partial class AddingReadOrPlan : Window
         catch { }
         idThis = id;
         CallBaza();
-        foreach (Bookplan book in ListsStaticClass.listAllBookPlan)
-        {
-            if (ListsStaticClass.currentAccount == book.ReaderId && book.BookId == idThis)
-            {
-                string error = "¬ы уже добавл€ли эту книгу в книжный план!";
-                check = 1;
-                new ErrorReport(error).ShowDialog(this);
-                break;
-            }
-        }
-
         ListsStaticClass.listAllPrioritylevel.Clear();
         boxForPrior.ItemsSource = ListsStaticClass.listAllPrioritylevel.ToList();
         CallBaza();

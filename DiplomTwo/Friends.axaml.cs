@@ -55,6 +55,7 @@ public partial class Friends : Window
 
     private void NextWork()
     {
+        ListBoxUsers.ItemsSource = null;
         var currentUserId = ListsStaticClass.currentAccount;
 
         // ID всех пользователей, с кем уже есть связь (друзья, заявки, чёрный список)
@@ -181,6 +182,38 @@ public partial class Friends : Window
 
         Baza.DbContext.Friendrelations.Add(newRequest);
         Baza.DbContext.SaveChanges();
+        NextWork();
+    }
+
+    private void AddReq(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        int selectedUserId = (int)(sender as Button).Tag;
+        int currentUserId = ListsStaticClass.currentAccount;
+
+        // Проверка, есть ли уже отношение между пользователями
+        var existingRelation = Baza.DbContext.Friendrelations.FirstOrDefault(fr =>
+            (fr.Fromuserid == currentUserId && fr.Touserid == selectedUserId) ||
+            (fr.Fromuserid == selectedUserId && fr.Touserid == currentUserId));
+
+        if (existingRelation != null)
+        {
+            string error = "У вас уже есть заявка!";
+            new ErrorReport(error).ShowDialog(this);
+            return;
+        }
+
+        // Добавляем новую заявку
+        var newRequest = new Friendrelation
+        {
+            Fromuserid = currentUserId,
+            Touserid = selectedUserId,
+            Statusid = 1, // 1 — заявка отправлена
+            Requestdate = DateTime.Now,
+        };
+
+        Baza.DbContext.Friendrelations.Add(newRequest);
+        Baza.DbContext.SaveChanges();
+        NextWork();
     }
 }
 public class FriendRecommendation
