@@ -13,6 +13,6 @@
 		<StackPanel Margin="0,64,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 			<TextBox TextChanged="TextBox_TextChanged" Name="checkCode" FontSize="64" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="White" Background="#E6ECFF" Width="586" Height="145"></TextBox>
 		</StackPanel>
-	
+		<TextBlock Name="errorCode" IsVisible="False" Margin="0,20,0,0" Foreground="Red" FontSize="24" HorizontalAlignment="Center">Неправильный код</TextBlock>
 	</StackPanel>
 </Window>

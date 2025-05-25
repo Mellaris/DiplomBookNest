@@ -14,6 +14,7 @@ public partial class CodeCheckWindow : Window
     private List<VerificationCode> checkVerification = new List<VerificationCode>();
     private int idUserCheck;
     private Window loginWindow;
+    private int check = 0;
     public CodeCheckWindow()
     {
         InitializeComponent();
@@ -68,7 +69,7 @@ public partial class CodeCheckWindow : Window
                             new personalAccount().Show();
                         }
                     }
-
+                    check = 1;
                     Close();
 
                     loginWindow.Close();
@@ -76,5 +77,10 @@ public partial class CodeCheckWindow : Window
                 }
             }
         }
+        if(check == 0)
+        {
+            errorCode.IsVisible = true;
+        }
+        check = 0;
     }
 }

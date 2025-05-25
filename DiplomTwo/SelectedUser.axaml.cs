@@ -47,15 +47,7 @@ public partial class SelectedUser : Window
         TopG();
         CountRAndQ();
         ChooseBook();
-        AuthorBooksOpen();
-        if(booksMyAll.Count > 0)
-        {
-            panel.IsVisible = true;
-        }
-        else
-        {
-            panel.IsVisible = false;
-        }
+
     }
     private void CallBaza()
     {
@@ -76,23 +68,7 @@ public partial class SelectedUser : Window
         ListsStaticClass.listAllBooks.Clear();
         ListsStaticClass.listAllBooks = Baza.DbContext.Books.ToList();
     }
-    private void AuthorBooksOpen()
-    {
-        booksMyAll.Clear();
-
-        // Получаем все id книг, написанных текущим автором
-        var myBookIds = ListsStaticClass.listAllBookAuthors
-            .Where(x => x.AppAuthorId == ListsStaticClass.currentAccount)
-            .Select(x => x.BookId)
-            .ToList();
-
-        // Отбираем книги, которые электронные и принадлежат текущему автору
-        booksMyAll = ListsStaticClass.listAllBooks
-            .Where(x => x.IsAuthorBook == true && myBookIds.Contains(x.Id))
-            .ToList();
-
-        myBooks.ItemsSource = booksMyAll;
-    }
+    
     private void ChooseBook()
     {
         var userBooks = ListsStaticClass.listAllPersonallLibrary

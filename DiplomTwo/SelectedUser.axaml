@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2803"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="2303"
         x:Class="DiplomTwo.SelectedUser"
 		Width="1440"
 		x:CompileBindings="False"
@@ -135,34 +135,7 @@
 				</ListBox>
 			</Border>
 
-			<StackPanel Name="panel" IsVisible="False">
-				<TextBlock Margin="0,64,0,0" HorizontalAlignment="Center" Foreground="#FF7979" FontSize="48">Доска автора</TextBlock>
-				<TextBlock Margin="0,6,0,0" TextAlignment="Center" TextWrapping="Wrap" Width="385" Foreground="#FFAAAA" FontSize="20">Здесь находятся все авторские книги пользователя</TextBlock>
-				<Border Margin="0,24,0,0" Width="1140" Height="257" Background="#DAEBFF" CornerRadius="32">
-					<StackPanel VerticalAlignment="Center">
-						<StackPanel VerticalAlignment="Center" Margin="110,8,0,0" Orientation="Horizontal">
-							<Image Source="\Imoges\leftDubl.png"></Image>
-							<ListBox Name="myBooks" VerticalAlignment="Center" Margin="69,0,0,0" Width="717" Height="163" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-				 SelectionMode="Single" BorderThickness="0">
-								<ListBox.ItemsPanel>
-									<ItemsPanelTemplate>
-										<!-- Книги располагаются горизонтально -->
-										<StackPanel Orientation="Horizontal" />
-									</ItemsPanelTemplate>
-								</ListBox.ItemsPanel>
-								<ListBox.ItemTemplate>
-									<DataTemplate>
-										<!-- Изображение книги -->
-										<Image  Width="163" Height="235" Margin="5" />
-									</DataTemplate>
-								</ListBox.ItemTemplate>
-							</ListBox>
-							<Image Margin="44,0,0,0" Source="\Imoges\strelkaRAutor.png"></Image>
-						</StackPanel>
-					</StackPanel>
-
-				</Border>
-			</StackPanel>
+			
 			
 
 		

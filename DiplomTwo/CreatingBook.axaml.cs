@@ -36,7 +36,7 @@ public partial class CreatingBook : Window
                 bookChapterList.Add(chapter);
             }
         }
-        listForChapters.ItemsSource = bookChapterList.ToList();
+        listForChapters.ItemsSource = bookChapterList.OrderBy(x => x.Id).ToList();
         foreach(Book book in ListsStaticClass.listAllBooks)
         {
             if(idForBook == book.Id)
@@ -78,7 +78,7 @@ public partial class CreatingBook : Window
         ListsStaticClass.listAllBookChapter.Add(newChapter);
         bookChapterList.Add(newChapter);
         listForChapters.ItemsSource = null;
-        listForChapters.ItemsSource = bookChapterList.ToList();
+        listForChapters.ItemsSource = bookChapterList.OrderBy(x => x.Id).ToList();
 
        
     }
