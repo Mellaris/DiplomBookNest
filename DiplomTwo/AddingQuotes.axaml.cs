@@ -43,6 +43,32 @@ public partial class AddingQuotes : Window
                 Baza.DbContext.SaveChanges();
                 textError.IsVisible = true;
                 textError.Text = "”спешно!";
+
+                int currentUserId = ListsStaticClass.currentAccount;
+
+                // ѕроверка: есть ли уже достижение с ID = 3
+                bool alreadyHasAchievement = Baza.DbContext.Userachievements
+                    .Any(ua => ua.ReaderId == currentUserId && ua.AchievementId == 3);
+
+                // —читаем количество цитат пользовател€
+                int quotesCount = Baza.DbContext.Quotes
+                    .Count(q => q.ReaderId == currentUserId); // замените UserId на нужное им€ пол€, если оно другое
+
+                if (!alreadyHasAchievement && quotesCount >= 9)
+                {
+                    var newAch = new Userachievement
+                    {
+                        ReaderId = currentUserId,
+                        AchievementId = 3,
+                        EarnedAt = DateTime.Now,
+                    };
+                    Baza.DbContext.Userachievements.Add(newAch);
+                    Baza.DbContext.SaveChanges();
+
+                    int ach = 3;
+                    new MessageCongratulations(ach).ShowDialog(this);
+                }
+
             }
             catch
             {

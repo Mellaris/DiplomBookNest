@@ -46,20 +46,15 @@ public partial class personalAccount : Window
                         pl.DateAdd.Value.Year == currentYear);
         sumThisYear.Text = booksCount.ToString();
         SortLoveBook();
-        foreach(Userachievement userachievement in ListsStaticClass.listAllUserachievement)
-        {
-            if(userachievement.Id == ListsStaticClass.currentAccount)
-            {
-                foreach(Achievement achievement in ListsStaticClass.listAllAchievement)
-                {
-                    if(userachievement.AchievementId == achievement.Id)
-                    {
-                        achievementSort.Add(achievement);
-                    }
-                }
-                break;
-            }
-        }
+        int currentUserId = ListsStaticClass.currentAccount;
+
+        var achievementSort = ListsStaticClass.listAllUserachievement
+            .Where(ua => ua.ReaderId == currentUserId)
+            .Select(ua => ListsStaticClass.listAllAchievement
+                .FirstOrDefault(a => a.Id == ua.AchievementId))
+            .Where(a => a != null)
+            .ToList();
+
         listWithAch.ItemsSource = achievementSort.ToList();
 
 

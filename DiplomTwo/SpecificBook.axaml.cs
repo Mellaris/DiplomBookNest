@@ -17,6 +17,7 @@ public partial class SpecificBook : Window
     private List<Genre> genreList = new List<Genre>();
     int idGenreThis;
     private int check = 0;
+    private int select;
     public SpecificBook()
     {
         InitializeComponent();
@@ -106,6 +107,28 @@ public partial class SpecificBook : Window
                 authorForBook.Text = user.Login;
             }
         }
+
+        var seriesBook = ListsStaticClass.listAllSeriesbook
+           .FirstOrDefault(sb => sb.BookId == idThisBook);
+
+        if (seriesBook != null)
+        {
+            select = seriesBook.SeriesId;
+            numberForBook.Text = seriesBook.BookOrder.ToString();
+
+            var series = ListsStaticClass.listAllSeries
+                .FirstOrDefault(s => s.Id == select);
+
+            if (series != null)
+            {
+                nameSeriesForBook.Text = series.Title;
+            }
+        }
+        else
+        {
+            nameSeriesForBook.Text = "Отсутствует";
+        }
+
         foreach (BookGenre bookGenre in ListsStaticClass.listAllBookGenres)
         {
             if (bookGenre.BookId == idThisBook)
@@ -244,6 +267,11 @@ public partial class SpecificBook : Window
         ListsStaticClass.listAllBookPlan.Clear();
         ListsStaticClass.listAllBookPlan = Baza.DbContext.Bookplans.ToList();
 
+        ListsStaticClass.listAllSeries.Clear();
+        ListsStaticClass.listAllSeries = Baza.DbContext.Series.ToList();
+
+        ListsStaticClass.listAllSeriesbook.Clear();
+        ListsStaticClass.listAllSeriesbook = Baza.DbContext.Seriesbooks.ToList();
     }
 
     private void Back(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

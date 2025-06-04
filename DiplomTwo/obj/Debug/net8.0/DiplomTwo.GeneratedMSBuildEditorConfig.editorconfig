@@ -83,6 +83,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Work/DiplomTwo/DiplomTwo/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Work/DiplomTwo/DiplomTwo/MessageCongratulations.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Work/DiplomTwo/DiplomTwo/Moderation.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

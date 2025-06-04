@@ -95,6 +95,10 @@ public partial class WritingReview : Window
                 seria.Text = series.Title;
             }
         }
+        else
+        {
+            seria.Text = "Отсутствует";
+        }
         RefreshQuotesList();
         foreach (BookGenre bookGenre in ListsStaticClass.listAllBookGenres)
         {
@@ -180,13 +184,43 @@ public partial class WritingReview : Window
                     BookId = idThisBook,
                     ReaderId = currentUserId,
                     ReviewText = textForRevu.Text,
-                    CreatedAt = DateTime.Now, // если у тебя есть поле "дата"
+                    CreatedAt = DateTime.Now,
                     IsHaveRev = false,
                 };
                 Baza.DbContext.Bookreviews.Add(newReview);
             }
             buttonForRev.IsVisible = true;
             Baza.DbContext.SaveChanges();
+
+           
+            int currentBookId = idThisBook; 
+
+            // Проверка: есть ли уже достижение с ID = 4
+            bool alreadyHasAchievement = Baza.DbContext.Userachievements
+                .Any(ua => ua.ReaderId == currentUserId && ua.AchievementId == 4);
+
+            if (!alreadyHasAchievement)
+            {
+                // Поиск рецензии на текущую книгу от текущего пользователя
+                var review = Baza.DbContext.Bookreviews
+                    .FirstOrDefault(br => br.ReaderId == currentUserId && br.BookId == currentBookId);
+
+                if (review != null && !string.IsNullOrWhiteSpace(review.ReviewText) && review.ReviewText.Length >= 100)
+                {
+                    var newAch = new Userachievement
+                    {
+                        ReaderId = currentUserId,
+                        AchievementId = 4,
+                        EarnedAt = DateTime.Now,
+                    };
+
+                    Baza.DbContext.Userachievements.Add(newAch);
+                    Baza.DbContext.SaveChanges();
+
+                    new MessageCongratulations(4).ShowDialog(this);
+                }
+            }
+
         }
     }
     private void AddOpen(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -224,6 +258,8 @@ public partial class WritingReview : Window
     {
         var addQuoteWindow = new AddingQuotes(idThisBook, this);
         addQuoteWindow.ShowDialog(this);
+
+
     }
     private void AddPersonally(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -268,6 +304,53 @@ public partial class WritingReview : Window
                     ? existingEntry.Rating.Value.ToString("F1")
                     : "0.0";
                     rating.IsVisible = true;
+                    int currentUserId = ListsStaticClass.currentAccount;
+
+                    // Проверка: есть ли уже достижение с ID = 2
+                    bool alreadyHasAchievement = Baza.DbContext.Userachievements
+                        .Any(ua => ua.ReaderId == currentUserId && ua.AchievementId == 2);
+
+                    // Считаем количество книг пользователя
+                    int bookCount = Baza.DbContext.Personallibraries
+                        .Count(p => p.ReaderId == currentUserId);
+
+                    if (!alreadyHasAchievement && bookCount == 9)
+                    {
+                        var newAch = new Userachievement
+                        {
+                            ReaderId = currentUserId,
+                            AchievementId = 2,
+                            EarnedAt = DateTime.Now,
+                        };
+                        Baza.DbContext.Userachievements.Add(newAch);
+                        Baza.DbContext.SaveChanges();
+
+                        int ach = 2;
+                        new MessageCongratulations(ach).ShowDialog(this);
+                    }
+
+
+                    alreadyHasAchievement = Baza.DbContext.Userachievements
+                        .Any(ua => ua.ReaderId == currentUserId && ua.AchievementId == 5);
+
+                    // Считаем количество книг пользователя
+                    bookCount = Baza.DbContext.Personallibraries
+                        .Count(p => p.ReaderId == currentUserId);
+
+                    if (!alreadyHasAchievement && bookCount == 29)
+                    {
+                        var newAch = new Userachievement
+                        {
+                            ReaderId = currentUserId,
+                            AchievementId = 5,
+                            EarnedAt = DateTime.Now,
+                        };
+                        Baza.DbContext.Userachievements.Add(newAch);
+                        Baza.DbContext.SaveChanges();
+
+                        int ach = 5;
+                        new MessageCongratulations(ach).ShowDialog(this);
+                    }
 
                 }
                 else
@@ -289,6 +372,26 @@ public partial class WritingReview : Window
                         DateAdd = DateTime.Now,
                     };
                     Baza.DbContext.Personallibraries.Add(newLibrary);
+
+                    int currentUserId = ListsStaticClass.currentAccount;
+
+                    // Проверка: есть ли уже такое достижение
+                    bool alreadyHasAchievement = Baza.DbContext.Userachievements
+                        .Any(ua => ua.ReaderId == currentUserId && ua.AchievementId == 1);
+
+                    if (!alreadyHasAchievement)
+                    {
+                        var newAch = new Userachievement
+                        {
+                            ReaderId = currentUserId,
+                            AchievementId = 1,
+                            EarnedAt = DateTime.Now,
+                        };
+                        int ach = 1;
+                        Baza.DbContext.Userachievements.Add(newAch);
+                        Baza.DbContext.SaveChanges(); // не забудь сохранить
+                        new MessageCongratulations(ach).ShowDialog(this);
+                    }
                 }
 
                 Baza.DbContext.SaveChanges();
