@@ -28,8 +28,15 @@
 						<TextBlock Margin="150,60,0,0" Foreground="#3444A2" FontSize="96">Личная</TextBlock>
 						<TextBlock Margin="245,0,0,0" Foreground="#3444A2" FontSize="64">Библиотека</TextBlock>
 						<TextBlock Margin="150,0,0,0" Foreground="#3444A2" FontSize="32">— это история вашего чтения!  </TextBlock>
-						<TextBlock Margin="150,48,0,0" Width="488" Foreground="#3444A2" FontSize="20" TextWrapping="Wrap">На данный момент в вашей коллекции уже 
-						10 книг. Откройте новые горизонты: добавляйте 
+						<StackPanel Margin="150,0,0,0" Orientation="Horizontal">
+							<TextBlock Margin="0,48,0,0" Width="433" Foreground="#3444A2" FontSize="20" TextWrapping="Wrap">
+								На данный момент в вашей коллекции уже
+								
+							</TextBlock>
+							<TextBlock Name="countAllMy" Margin="0,48,0,0" Foreground="#3444A2" FontSize="20">10</TextBlock>
+							<TextBlock  Margin="5,48,0,0" Foreground="#3444A2" FontSize="20">книг.</TextBlock>
+						</StackPanel>
+						<TextBlock Margin="130,0,0,0" Width="488" Foreground="#3444A2" FontSize="20" TextWrapping="Wrap">Откройте новые горизонты: добавляйте 
 						интересные произведения и продолжайте своё
 						книжное путешествие.</TextBlock>
 						<Button Click="OpenAllBooks" Margin="150,58,0,0" CornerRadius="12" Width="263" Height="46" Background="#FFA37E">

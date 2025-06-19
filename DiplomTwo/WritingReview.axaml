@@ -41,7 +41,10 @@
 							<StackPanel>
 								<TextBlock Width="550" TextWrapping="Wrap" Height="60" Name="nameBook" Margin="0,24,0,0" FontSize="36" Foreground="#042A99">Первый раунд</TextBlock>
 								<TextBlock Name="authorName" Margin="0,12,0,0" Foreground="#3250A6" FontSize="28">Грейс Райли</TextBlock>
-								<TextBlock Name="contentBook" Foreground="#3250A6" FontSize="16" Margin="0,24,0,0" Width="550" Height="200" TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
+								<ScrollViewer Height="200" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+									<TextBlock Name="contentBook" Foreground="#3250A6" FontSize="16" Margin="0,24,0,0" Width="550"  TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
+
+								</ScrollViewer>
 								<StackPanel Orientation="Horizontal">
 									<TextBlock Margin="0,24,0,0" Foreground="#042A99" FontSize="20">Количество страниц:</TextBlock>
 									<TextBlock Margin="10,24,0,0" Foreground="#042A99" FontSize="20" Name="page"></TextBlock>

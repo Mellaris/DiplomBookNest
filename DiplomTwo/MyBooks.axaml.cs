@@ -12,7 +12,7 @@ public partial class MyBooks : Window
 {
     private string? currentSearchText = null;
     private int? currentSortIndex = null;
-
+    private int countCheck;
     public MyBooks()
     {
         InitializeComponent();
@@ -23,6 +23,15 @@ public partial class MyBooks : Window
         catch { }
         CallBaza();
         UpdateDisplayedBooks();
+        foreach (Personallibrary personallibrary in ListsStaticClass.listAllPersonallLibrary)
+        {
+            if(personallibrary.ReaderId == ListsStaticClass.currentAccount)
+            {
+                countCheck++;
+            }
+        }
+        countAllMy.Text = countCheck.ToString();
+        countCheck = 0;
     }
     private void UpdateDisplayedBooks(string? searchText = null, int? sortIndex = null)
     {
@@ -317,6 +326,8 @@ public partial class MyBooks : Window
 
         // Обновляем отображение списка
         UpdateDisplayedBooks(); // Или другой метод для обновления интерфейса
+        int count = Baza.DbContext.Personallibraries.Where(x => x.ReaderId == ListsStaticClass.currentAccount).Count();
+        countAllMy.Text = count.ToString();
     }
 
     private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
