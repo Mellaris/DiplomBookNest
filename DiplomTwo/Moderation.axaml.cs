@@ -20,7 +20,7 @@ public partial class Moderation : Window
         CallBaza();
         allBooksOne.ItemsSource = ListsStaticClass.listAllBooks.OrderBy(x => x.Id).ToList();
         allBooksTwo.ItemsSource = ListsStaticClass.listAllBooks.OrderBy(x => x.Id).ToList();
-        allBooksThree.ItemsSource = ListsStaticClass.listAllBooks.OrderBy(x => x.Id).ToList();
+        
         AllContent();
     }
     private void AllContent()
@@ -236,27 +236,6 @@ public partial class Moderation : Window
             .Where(r => !string.IsNullOrWhiteSpace(r.Content))
             .ToList();
 
-        // фильтрация по книге, если выбрана
-        if (threeBoxSelectBooks != 0)
-        {
-            filteredReviews = filteredReviews
-                .Where(r => r.BookId == threeBoxSelectBooks)
-                .ToList();
-        }
-
-        // сортировка по дате
-        if (threeBoxSelect == 1)
-        {
-            filteredReviews = filteredReviews
-                .OrderBy(r => r.CreatedAt)
-                .ToList();
-        }
-        else if (threeBoxSelect == 2)
-        {
-            filteredReviews = filteredReviews
-                .OrderByDescending(r => r.CreatedAt)
-                .ToList();
-        }
 
         var users = Baza.DbContext.Users.ToList();
         var books = Baza.DbContext.Books.ToList();
@@ -273,25 +252,7 @@ public partial class Moderation : Window
 
         allCommentsListBox.ItemsSource = displayList.ToList();
     }
-    private void BoxForBooksAndComments(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
-    {
-        if (allBooksOne.SelectedItem is Book selectedBook)
-        {
-            threeBoxSelectBooks = selectedBook.Id;
-        }
-        else
-        {
-            threeBoxSelectBooks = 0; // если ничего не выбрано — показать все
-        }
-
-        DisplayTwo();
-    }
-    private void BoxForDateAndComments(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
-    {
-        threeBoxSelect = (sender as ComboBox)?.SelectedIndex + 1 ?? 0;
-        DisplayTwo();
-    }
-
+   
     private void DeleteQ(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         int select = (int)(sender as Button).Tag;

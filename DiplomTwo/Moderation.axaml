@@ -107,17 +107,8 @@
 				<StackPanel Width="1140">
 					<StackPanel Margin="0,40,0,0" Width="1140" Orientation="Horizontal">
 						<TextBlock FontSize="48" Foreground="#108DE8">Комментарии</TextBlock>
-						<ComboBox SelectionChanged="BoxForDateAndComments" Margin="63,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Дата">
-							<ComboBoxItem>По возрастанию</ComboBoxItem>
-							<ComboBoxItem>По убыванию</ComboBoxItem>
-						</ComboBox>
-						<ComboBox SelectionChanged="BoxForBooksAndComments" Name="allBooksThree" Margin="32,0,0,0" Foreground="#108DE8" PlaceholderForeground="#108DE8" Background="White" VerticalAlignment="Center" Width="260" Height="36" PlaceholderText="Книга">
-							<ComboBox.ItemTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding Title}"></TextBlock>
-								</DataTemplate>
-							</ComboBox.ItemTemplate>
-						</ComboBox>
+						
+						
 					</StackPanel>
 					<ListBox Name="allCommentsListBox" HorizontalAlignment="Left" Margin="0,46,0,0" Width="1042" Height="312" Background="White">
 						<ListBox.ItemTemplate>
