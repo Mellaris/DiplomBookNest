@@ -272,6 +272,9 @@ public partial class SpecificBook : Window
 
         ListsStaticClass.listAllSeriesbook.Clear();
         ListsStaticClass.listAllSeriesbook = Baza.DbContext.Seriesbooks.ToList();
+
+        ListsStaticClass.listAllBookAuthors.Clear();
+        ListsStaticClass.listAllBookAuthors = Baza.DbContext.Bookauthors.ToList();
     }
 
     private void Back(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

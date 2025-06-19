@@ -50,8 +50,9 @@
 					</StackPanel>
 					<TextBlock Name="authorForBook" Margin="0,2,0,0" FontSize="32" Foreground="#3250A6">Грейс Райли</TextBlock>
 					<Border HorizontalAlignment="Left" Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="301">
-						
+						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
 							<TextBlock Name="contetForBook" Foreground="#3250A6" FontSize="20" Margin="18,20,0,0" HorizontalAlignment="Left" Width="626" TextWrapping="Wrap">В мрачном особняке разворачивается захватывающая история о существе, созданном безумным доктором. Что значит — жить вечно? Каково это — пережить своего создателя? Мысли главного героя о жизни и морали усложняются по мере его собственного развития.</TextBlock>
+						</ScrollViewer>
 						
 					</Border>
 					<Border HorizontalAlignment="Left" Margin="0,18,0,0" Background="White" BorderThickness="3" BorderBrush="#506AB8" Width="684" Height="48">

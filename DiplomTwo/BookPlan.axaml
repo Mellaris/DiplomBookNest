@@ -58,8 +58,11 @@
 							<StackPanel Margin="6" Background="#EAF2FF" Orientation="Horizontal">
 								<TextBlock Margin="10,0,0,0" FontSize="18" Foreground="#3B57FF" Text="{Binding BookTitle}" TextWrapping="Wrap" Width="300" VerticalAlignment="Center" />
 								<Button Click="OpenAndAdd" Tag="{Binding BookId}" Margin="40,0,0,0" Width="65" Height="57" Background="{Binding PriorityColor}" BorderBrush="{Binding PriorityColor}" />
-								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="240,0,0,0" Click="EditPrioritet">
+								<Button Tag="{Binding Id}" Background="#EAF2FF" Margin="230,0,0,0" Click="EditPrioritet">
 									<Image Source="\Imoges\pen-solid.png" />
+								</Button>
+								<Button Tag="{Binding BookId}" Background="#EAF2FF" Margin="20,0,0,0" Click="DeletePrior">
+									<Image Source="\Imoges\trash-alt.png" />
 								</Button>
 							</StackPanel>
 						</DataTemplate>

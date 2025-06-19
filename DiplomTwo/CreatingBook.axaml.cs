@@ -14,6 +14,7 @@ public partial class CreatingBook : Window
     private List<BookChapter> bookChapterList = new List<BookChapter>();
     private int idForBook;
     private int wordsPerPage = 325;
+    private int count;
     private int selectIdChapterNumber;
     public CreatingBook()
     {
@@ -34,8 +35,12 @@ public partial class CreatingBook : Window
             if(idForBook == chapter.BookId)
             {
                 bookChapterList.Add(chapter);
+                count = count + Convert.ToInt32(chapter.WordCount);
             }
         }
+        var thisBook = Baza.DbContext.ElectronicBooksInfos.FirstOrDefault(x => x.BookId == idForBook);
+        thisBook.CurrentWordCount = count;  
+        Baza.DbContext.SaveChanges();
         listForChapters.ItemsSource = bookChapterList.OrderBy(x => x.Id).ToList();
         foreach(Book book in ListsStaticClass.listAllBooks)
         {
@@ -44,6 +49,16 @@ public partial class CreatingBook : Window
                 nameBook.Text = book.Title;
             }
         }
+        foreach(ElectronicBooksInfo book in ListsStaticClass.listAllElectronicBooksInfo)
+        {
+            if(idForBook == book.BookId)
+            {
+                countBefore.Text = book.CurrentWordCount.ToString();
+                countMain.Text = book.TargetWordCount.ToString();
+                break;
+            }
+        }
+        count = 0;
     }
     private void AddNewChapter(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -119,6 +134,20 @@ public partial class CreatingBook : Window
 
         listForChapters.ItemsSource = null;
         listForChapters.ItemsSource = bookChapterList.ToList();
+        CallBaza();
+
+        foreach (BookChapter chapter in ListsStaticClass.listAllBookChapter)
+        {
+            if (idForBook == chapter.BookId)
+            {
+                bookChapterList.Add(chapter);
+                count = count + Convert.ToInt32(chapter.WordCount);
+            }
+        }
+        var thisBook = Baza.DbContext.ElectronicBooksInfos.FirstOrDefault(x => x.BookId == idForBook);
+        thisBook.CurrentWordCount = count;
+        Baza.DbContext.SaveChanges();
+        count = 0;
     }
     private void OpenOurChapter(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -183,6 +212,26 @@ public partial class CreatingBook : Window
                 bookChapterList.Add(chapterOne);
             }
         }
+        count = 0;
+        foreach (BookChapter chapterAther in ListsStaticClass.listAllBookChapter)
+        {
+            if (idForBook == chapterAther.BookId)
+            {
+                count = count + Convert.ToInt32(chapterAther.WordCount);
+            }
+        }
+        var thisBook = Baza.DbContext.ElectronicBooksInfos.FirstOrDefault(x => x.BookId == idForBook);
+        thisBook.CurrentWordCount = count;
+        Baza.DbContext.SaveChanges();
+        foreach (ElectronicBooksInfo book in ListsStaticClass.listAllElectronicBooksInfo)
+        {
+            if (idForBook == book.BookId)
+            {
+                countBefore.Text = book.CurrentWordCount.ToString();
+                countMain.Text = book.TargetWordCount.ToString();
+                break;
+            }
+        }
         listForChapters.ItemsSource = bookChapterList.ToList();
     }
     private void TextBox_TextChanged(object? sender, Avalonia.Controls.TextChangedEventArgs e)
@@ -233,6 +282,9 @@ public partial class CreatingBook : Window
             Dateadd = book.Dateadd,
             SeriesId = book.SeriesId,
         }).ToList();
+
+        ListsStaticClass.listAllElectronicBooksInfo.Clear();
+        ListsStaticClass.listAllElectronicBooksInfo = Baza.DbContext.ElectronicBooksInfos.ToList();
     }
     private void MyAccount(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

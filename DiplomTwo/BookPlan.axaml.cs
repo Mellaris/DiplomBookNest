@@ -182,4 +182,38 @@ public partial class BookPlan : Window
         new Friends().Show();
         Close();
     }
+
+    private void DeletePrior(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        int idToDelete = (int)(sender as Button).Tag;
+
+        // Находим запись плана в базе
+        var planToRemove = Baza.DbContext.Bookplans
+            .FirstOrDefault(p => p.BookId == idToDelete && p.ReaderId == ListsStaticClass.currentAccount);
+
+        if (planToRemove != null)
+        {
+            // Удаляем из базы
+            Baza.DbContext.Bookplans.Remove(planToRemove);
+            Baza.DbContext.SaveChanges();
+
+            // Обновляем список в статике и UI
+            CallBaza();
+
+            // Удаляем из визуального списка (bookDisplayModels + ItemsSource)
+            var displayToRemove = bookDisplayModels.FirstOrDefault(b => b.BookId == idToDelete);
+            if (displayToRemove != null)
+            {
+                bookDisplayModels.Remove(displayToRemove);
+                myPlan.ItemsSource = null;
+                myPlan.ItemsSource = bookDisplayModels;
+            }
+        }
+        else
+        {
+            string error = "Не удалось найти книгу для удаления.";
+            new ErrorReport(error).ShowDialog(this);
+        }
+    }
+
 }

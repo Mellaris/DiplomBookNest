@@ -79,7 +79,10 @@
     <None Remove="Imoges\user.png" />
     <None Remove="Imoges\userPurple.png" />
     <None Remove="Imoges\Vector.png" />
+    <None Remove="PhotoForBook\018fa152-fa30-77cb-b989-5a9e5a856f46.jpg" />
     <None Remove="PhotoForBook\1.50x-thumb.png" />
+    <None Remove="PhotoForBook\69756892.jpg" />
+    <None Remove="PhotoForBook\71691442.jpg" />
     <None Remove="PhotoForBook\AblY0tFG-ipad.jpeg" />
     <None Remove="PhotoForBook\AILSi1cf-ipad.jpeg" />
     <None Remove="PhotoForBook\Ajgul_Klinovskaya__Data_S_Kogda_zhizn_nachinaetsya_zanovo.jpg" />
@@ -89,6 +92,7 @@
     <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Orden_Sumrachnoj_Vuali.jpg" />
     <None Remove="PhotoForBook\Antonina_Krejn__Sholoh._Prizrachnye_roschi.jpg" />
     <None Remove="PhotoForBook\Atft7r9l-ipad.jpeg" />
+    <None Remove="PhotoForBook\cover.png" />
     <None Remove="PhotoForBook\feaospugl.jpg" />
     <None Remove="PhotoForBook\Frank_Tile__Golovolomka.jpg" />
     <None Remove="PhotoForBook\FZ1fI05G-ipad.jpeg" />
@@ -210,7 +214,10 @@
     <AvaloniaResource Include="Imoges\user.png" />
     <AvaloniaResource Include="Imoges\userPurple.png" />
     <AvaloniaResource Include="Imoges\Vector.png" />
+    <AvaloniaResource Include="PhotoForBook\018fa152-fa30-77cb-b989-5a9e5a856f46.jpg" />
     <AvaloniaResource Include="PhotoForBook\1.50x-thumb.png" />
+    <AvaloniaResource Include="PhotoForBook\69756892.jpg" />
+    <AvaloniaResource Include="PhotoForBook\71691442.jpg" />
     <AvaloniaResource Include="PhotoForBook\AblY0tFG-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\AILSi1cf-ipad.jpeg" />
     <AvaloniaResource Include="PhotoForBook\Ajgul_Klinovskaya__Data_S_Kogda_zhizn_nachinaetsya_zanovo.jpg" />
@@ -220,6 +227,7 @@
     <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Orden_Sumrachnoj_Vuali.jpg" />
     <AvaloniaResource Include="PhotoForBook\Antonina_Krejn__Sholoh._Prizrachnye_roschi.jpg" />
     <AvaloniaResource Include="PhotoForBook\Atft7r9l-ipad.jpeg" />
+    <AvaloniaResource Include="PhotoForBook\cover.png" />
     <AvaloniaResource Include="PhotoForBook\feaospugl.jpg" />
     <AvaloniaResource Include="PhotoForBook\Frank_Tile__Golovolomka.jpg" />
     <AvaloniaResource Include="PhotoForBook\FZ1fI05G-ipad.jpeg" />

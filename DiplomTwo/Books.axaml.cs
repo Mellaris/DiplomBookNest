@@ -12,6 +12,7 @@ namespace DiplomTwo;
 public partial class Books : Window
 {
     private List<Book> booksForGenre = new List<Book>();
+    private List<Book> booksForFinal= new List<Book>();
     private int selectedGenreId;
     private int selectRatingId = -1;
     private string textForSearch;
@@ -50,7 +51,7 @@ public partial class Books : Window
         int currentUser = ListsStaticClass.currentAccount; // текущий пользователь
 
         // Фильтрация списка книг
-        var filteredBooks = ListsStaticClass.listAllBooks.Where(book =>
+        booksForGenre = ListsStaticClass.listAllBooks.Where(book =>
         {
             // Проверка на авторскую книгу
             if (book.IsAuthorBook)
@@ -105,18 +106,19 @@ public partial class Books : Window
             return true;
         }).ToList();
 
-        allBooks.ItemsSource = filteredBooks;
+        allBooks.ItemsSource = booksForGenre;
     }
 
     private void DisplayForAllFiltr()
     {
-        booksForGenre.Clear();
-        booksForGenre = ListsStaticClass.listAllBooks.ToList();
+        booksForFinal.Clear();
+        allBooks.ItemsSource = booksForFinal.ToList();
+        booksForFinal = booksForGenre.ToList();
 
         // Фильтрация по жанру
         if (selectedGenreId > 0)
         {
-            booksForGenre = booksForGenre
+            booksForFinal = booksForFinal
             .Where(book => book.BookGenres.Any(g => g.GenreId == selectedGenreId))
             .ToList();
         }
@@ -126,7 +128,7 @@ public partial class Books : Window
         {
             var currentMonth = DateTime.Now.Month;
             var currentYear = DateTime.Now.Year;
-            booksForGenre = booksForGenre
+            booksForFinal = booksForFinal
             .Where(book => book.Dateadd.HasValue &&
             book.Dateadd.Value.Month == currentMonth &&
             book.Dateadd.Value.Year == currentYear)
@@ -136,7 +138,7 @@ public partial class Books : Window
         // Фильтрация по авторским книгам
         if (CheckBoxIsAuthorBook.IsChecked == true)
         {
-            booksForGenre = booksForGenre
+            booksForFinal = booksForFinal
             .Where(book => book.IsAuthorBook == true)
             .ToList();
         }
@@ -144,7 +146,7 @@ public partial class Books : Window
         // Поиск по названию
         if (!string.IsNullOrEmpty(textForSearch))
         {
-            booksForGenre = booksForGenre
+            booksForFinal = booksForFinal
             .Where(book => book.Title.ToLower().Contains(textForSearch.ToLower()))
             .ToList();
         }
@@ -152,14 +154,14 @@ public partial class Books : Window
         // Сортировка по рейтингу
         if (selectRatingId == 0)
         {
-            booksForGenre = booksForGenre.OrderBy(book => book.Rating).ToList();
+            booksForFinal = booksForFinal.OrderBy(book => book.Rating).ToList();
         }
         else if (selectRatingId == 1)
         {
-            booksForGenre = booksForGenre.OrderByDescending(book => book.Rating).ToList();
+            booksForFinal = booksForFinal.OrderByDescending(book => book.Rating).ToList();
         }
 
-        allBooks.ItemsSource = booksForGenre;
+        allBooks.ItemsSource = booksForFinal.ToList();
     }
     private void CheckBoxIsNew_Checked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -219,6 +221,9 @@ public partial class Books : Window
             BookId = bookGenre.BookId,
             GenreId = bookGenre.GenreId,
         }).ToList();
+
+        ListsStaticClass.listAllElectronicBooksInfo.Clear();
+        ListsStaticClass.listAllElectronicBooksInfo = Baza.DbContext.ElectronicBooksInfos.ToList();
     }
 
     private void TextBox_TextChanged(object? sender, Avalonia.Controls.TextChangedEventArgs e)
